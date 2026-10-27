@@ -107,6 +107,79 @@ html{background:#13232b}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe
 #v6cinema{z-index:14}
 @media(max-width:560px){#v8top{grid-template-columns:1fr auto;gap:5px}#v8brand{display:none}#v8topcenter{text-align:left;padding:8px 10px}#v8progress{justify-content:flex-start}#v8topactions button{width:39px;height:39px;font-size:18px}#v8mid{top:75px;width:175px;padding:8px 10px}#v8tip{bottom:155px;max-width:54vw;min-width:0;padding:8px;font-size:11px}#v8waypoint{top:43%;font-size:11px}#actions{gap:6px}#actions button,#actions #hide,#actions #interact{width:66px;height:66px}#actions button span{font-size:23px}#controls{width:120px;height:120px}#stick{width:58px;height:58px;left:29px;top:29px}.v8menulevels{gap:8px}.v8leveldetails{padding:9px}.v8leveldetails b{font-size:13px}.v8levelart{height:79px}.v8levelarrow{padding:5px}.v8menu{padding:18px}}
 @media(orientation:landscape) and (max-height:540px){#v8top{top:5px;grid-template-columns:minmax(0,1fr) minmax(160px,1fr) minmax(140px,1fr);gap:6px}#v8brand{display:flex;padding:5px 9px}.v8logo{font-size:19px}.v8brandtitle{font-size:10px}.v8subtitle{font-size:8px}#v8topcenter{padding:5px 9px}#v8objective{font-size:13px}#v8progress{margin-top:3px}#v8topactions button{height:35px;width:36px;font-size:18px}#v8mid{top:54px;padding:6px 9px;width:170px;gap:5px}#v8tip{bottom:10px;max-width:220px;left:50%;font-size:10px;padding:6px 8px}#v8waypoint{top:45%}#actions button,#actions #hide,#actions #interact{width:59px;height:59px;font-size:9px}#actions button span{font-size:20px}#controls{width:112px;height:112px}#stick{width:54px;height:54px;left:27px;top:27px}#panel{max-height:95dvh}.v8menu{padding:14px 22px}.v8menutitle{font-size:25px}.v8menudesc{font-size:12px;margin:7px 0}.v8levelcard{min-height:125px!important}.v8levelart{height:64px}.v8menufooter{margin-top:6px}}
+</style>
+<style id="mobile-clear-screen-v08a">
+/* Mobile cleanup, inspired by a real 393px iPhone screenshot.
+   HUD occupies the upper 90px instead of covering the playfield. */
+#v8brand{display:none!important}
+#v8top{
+ top:max(5px,env(safe-area-inset-top));left:max(9px,env(safe-area-inset-left));right:max(9px,env(safe-area-inset-right));
+ grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:7px;
+}
+#v8topcenter{min-width:0;padding:6px 10px 7px;text-align:left;border-radius:11px;background:#142b38dc}
+#v8levelname{font-size:9px;line-height:12px;letter-spacing:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#v8objective{font-size:13px;line-height:17px;margin-top:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#v8progress{justify-content:flex-start;gap:5px;margin-top:4px}
+#v8progress i{height:3px;width:31px}
+#v8topactions{gap:4px}
+#v8topactions button{width:38px;height:38px;font-size:18px;border-radius:11px}
+#v8mid{
+ top:61px;left:max(9px,env(safe-area-inset-left));right:max(9px,env(safe-area-inset-right));width:auto;
+ display:flex;align-items:center;gap:9px;min-height:36px;padding:5px 9px;
+ background:#142b38ca;border:1px solid #e9d49a52;border-radius:11px;
+}
+#v8mid .v8stat{min-width:0;flex:1 1 0}
+#v8mid .v8statline{font-size:8px;line-height:10px;margin-bottom:3px;gap:3px;letter-spacing:0}
+#v8mid .v8statline span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#v8mid .v8meter{height:4px}
+#v8mid .v8statsmall{font-size:11px;min-width:48px;flex:0 0 auto;gap:4px}
+#v8loot,#v8timer{display:none}
+#v8lives{letter-spacing:-1px;color:#ffd49d}
+#v8tip{bottom:max(160px,calc(env(safe-area-inset-bottom) + 142px));left:50%;padding:5px 10px;font-size:10px;line-height:13px;min-width:0;max-width:200px;
+ background:#122d36b8;border:1px solid #e7c78c59;border-radius:10px;box-shadow:none;white-space:normal}
+#v8tipicon{font-size:12px;margin-right:3px}
+#v8waypoint{top:105px;right:10px;padding:4px 7px;font-size:11px;font-weight:800;border-radius:8px;max-width:150px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+ background:#172f3bc4;border:1px solid #eacb9361;text-shadow:none}
+#v8waypoint:first-letter{font-size:14px}
+#toast{top:135px;font-size:11px;padding:5px 9px;max-width:min(76vw,270px);white-space:normal;text-align:center;
+ background:#152d38bf;border:1px solid #edce9b7d;box-shadow:none}
+#v6cinema{
+ position:fixed;z-index:16;left:50%;top:max(7px,env(safe-area-inset-top));transform:translateX(-50%);
+ width:min(260px,75vw);min-width:145px;min-height:0;margin:0;padding:6px 10px 7px;
+ background:#282334db;border:1px solid #e4c7989c;border-radius:10px;box-shadow:0 3px 14px #0005;
+ font:700 12px/15px system-ui;color:#fff2d8;text-align:center;
+}
+#v6cinema .v6cinemaicon{display:none}
+#v6stage{font-size:12px;line-height:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#v6cinema .v6cinemabar{height:2px;margin-top:4px;background:#121a2490}
+#v6cinemafill{height:2px}
+body.v8-capture-mode #v8ui,
+body.v8-capture-mode #toast{display:none!important}
+body.v8-capture-mode #controls,
+body.v8-capture-mode #actions{
+ opacity:0!important;visibility:hidden!important;pointer-events:none!important;
+}
+#controls,#actions{transition:opacity .17s ease}
+@media (orientation:landscape){
+ #v8top{top:4px;left:max(9px,env(safe-area-inset-left));right:max(9px,env(safe-area-inset-right))}
+ #v8topcenter{padding:4px 8px}
+ #v8levelname{font-size:8px;line-height:10px}
+ #v8objective{font-size:11px;line-height:13px}
+ #v8progress{margin-top:2px}
+ #v8topactions button{width:33px;height:33px;font-size:16px}
+ #v8mid{top:44px;right:auto;width:min(360px,70vw);padding:4px 9px;gap:7px}
+ #v8waypoint{top:48px;right:max(10px,env(safe-area-inset-right))}
+ #v8tip{bottom:10px;max-width:175px}
+ #toast{top:87px}
+ #v6cinema{top:5px;width:min(230px,45vw);padding:4px 8px}
+}
+@media (max-width:370px){
+ #v8topactions button{width:33px;height:35px}
+ #v8mid{gap:5px;padding:4px 6px}
+ #v8mid .v8statline{font-size:7px}
+ #v8mid .v8statsmall{font-size:9px}
+ #v8waypoint{top:102px}
+}
 </style></head><body><div id="loadingHint" style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff6dc;color:#443323;padding:15px 20px;border-radius:16px;z-index:12;text-align:center;max-width:85%;font:600 15px system-ui">Загрузка игры… Если надпись не исчезает, открой эту страницу в Safari.</div><script>window.addEventListener('error',function(e){var x=document.getElementById('loadingHint');if(x){x.textContent='Ошибка запуска: '+(e.message||'не удалось загрузить игру');x.style.display='block'}});</script><canvas id="c"></canvas><div id="v8ui"><div id="v8top"><div id="v8brand"><span class="v8logo">👠</span><div><span class="v8brandtitle">БОЛЬШАЯ ЖЕНА</span><span class="v8subtitle">МЕЛКИЙ МУЖ · v0.8</span></div></div><div id="v8topcenter"><div id="v8levelname">ПОБЕГ ИЗ ДОМА</div><div id="v8objective">Найди ключ</div><div id="v8progress"><i class="active"></i><i></i><i></i></div></div><div id="v8topactions"><button id="v8map" title="Карта" aria-label="Открыть карту">◇</button><button id="v8music" title="Звук" aria-label="Переключить звук">♫</button><button id="v8pause" title="Пауза" aria-label="Меню паузы">☰</button></div></div><div id="v8mid"><div class="v8stat"><div class="v8statline"><span>БЕГ</span><span id="v8staminaText">100%</span></div><div class="v8meter"><i id="v8stamina"></i></div></div><div class="v8stat"><div class="v8statline"><span>ОБНАРУЖЕНИЕ</span><span id="v8threatText">ТИХО</span></div><div class="v8meter danger"><i id="v8threat"></i></div></div><div class="v8statsmall"><span id="v8lives">♥ ♥ ♥</span><span id="v8loot">★ 0/3 · ◈ 0/5</span><span id="v8timer">00:00</span></div></div><div id="v8tip"><span id="v8tipicon">✦</span><span id="v8tiptext">Следуй к отмеченной цели</span></div><div id="v8waypoint">↗ <span id="v8distance">Ключ</span></div></div><div id="v8modal" aria-hidden="true"><div id="v8modalCard"></div></div><div id="hud"><div id="quest">🎯 Доберись до ворот</div><div id="state">👠 Жена ищет тебя</div></div><button id="pause" style="position:fixed;right:10px;top:75px;width:48px;height:44px;font-size:20px;z-index:3">⏸</button><div id="hearts" style="position:fixed;left:10px;top:76px;background:#213a42dc;border-radius:10px;padding:8px 12px;font-size:21px;pointer-events:none">❤️❤️❤️</div><div id="toast"></div><div id="v5mission" aria-live="polite">🗝️ 1 / 3 · Найди ключ</div><div id="v5proximity" aria-live="polite"></div><button id="v7home" aria-label="Выбрать уровень" title="Выбрать уровень">🗺️</button><div id="v7mapTag">🏡 Уровень 1</div><div id="v7help">Найди ключ, активируй рычаг, открой ворота</div><div id="v6cinema" role="status" aria-live="polite"><div class="v6cinemaicon">👀</div><div id="v6stage">Жена заметила тебя!</div><div class="v6cinemabar"><div id="v6cinemafill"></div></div></div><button id="v5sound" aria-label="Включить или выключить звук" title="Звук">🔊</button><div id="controls" aria-label="Джойстик движения"><div id="stick">✥</div></div><div id="actions"><button id="hide"><span>🌿</span>Укрытие</button><button id="interact" aria-label="Взаимодействовать"><span>✋</span>Действие</button><button id="run"><span>🏃</span>БЕГ</button></div><div id="overlay"><div id="panel"><h2>🏡 Большая жена и мелкий муж</h2><p>Версия 0.8 · Новый интерфейс «Побег из дома». Ты — крошечный муж огромной великанши. Найди ключ у сарая, нажми «Действие», включи рычаг и открой ворота. Собирай звёзды и монеты, обходи ящики и пруд. Жена сама ходит по двору и пытается поймать тебя!</p><p>🕹️ Джойстик — движение · 🏃 — бег (слышен жене) · 🌿 — прятки у кустов · ✋ — взять ключ, включить рычаг, открыть ворота.</p><p>Жена замечает тебя взглядом, слышит бег и ищет возле последнего места встречи. Три попытки, бонусы и лучший результат сохраняются.</p><div id="v7levels"><button id="v7level1" class="v7levelbtn">🏡 Уровень 1 · Побег из дома</button><button id="v7level2" class="v7levelbtn">🌙 Уровень 2 · Ночной сад</button></div><button id="start" style="display:none">▶ Начать побег</button></div></div><script>
 const spriteWife=new Image(),spriteHusband=new Image();spriteWife.src='../assets/wife.svg?fullbody=20261027d';spriteHusband.src='../assets/husband.svg?fullbody=20261027b';let wifeRaster=null;
 const artSprites={wife:null,husband:null};const artPaths={wife:'../assets/wife_new.webp',husband:'../assets/husband_new.webp'};
@@ -289,7 +362,7 @@ const illustratedGround=new Image();illustratedGround.onload=()=>{worldLayer=nul
  const desiredZoom=fit*(captureTimer>0?1.15:1.08);
  const follow=captureTimer>0?wife:man;
  const lookX=captureTimer>0?0:manFacing*cl(Math.abs(joystick.x)*62,12,62);
- const lookY=captureTimer>0?-35:joystick.y*24;
+ const lookY=captureTimer>0?-175:joystick.y*24;
  const fx=cl(follow.x+lookX,W/desiredZoom/2,1600-W/desiredZoom/2);
  const fy=cl(follow.y+lookY,H/desiredZoom/2,1400-H/desiredZoom/2);
  if(!v8Camera.ready){v8Camera.x=fx;v8Camera.y=fy;v8Camera.zoom=desiredZoom;v8Camera.ready=true}
@@ -705,6 +778,7 @@ function v8ScreenAtmosphere(){
 function v8Time(s){return String(Math.floor(s/60)).padStart(2,'0')+':'+String(Math.floor(s%60)).padStart(2,'0')}
 function v8CurrentTarget(){return phase===0?key:!leverOn?lever:gate}
 function v8UpdateHud(){
+ document.body.classList.toggle('v8-capture-mode',playing&&captureTimer>0);
  const p=phase===0?0:!leverOn?1:2;
  v8Els.level.textContent=v7Level===2?'УРОВЕНЬ 02 · НОЧНОЙ САД':'УРОВЕНЬ 01 · ПОБЕГ ИЗ ДОМА';
  v8Els.objective.textContent=p===0?'Найти ключ':p===1?'Запустить механизм':'Открыть ворота';
@@ -728,6 +802,7 @@ function v8UpdateHud(){
  v8Top.style.display=playing?'block':'none';
 }
 function v8Menu(){
+ document.body.classList.remove('v8-capture-mode');
  v7CinemaHide();playing=false;paused=false;overlay.style.display='flex';resetStick();v8Modal.style.display='none';v8ModalType='';v8Top.style.display='none';
  const best=(key)=>{try{const x=Number(localStorage.getItem(key));return x>0&&Number.isFinite(x)?'Рекорд '+v8Time(x):'Новый вызов'}catch(_){return 'Новый вызов'}};
  panel.innerHTML='<section class="v8menu"><div class="v8eyebrow">ИНТЕРАКТИВНОЕ ПРИКЛЮЧЕНИЕ · 2D GAME</div><div class="v8menutitle">Большая жена<br><em>и мелкий муж</em></div><p class="v8menudesc">Тихо выберись из сада, найди ключ и ворота. Но огромная жена внимательно следит за каждым твоим шагом.</p><div class="v8menulevels"><button id="v8level1" class="v8levelcard"><div class="v8levelart day">🏡</div><div class="v8leveldetails"><div><b>01 · Побег из дома</b><small>'+best('giant_escape_best')+'</small></div><span class="v8levelarrow">▶</span></div></button><button id="v8level2" class="v8levelcard"><div class="v8levelart night">🌙</div><div class="v8leveldetails"><div><b>02 · Ночной сад</b><small>'+best('wife_escape_best_night')+'</small></div><span class="v8levelarrow">▶</span></div></button></div><button id="v8how" class="v8secondary">⌘ Как играть</button><div class="v8menufooter">Два уровня · Плавная камера · Сенсорное управление · Достижения</div></section>';
@@ -735,7 +810,7 @@ function v8Menu(){
  document.getElementById('v8level2').onclick=()=>v8Start(2);
  document.getElementById('v8how').onclick=v8Help;
 }
-function v8Start(level){v7Level=level===2?2:1;v8Camera.ready=false;reset();v8Modal.style.display='none';v8ModalType='';v8Top.style.display='block';v8UpdateHud()}
+function v8Start(level){document.body.classList.remove('v8-capture-mode');v7Level=level===2?2:1;v8Camera.ready=false;reset();v8Modal.style.display='none';v8ModalType='';v8Top.style.display='block';v8UpdateHud()}
 function v8ModalShow(title,body,buttons){
  v8ModalCard.innerHTML='<h2>'+title+'</h2>'+body+'<div id="v8modalActions" class="v8modalactions"></div>';
  const actions=document.getElementById('v8modalActions');
@@ -781,6 +856,7 @@ reset=function(){v8Camera.ready=false;v8ResetPrevious();v8Top.style.display='blo
 if(document.getElementById('start'))document.getElementById('start').onclick=reset;
 const v8EndPrevious=end;
 end=function(won){
+ document.body.classList.remove('v8-capture-mode');
  v8EndPrevious(won);
  const mission=won?'Побег удался!':'Тебя поймали!';
  const title=won?'🏆 '+mission:'👠 '+mission;
