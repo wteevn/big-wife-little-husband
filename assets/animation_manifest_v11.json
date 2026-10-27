@@ -1,0 +1,87 @@
+{
+  "version": "1.1",
+  "note": "Original atlas frames repurposed, no new independently illustrated walk frames. Master WebP used for static portraits; motion uses existing frame strips.",
+  "targetRatio": {
+    "wifeHeight": 410,
+    "husbandHeight": 104,
+    "husbandToWife": 0.2537
+  },
+  "inputAtlases": [
+    {
+      "name": "wife_walk",
+      "path": "../assets/animations/wife_walk.webp",
+      "cells": 7,
+      "sourceCells": 8,
+      "cellWidth": 128,
+      "cellHeight": 210,
+      "gameplay": "walk and patrol"
+    },
+    {
+      "name": "wife_run",
+      "path": "../assets/animations/wife_run.webp",
+      "cells": 8,
+      "sourceCells": 8,
+      "cellWidth": 128,
+      "cellHeight": 210,
+      "gameplay": "chase"
+    },
+    {
+      "name": "wife_search",
+      "path": "../assets/animations/wife_search.webp",
+      "cells": 5,
+      "sourceCells": 8,
+      "cellWidth": 128,
+      "cellHeight": 210,
+      "gameplay": "search"
+    },
+    {
+      "name": "wife_carry",
+      "path": "../assets/animations/wife_carry.webp",
+      "cells": 8,
+      "sourceCells": 8,
+      "cellWidth": 128,
+      "cellHeight": 210,
+      "gameplay": "carrying/capture"
+    },
+    {
+      "name": "husband_walk",
+      "path": "../assets/animations/husband_walk.webp",
+      "cells": 8,
+      "sourceCells": 8,
+      "cellWidth": 128,
+      "cellHeight": 210,
+      "gameplay": "walking/stealth"
+    },
+    {
+      "name": "husband_run",
+      "path": "../assets/animations/husband_run.webp",
+      "cells": 8,
+      "sourceCells": 8,
+      "cellWidth": 128,
+      "cellHeight": 210,
+      "gameplay": "sprint"
+    }
+  ],
+  "highDetailStills": [
+    "../assets/wife_new.webp",
+    "../assets/husband_new.webp"
+  ],
+  "modes": [
+    "cinematic",
+    "detailed",
+    "classic"
+  ],
+  "captureSequence": [
+    "noticed",
+    "reaching",
+    "lifted",
+    "carried"
+  ],
+  "technicalNotes": [
+    "Gait cycle based on traversed world distance",
+    "Fade transitions based on character movement, not image loading",
+    "Graceful fallback if any image is missing",
+    "Respect mobile performance budgets",
+    "All existing levels and progress preserved"
+  ]
+}
