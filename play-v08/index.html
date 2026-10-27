@@ -191,7 +191,7 @@ const medals=[{x:320,y:990,got:false},{x:835,y:620,got:false},{x:1270,y:390,got:
 function say(t){toast.textContent=t;toast.style.display='block';noticeTime=clock+2.5}
 function reset(){screenShake=0;celebrate=0;ambientParticles=[];coinsFound=0;combo=0;comboTime=0;gateHint=0;coins.forEach(c=>c.got=false);leverOn=false;boosts.forEach(b=>b.used=false);footsteps.length=0;trailTimer=0;decoyTimer=0;decoyTarget=null;decoys.forEach(p=>p.used=false);medalsFound=0;elapsed=0;medals.forEach(m=>m.got=false);resetStick();clock=0;noticeTime=0;toast.style.display='none';wife.tx=v7Start.wife.x;wife.ty=v7Start.wife.y;wifeFacing=1;manFacing=1;runButton.classList.remove('active');stamina=100;alertLevel=0;Object.keys(keys).forEach(k=>keys[k]=false);manFacing=1;wifeFacing=1;captureTimer=0;capturePending=false;stamina=100;alertLevel=0;manMoving=false;wifeMoving=false;lives=3;paused=false;document.getElementById('pause').textContent='⏸';document.getElementById('hearts').textContent='❤️❤️❤️';v7Spawn();wife.mode='patrol';wife.timer=0;wife.tx=v7Start.wife.x;wife.ty=v7Start.wife.y;phase=0;hidden=false;sprint=false;playing=true;overlay.style.display='none';updateHud();say('Тихо! Жена вышла во двор...')}
 function updateHud(){document.getElementById('hearts').textContent='❤️'.repeat(lives)+'🖤'.repeat(3-lives);quest.textContent=phase===0?'🎯 Найди ключ у сарая':!leverOn?'🎯 Включи рычаг ворот':'🎯 Доберись до ворот';state.textContent=captureTimer>0?'👠 Жена несёт тебя домой':hidden?'🌿 Ты спрятался':wife.mode==='chase'?'🚨 Жена преследует!':wife.mode==='search'?'👀 Жена ищет тебя':'👠 Жена патрулирует'}
-document.getElementById('start').onclick=reset;document.getElementById('pause').onclick=()=>{if(!playing)return;paused=!paused;document.getElementById('pause').textContent=paused?'▶️':'⏸';say(paused?'Пауза':'Побег продолжается')};
+if(document.getElementById('start'))document.getElementById('start').onclick=reset;document.getElementById('pause').onclick=()=>{if(!playing)return;paused=!paused;document.getElementById('pause').textContent=paused?'▶️':'⏸';say(paused?'Пауза':'Побег продолжается')};
 document.getElementById('hide').onclick=()=>{if(!playing||paused||captureTimer>0)return;const near=bushes.some(b=>d(man,b)<b.r*.78);if(!near){say('Подойди к кустам, чтобы спрятаться');return}hidden=!hidden;if(hidden){resetStick();Object.keys(keys).forEach(k=>keys[k]=false)}say(hidden?'Тсс! Ты спрятался в кустах':'Ты вышел из укрытия');updateHud()};
 document.getElementById('run').onpointerdown=e=>{e.preventDefault();if(playing&&!paused&&captureTimer<=0)sprint=true};document.getElementById('run').onpointerup=document.getElementById('run').onpointercancel=()=>sprint=false;
 const pad=document.getElementById('controls'),knob=document.getElementById('stick');
@@ -365,7 +365,7 @@ v5ActionButton.onclick=v5Act;
 document.addEventListener('keydown',e=>{if((e.code==='KeyE'||e.code==='Enter')&&!e.repeat){v5Act();e.preventDefault()}});
 const v5OriginalReset=reset;
 reset=function(){v5AudioUnlock();v5ActionPulse=0;v5PreviousMode='patrol';v5LastFootstep=0;v5OriginalReset();v5Mission.textContent='🗝️ 1 / 3 · Найди ключ';v5Proximity.style.display='none';};
-document.getElementById('start').onclick=reset;
+if(document.getElementById('start'))document.getElementById('start').onclick=reset;
 const v5OriginalEnd=end;
 end=function(won){v5Sound(won?'win':'caught');v5OriginalEnd(won);const heading=panel.querySelector('h2');if(heading)heading.textContent=won?'🏆 Побег удался!':'👠 Жена поймала тебя!';const para=panel.querySelector('p');if(para&&!won)para.textContent='Жена нашла тебя, подняла и унесла домой. Прячься в кустах, не беги у неё на виду и пользуйся укрытиями. Попробуй снова!';};
 const v5OriginalUpdate=update;
@@ -466,7 +466,7 @@ function v6CaptureUi(){
 }
 const v6PreReset=reset;
 reset=function(){v6Gait.wife=0;v6Gait.husband=0;v6CapturePose='neutral';v6CaptureWasActive=false;v6CaptureStage=-1;v6Cinema.style.display='none';v6PreReset()};
-document.getElementById('start').onclick=reset;
+if(document.getElementById('start'))document.getElementById('start').onclick=reset;
 const v6PreviousEnd=end;
 end=function(won){v6Cinema.style.display='none';v6PreviousEnd(won);};
 const v6PreviousUpdate=update;
@@ -778,7 +778,7 @@ function v8Map(){
 }
 const v8ResetPrevious=reset;
 reset=function(){v8Camera.ready=false;v8ResetPrevious();v8Top.style.display='block';v8UpdateHud()};
-document.getElementById('start').onclick=reset;
+if(document.getElementById('start'))document.getElementById('start').onclick=reset;
 const v8EndPrevious=end;
 end=function(won){
  v8EndPrevious(won);
