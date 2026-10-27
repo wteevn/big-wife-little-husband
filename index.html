@@ -11,9 +11,9 @@ const artSprites={wife:null,husband:null};const artPaths={wife:'assets/wife_new.
 for(const role of ['wife','husband']){const im=new Image();im.onload=()=>{if(im.naturalWidth>0&&im.naturalHeight>0){artSprites[role]=im;console.info('Artwork loaded',role,im.naturalWidth,im.naturalHeight)}};im.onerror=()=>console.info('Artwork not installed yet:',role);im.src=artPaths[role]+'?art=32'}
 
 // Hand-illustrated character animation atlas: six transparent WebP strips, eight 128x210 cells each.
-const animatedSprites={};
+const animatedSprites={};const animationEnabled=new URLSearchParams(location.search).get('art')!=='legacy';
 const animationCounts={wife_walk:7,wife_run:8,wife_search:5,wife_carry:8,husband_walk:8,husband_run:8};
-for(const name of Object.keys(animationCounts)){
+for(const name of (animationEnabled?Object.keys(animationCounts):[])){
  const image=new Image();
  image.onload=()=>{if(image.naturalWidth===1024&&image.naturalHeight===210){animatedSprites[name]=image;console.info('Animated artwork ready:',name)}};
  image.onerror=()=>console.warn('Animation unavailable; using still art:',name);
@@ -33,8 +33,8 @@ function animatedFigure(x,y,large){
  }
  const image=animatedSprites[kind];
  if(!image)return false;
- const height=large?(kind==='wife_carry'?440:375):130;
- const width=large?(kind==='wife_carry'?225:210):82;
+ const height=large?(kind==='wife_carry'?460:410):122;
+ const width=large?(kind==='wife_carry'?225:220):75;
  const facing=large?wifeFacing:manFacing;
  g.save();
  g.fillStyle='#30241944';g.beginPath();g.ellipse(x,y+12,large?50:18,large?12:6,0,0,Math.PI*2);g.fill();
