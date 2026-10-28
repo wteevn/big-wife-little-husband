@@ -1,0 +1,2147 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Большая жена и мелкий муж · Художественный уровень v2.0</title><style>*{box-sizing:border-box}body{margin:0;background:#b7d7b1;font:15px system-ui;color:white;overflow:hidden;touch-action:none;-webkit-user-select:none;user-select:none}canvas{display:block;width:100vw;height:100dvh;touch-action:none}#hud{position:fixed;top:env(safe-area-inset-top,12px);left:10px;right:10px;display:flex;gap:8px;justify-content:space-between;pointer-events:none}#hud>div{background:#213a42e8;border:1px solid #ffffff33;padding:9px 11px;border-radius:12px;max-width:65%}#state{font-size:13px;max-width:40%!important}#controls{position:fixed;bottom:max(24px,env(safe-area-inset-bottom));left:14px;display:grid;grid-template-columns:56px 56px 56px;gap:5px}button{border:1px solid #ffffff66;border-radius:15px;background:#264b65e9;color:#fff;font-size:24px;height:56px;touch-action:none;-webkit-touch-callout:none}#actions{position:fixed;right:12px;bottom:max(31px,env(safe-area-inset-bottom));display:grid;gap:10px}#actions button{font-size:15px;background:#a92d48e9;min-width:125px}#toast{position:fixed;top:105px;left:10%;right:10%;background:#1b3446e8;border-radius:12px;text-align:center;padding:12px;display:none}#overlay{position:fixed;inset:0;background:#142a3ccf;display:flex;align-items:center;justify-content:center;padding:25px}#panel{background:#f5dfb9;color:#3b2c24;padding:24px;border-radius:20px;max-width:360px;text-align:center;box-shadow:0 15px 50px #0008}#panel h2{margin:0 0 10px}#panel button{background:#b82c42;width:100%;margin-top:12px;font-size:18px}#panel p{line-height:1.5}#panel{background:linear-gradient(145deg,#fff1d2,#e8c698);border:3px solid #fff2d5;box-shadow:0 18px 65px #091d27b8,inset 0 0 0 2px #a8784833;max-height:88dvh;overflow:auto}#panel h2{font-size:27px;color:#7d3032;text-shadow:0 2px #fff5}#panel button{border-radius:30px;background:linear-gradient(180deg,#e95162,#9d233d);border:3px solid #ffd8a0;box-shadow:0 5px 0 #702139;font-weight:800;letter-spacing:.4px}#overlay{background:radial-gradient(circle at 50% 38%,#29483b99,#081a29eb)}#hud>div{background:linear-gradient(145deg,#1b4051f2,#19303ce8);border:2px solid #e6c88b99;box-shadow:0 3px 10px #0006;text-shadow:0 1px 2px #0008}#toast{border:2px solid #ffe4a7;box-shadow:0 6px 25px #0008;font-weight:700}#pause{border:2px solid #ffe2a4!important;border-radius:50%!important;background:linear-gradient(145deg,#b44b4b,#642e3c)!important}#hearts{border:2px solid #e8c98b88;box-shadow:0 4px 12px #0005}@media (orientation:landscape){#controls{grid-template-columns:48px 48px 48px;gap:4px;left:max(12px,env(safe-area-inset-left));bottom:12px}#controls button{height:45px;font-size:21px}#actions{right:max(12px,env(safe-area-inset-right));bottom:12px;gap:6px}#actions button{height:46px;min-width:110px}#hud{top:5px;left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right))}#hud>div{padding:5px 9px;font-size:12px}#hearts{top:48px!important;font-size:15px!important}#pause{top:47px!important;height:36px!important}#toast{top:49px;padding:6px}}@media(max-width:390px){#controls{grid-template-columns:48px 48px 48px}#controls button{height:49px}#actions button{min-width:112px;height:50px;font-size:13px}}#controls,#actions{z-index:4}#toast{pointer-events:none;z-index:5}#overlay{z-index:10}#controls{position:fixed;left:max(16px,env(safe-area-inset-left));bottom:max(24px,env(safe-area-inset-bottom));width:142px;height:142px;display:block;touch-action:none;z-index:6;border-radius:50%;border:2px solid #ffffff77;background:radial-gradient(circle at 35% 30%,#ffffff3c,#203a4da8 70%);box-shadow:inset 0 3px 12px #fff2,0 7px 20px #14273355}#stick{position:absolute;width:66px;height:66px;border-radius:50%;left:36px;top:36px;background:linear-gradient(145deg,#91c9e4,#37688d);border:3px solid #e5faffbb;box-shadow:0 4px 14px #102d4d99;pointer-events:none;transform:translate(0px,0px);display:grid;place-items:center;color:white;font-size:25px}#actions{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(26px,env(safe-area-inset-bottom));display:flex;align-items:end;gap:12px;z-index:6}#actions button{border-radius:50%;width:88px;height:88px;min-width:0;background:linear-gradient(150deg,#e54b6a,#95253d);border:3px solid #ffffffa0;box-shadow:0 5px 15px #17283c66;font-size:12px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px}#actions button span{font-size:29px;line-height:1.1}#actions #hide{width:76px;height:76px;background:linear-gradient(150deg,#6aa982,#2e6557)}#actions button:active,#actions button.active{filter:brightness(1.3);transform:scale(.96)}@media(orientation:landscape){#controls{width:120px;height:120px;left:max(20px,env(safe-area-inset-left));bottom:12px}#stick{left:28px;top:28px;width:60px;height:60px}#actions{bottom:12px;right:max(20px,env(safe-area-inset-right))}#actions button{width:76px;height:76px}#actions #hide{width:68px;height:68px}}@media(max-width:390px) and (orientation:portrait){#controls{width:124px;height:124px;left:12px}#stick{left:30px;top:30px;width:60px;height:60px}#actions{right:10px;gap:7px}#actions button{width:75px;height:75px}#actions #hide{width:68px;height:68px}}
+/* Illustrated title artwork; game UI remains separate and interactive. */
+#overlay{isolation:isolate;overflow:hidden;background:#18302b}
+#overlay:before{content:"";position:absolute;inset:-12px;background:linear-gradient(90deg,#0b1c25a3,#14252a3d,#0c2023a3),url('../assets/intro-art.webp?v=36') center center/cover no-repeat;filter:blur(3px) saturate(1.15);z-index:-1}
+#panel{position:relative;z-index:1;background:linear-gradient(145deg,#fff1d7f2,#e5c69aef);backdrop-filter:blur(8px);max-width:430px;border-radius:24px}
+#panel h2{font-size:clamp(23px,5vw,33px);line-height:1.1}
+@media(max-height:540px){#panel{padding:12px 20px;max-width:550px}#panel p{font-size:13px;margin:6px 0}#panel h2{font-size:23px}}
+</style>
+<style>
+#v5mission{position:fixed;top:155px;left:12px;z-index:3;background:#193b4de9;color:#fff9e7;border:1.5px solid #edd0969e;border-radius:12px;padding:8px 12px;font:700 13px system-ui;pointer-events:none;box-shadow:0 4px 16px #14232c55;max-width:63vw}
+#v5proximity{position:fixed;bottom:190px;left:50%;transform:translateX(-50%);z-index:4;color:#42311b;background:#fff0bbf0;border:2px solid #c69a4e;border-radius:30px;font:800 13px system-ui;box-shadow:0 4px 14px #18263050;padding:8px 12px;text-align:center;display:none;white-space:nowrap;pointer-events:none}
+#v5sound{position:fixed;top:78px;right:72px;z-index:5;display:grid;place-items:center;width:44px;height:44px;font-size:23px;border-radius:50%;background:#234b5ddd;border:2px solid #e9d5a4;color:#fff}
+#actions #interact{background:linear-gradient(145deg,#ffd778,#b4712e);color:#442712;border:3px solid #fff5d2;width:77px;height:77px;font-weight:900}
+#actions #interact:disabled{filter:grayscale(.65);opacity:.63}
+#actions #interact.ready{box-shadow:0 0 0 4px #f9de77aa,0 0 22px #fae499;animation:readyPulse 1.3s ease-in-out infinite}
+@keyframes readyPulse{50%{box-shadow:0 0 0 9px #f9de7738,0 0 22px #fbed97}}
+#panel{width:min(93vw,450px)}#panel p{font-size:14px}
+@media(orientation:landscape){#v5mission{top:54px;left:max(12px,env(safe-area-inset-left));font-size:12px;padding:5px 9px}#v5proximity{bottom:91px}#v5sound{top:48px;right:max(68px,env(safe-area-inset-right))}#actions{gap:7px}#actions #interact{height:68px;width:68px}}
+@media(max-width:390px) and (orientation:portrait){#actions{gap:5px}#actions #interact{width:68px;height:68px}#actions button span{font-size:25px}#v5proximity{bottom:178px;font-size:12px}}
+</style>
+<style>
+/* v0.6 cinematic capture sequence */
+#v6cinema{display:none;pointer-events:none;position:fixed;z-index:9;top:19%;left:50%;transform:translateX(-50%);width:min(365px,82vw);text-align:center;border-radius:22px;padding:11px 20px 13px;background:linear-gradient(140deg,#3c1e2bec,#702338ed);border:2px solid #ffd899;box-shadow:0 10px 40px #151723aa;color:#fff6df;font:800 18px system-ui;text-shadow:0 1px 3px #0008}
+#v6cinema .v6cinemaicon{font-size:31px;line-height:1.1}
+.v6cinemabar{margin-top:9px;background:#161b288c;border-radius:9px;height:6px;overflow:hidden}
+#v6cinemafill{width:0;height:100%;background:linear-gradient(90deg,#f7b659,#ffede0);border-radius:9px}
+#v6stage{line-height:1.3}
+@media(orientation:landscape){#v6cinema{top:11%;font-size:15px;padding:6px 14px}#v6cinema .v6cinemaicon{font-size:22px}.v6cinemabar{margin-top:4px}}
+</style>
+<style>
+/* v0.7 — second playable level, night garden */
+#v7home{position:fixed;top:135px;right:10px;width:45px;height:45px;font-size:24px;border-radius:50%;z-index:5;background:linear-gradient(135deg,#245477,#153341);border:2px solid #f4dda5;box-shadow:0 4px 12px #0006}
+#v7levels{display:grid;gap:9px;margin:12px 0 6px}
+#v7levels .v7levelbtn{height:auto;min-height:56px;margin:0;line-height:1.25;padding:12px 16px;text-align:left;font-size:17px;white-space:normal}
+#v7levels #v7level2{background:linear-gradient(140deg,#314e8f,#172646);border-color:#c4d7ff;box-shadow:0 5px 0 #111f44}
+#v7mapTag{position:fixed;right:8px;bottom:127px;padding:8px 10px;border:1px solid #ffdca5;border-radius:11px;background:#14293fe7;color:#fff8e4;font:800 13px system-ui;z-index:3;pointer-events:none}
+#v7help{position:fixed;left:50%;transform:translateX(-50%);bottom:11px;background:#f5eac7eb;color:#3e3226;border-radius:11px;padding:5px 10px;font:700 11px system-ui;z-index:4;pointer-events:none;max-width:65%;text-align:center}
+@media(orientation:landscape){#v7home{top:100px;right:12px;width:38px;height:38px;font-size:20px}#v7mapTag{right:10px;bottom:94px}#v7help{bottom:5px;font-size:10px}}
+@media(max-height:500px){#v7levels .v7levelbtn{min-height:38px;padding:5px 10px;font-size:14px}#v7levels{gap:5px}}
+</style>
+<style id="v8-design">
+:root{--v8cream:#fff1d4;--v8gold:#f4d38e;--v8deep:#1b2531;--v8wine:#873a49}
+html{background:#13232b}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:#1b3440}
+#overlay{z-index:20;background:radial-gradient(circle at 50% 30%,#263e40b8,#080c17f0);padding:max(9px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) max(9px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));overflow-y:auto;align-items:center}
+#overlay:before{background:linear-gradient(90deg,#08121df0,#08121da0 48%,#08121d92),url('../assets/intro-art.webp') center/cover no-repeat;filter:none;inset:0}
+#panel{position:relative;max-width:900px;width:min(94vw,900px);max-height:min(96dvh,700px);overflow:auto;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;border-radius:24px!important;backdrop-filter:none!important;text-align:left!important;color:#fff5df}
+#panel h2{font-size:clamp(23px,4vw,44px)!important;color:#fff0ca;text-shadow:0 3px 16px #000b;font-weight:900}
+#panel p{color:#d8e4df}
+.v8menu{padding:clamp(20px,4vw,42px);border:1px solid #f3d39653;border-radius:24px;background:linear-gradient(145deg,#132d39ee,#13212fe8);box-shadow:0 24px 70px #0009,inset 0 1px #ffe7b534}
+.v8eyebrow{font-size:11px;font-weight:900;letter-spacing:2px;color:#f8c986;text-transform:uppercase}
+.v8menutitle{margin:10px 0 5px;line-height:1.06;font-size:clamp(26px,5.2vw,52px);font-weight:950;letter-spacing:-1.5px;color:#fff5df}
+.v8menutitle em{font-style:normal;color:#f5bc80}
+.v8menudesc{font-size:clamp(12px,2vw,15px);max-width:620px;line-height:1.55;margin:12px 0 20px;color:#cfddd8}
+.v8menulevels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#panel .v8levelcard{appearance:none;width:100%;height:auto;min-height:172px;margin:0;border-radius:16px;text-align:left;padding:0;overflow:hidden;background:#203b45;border:1.5px solid #eed09966;box-shadow:0 7px 18px #0005;font-weight:inherit;letter-spacing:normal;transform:none}
+#panel .v8levelcard:active{transform:scale(.984)}
+.v8levelart{height:91px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:42px;background-size:cover;background-position:center}
+.v8levelart.day{background-image:linear-gradient(180deg,#0c2a3270,#0c2a32ad),url('../assets/garden-art.svg')}
+.v8levelart.night{background:radial-gradient(circle at 70% 15%,#f5e2ad96 0 9px,transparent 12px),linear-gradient(150deg,#13333c,#2f5553 58%,#12213a)}
+.v8levelart:after{content:'';position:absolute;inset:auto 0 0;height:27px;background:linear-gradient(transparent,#122633)}
+.v8leveldetails{padding:12px 13px;display:flex;gap:10px;justify-content:space-between;align-items:center}
+.v8leveldetails b{color:#fff5df;display:block;font-size:16px}.v8leveldetails small{color:#bacdcd;font-size:11px;display:block;margin-top:3px}
+.v8levelarrow{border:1px solid #ffd49a6b;background:#f3d39233;color:#ffdea5;padding:9px;border-radius:12px;flex-shrink:0}
+#panel .v8secondary{background:transparent;border:1px solid #fff6ce61;box-shadow:none;color:#f9e1b7;height:43px;width:auto;padding:7px 20px;font-size:13px;font-weight:800;letter-spacing:.3px;margin:16px 0 0;border-radius:11px}
+.v8menufooter{font-size:11px;color:#b8c9cb;margin-top:14px}
+#v8ui{position:fixed;inset:0;z-index:3;pointer-events:none;color:#fdf4de}
+#v8top{position:absolute;top:max(8px,env(safe-area-inset-top));left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));display:grid;grid-template-columns:1fr minmax(180px,1.15fr) 1fr;align-items:start;gap:9px}
+#v8brand,#v8topcenter,#v8mid,.v8stat{background:linear-gradient(145deg,#172d3bea,#13212de8);border:1px solid #eed59666;box-shadow:0 6px 24px #070f1a69,inset 0 1px #fff2;border-radius:13px}
+#v8brand{display:flex;align-items:center;gap:9px;min-width:0;padding:8px 11px}
+.v8logo{font-size:25px}.v8brandtitle{font-size:12px;letter-spacing:1px;font-weight:950;display:block;white-space:nowrap}.v8subtitle{font-size:9px;color:#f0c98f;display:block;letter-spacing:.8px;white-space:nowrap}
+#v8topcenter{padding:7px 12px 8px;text-align:center}
+#v8levelname{color:#d1c3ab;font-size:9px;font-weight:900;letter-spacing:1.5px}
+#v8objective{font-size:15px;font-weight:950;margin-top:1px}
+#v8progress{display:flex;gap:6px;margin-top:6px;justify-content:center}
+#v8progress i{height:4px;width:37px;border-radius:5px;background:#69717c}#v8progress i.active{background:#ffc775;box-shadow:0 0 8px #ffcb80a0}#v8progress i.done{background:#90d9a4}
+#v8topactions{display:flex;justify-content:flex-end;gap:7px;pointer-events:auto}
+#v8topactions button{width:43px;height:43px;display:grid;place-items:center;font-size:22px;font-weight:900;border-radius:12px;color:#fff4d8;background:linear-gradient(145deg,#254a56,#132b39);border:1.5px solid #ffdb9966;box-shadow:0 5px 13px #0d1b28ab}
+#v8topactions button:active{transform:scale(.94)}
+#v8mid{position:absolute;top:96px;left:max(12px,env(safe-area-inset-left));width:190px;padding:10px 12px;display:grid;gap:8px}
+.v8stat{border:0;background:none;box-shadow:none;padding:0;border-radius:0}
+.v8statline{display:flex;justify-content:space-between;font-size:9px;font-weight:950;letter-spacing:.7px;margin-bottom:4px;color:#d9dccd}
+.v8meter{height:6px;background:#435462;border-radius:6px;overflow:hidden}
+.v8meter i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#4ea87e,#a9e1aa);border-radius:5px;transition:width .12s}
+.v8meter.danger i{background:linear-gradient(90deg,#edaf6f,#e2576b)}
+.v8statsmall{display:flex;gap:7px;justify-content:space-between;align-items:center;font-size:10px;font-weight:900;color:#f6dfa9;white-space:nowrap}
+#v8tip{position:absolute;bottom:max(18px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);padding:10px 14px;background:#142c39e8;border:1px solid #e7c78c88;box-shadow:0 7px 18px #0815239c;border-radius:14px;min-width:205px;max-width:280px;text-align:center;font-size:12px;font-weight:800}
+#v8tipicon{color:#ffcd79;font-size:16px;margin-right:6px}
+#v8waypoint{position:absolute;top:47%;right:12px;color:#ffe2a0;font-weight:900;font-size:13px;text-shadow:0 2px 8px #000}
+#v8waypoint:first-letter{font-size:26px}
+#hud,#hearts,#pause,#v5mission,#v7mapTag,#v7help,#v5sound,#v5proximity{display:none!important}
+#toast{top:157px;left:50%;right:auto;transform:translateX(-50%);width:max-content;max-width:80%;font-size:12px;padding:9px 13px;background:#1a3740e9;border:1px solid #f0d19f;color:#fff3df}
+#controls{background:radial-gradient(circle at 45% 35%,#7896a185,#172e41df 75%);border:2px solid #e2d8bb91;box-shadow:0 10px 30px #0f1d2a99,inset 0 0 20px #0004}
+#stick{background:radial-gradient(circle at 36% 23%,#9ab6b5,#305a65);border:3px solid #f5e7cba8;box-shadow:inset 0 1px 6px #fff4,0 5px 15px #0007}
+#actions{pointer-events:auto}
+#actions button,#actions #hide,#actions #interact{border-radius:16px;width:72px;height:72px;min-width:0;border:2px solid #f2d8a6a3;box-shadow:0 6px 19px #09142095;font-size:11px;font-weight:900;background:linear-gradient(150deg,#5b8791,#1a4358);color:#fff4d8}
+#actions #run{background:linear-gradient(150deg,#dd8069,#823746)}
+#actions #hide{background:linear-gradient(150deg,#559e88,#23645e)}
+#actions #interact{background:linear-gradient(150deg,#f6dc9f,#b77d38);color:#372719}
+#actions button span{font-size:25px}
+#actions #interact.ready{box-shadow:0 0 0 3px #f0e7a6a3,0 0 28px #ffd48bcc}
+#v8modal{display:none;position:fixed;inset:0;z-index:30;background:#07121fc9;backdrop-filter:blur(8px);padding:max(12px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));align-items:center;justify-content:center;overflow:auto}
+#v8modalCard{width:min(92vw,520px);max-height:90dvh;overflow:auto;padding:20px;border:1px solid #edc78588;border-radius:20px;color:#fff0cd;background:linear-gradient(150deg,#203c4a,#152634);box-shadow:0 20px 70px #000a;text-align:center}
+#v8modalCard h2{font-size:25px;margin:7px 0 10px}#v8modalCard p{font-size:13px;color:#cfdfd5;line-height:1.5}
+.v8modalactions{display:grid;gap:9px;margin-top:15px}.v8modalactions button{width:100%;height:49px;border-radius:12px;font-size:15px;font-weight:900;background:linear-gradient(#ca9b65,#986540);border:1px solid #ffe7a8;color:#fff5e0}
+.v8modalactions .quiet{background:#284954}
+#v8mapCanvas{display:block;width:100%;height:auto;max-height:58vh;aspect-ratio:8/7;border-radius:14px;border:1px solid #f7d6a487;margin:10px auto;background:#234b4a}
+#v6cinema{z-index:14}
+@media(max-width:560px){#v8top{grid-template-columns:1fr auto;gap:5px}#v8brand{display:none}#v8topcenter{text-align:left;padding:8px 10px}#v8progress{justify-content:flex-start}#v8topactions button{width:39px;height:39px;font-size:18px}#v8mid{top:75px;width:175px;padding:8px 10px}#v8tip{bottom:155px;max-width:54vw;min-width:0;padding:8px;font-size:11px}#v8waypoint{top:43%;font-size:11px}#actions{gap:6px}#actions button,#actions #hide,#actions #interact{width:66px;height:66px}#actions button span{font-size:23px}#controls{width:120px;height:120px}#stick{width:58px;height:58px;left:29px;top:29px}.v8menulevels{gap:8px}.v8leveldetails{padding:9px}.v8leveldetails b{font-size:13px}.v8levelart{height:79px}.v8levelarrow{padding:5px}.v8menu{padding:18px}}
+@media(orientation:landscape) and (max-height:540px){#v8top{top:5px;grid-template-columns:minmax(0,1fr) minmax(160px,1fr) minmax(140px,1fr);gap:6px}#v8brand{display:flex;padding:5px 9px}.v8logo{font-size:19px}.v8brandtitle{font-size:10px}.v8subtitle{font-size:8px}#v8topcenter{padding:5px 9px}#v8objective{font-size:13px}#v8progress{margin-top:3px}#v8topactions button{height:35px;width:36px;font-size:18px}#v8mid{top:54px;padding:6px 9px;width:170px;gap:5px}#v8tip{bottom:10px;max-width:220px;left:50%;font-size:10px;padding:6px 8px}#v8waypoint{top:45%}#actions button,#actions #hide,#actions #interact{width:59px;height:59px;font-size:9px}#actions button span{font-size:20px}#controls{width:112px;height:112px}#stick{width:54px;height:54px;left:27px;top:27px}#panel{max-height:95dvh}.v8menu{padding:14px 22px}.v8menutitle{font-size:25px}.v8menudesc{font-size:12px;margin:7px 0}.v8levelcard{min-height:125px!important}.v8levelart{height:64px}.v8menufooter{margin-top:6px}}
+</style>
+<style id="mobile-clear-screen-v08a">
+/* Mobile cleanup, inspired by a real 393px iPhone screenshot.
+   HUD occupies the upper 90px instead of covering the playfield. */
+#v8brand{display:none!important}
+#v8top{
+ top:max(5px,env(safe-area-inset-top));left:max(9px,env(safe-area-inset-left));right:max(9px,env(safe-area-inset-right));
+ grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:7px;
+}
+#v8topcenter{min-width:0;padding:6px 10px 7px;text-align:left;border-radius:11px;background:#142b38dc}
+#v8levelname{font-size:9px;line-height:12px;letter-spacing:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#v8objective{font-size:13px;line-height:17px;margin-top:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#v8progress{justify-content:flex-start;gap:5px;margin-top:4px}
+#v8progress i{height:3px;width:31px}
+#v8topactions{gap:4px}
+#v8topactions button{width:38px;height:38px;font-size:18px;border-radius:11px}
+#v8mid{
+ top:61px;left:max(9px,env(safe-area-inset-left));right:max(9px,env(safe-area-inset-right));width:auto;
+ display:flex;align-items:center;gap:9px;min-height:36px;padding:5px 9px;
+ background:#142b38ca;border:1px solid #e9d49a52;border-radius:11px;
+}
+#v8mid .v8stat{min-width:0;flex:1 1 0}
+#v8mid .v8statline{font-size:8px;line-height:10px;margin-bottom:3px;gap:3px;letter-spacing:0}
+#v8mid .v8statline span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#v8mid .v8meter{height:4px}
+#v8mid .v8statsmall{font-size:11px;min-width:48px;flex:0 0 auto;gap:4px}
+#v8loot,#v8timer{display:none}
+#v8lives{letter-spacing:-1px;color:#ffd49d}
+#v8tip{bottom:max(160px,calc(env(safe-area-inset-bottom) + 142px));left:50%;padding:5px 10px;font-size:10px;line-height:13px;min-width:0;max-width:200px;
+ background:#122d36b8;border:1px solid #e7c78c59;border-radius:10px;box-shadow:none;white-space:normal}
+#v8tipicon{font-size:12px;margin-right:3px}
+#v8waypoint{top:105px;right:10px;padding:4px 7px;font-size:11px;font-weight:800;border-radius:8px;max-width:150px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+ background:#172f3bc4;border:1px solid #eacb9361;text-shadow:none}
+#v8waypoint:first-letter{font-size:14px}
+#toast{top:135px;font-size:11px;padding:5px 9px;max-width:min(76vw,270px);white-space:normal;text-align:center;
+ background:#152d38bf;border:1px solid #edce9b7d;box-shadow:none}
+#v6cinema{
+ position:fixed;z-index:16;left:50%;top:max(7px,env(safe-area-inset-top));transform:translateX(-50%);
+ width:min(260px,75vw);min-width:145px;min-height:0;margin:0;padding:6px 10px 7px;
+ background:#282334db;border:1px solid #e4c7989c;border-radius:10px;box-shadow:0 3px 14px #0005;
+ font:700 12px/15px system-ui;color:#fff2d8;text-align:center;
+}
+#v6cinema .v6cinemaicon{display:none}
+#v6stage{font-size:12px;line-height:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#v6cinema .v6cinemabar{height:2px;margin-top:4px;background:#121a2490}
+#v6cinemafill{height:2px}
+body.v8-capture-mode #v8ui,
+body.v8-capture-mode #toast{display:none!important}
+body.v8-capture-mode #controls,
+body.v8-capture-mode #actions{
+ opacity:0!important;visibility:hidden!important;pointer-events:none!important;
+}
+#controls,#actions{transition:opacity .17s ease}
+@media (orientation:landscape){
+ #v8top{top:4px;left:max(9px,env(safe-area-inset-left));right:max(9px,env(safe-area-inset-right))}
+ #v8topcenter{padding:4px 8px}
+ #v8levelname{font-size:8px;line-height:10px}
+ #v8objective{font-size:11px;line-height:13px}
+ #v8progress{margin-top:2px}
+ #v8topactions button{width:33px;height:33px;font-size:16px}
+ #v8mid{top:44px;right:auto;width:min(360px,70vw);padding:4px 9px;gap:7px}
+ #v8waypoint{top:48px;right:max(10px,env(safe-area-inset-right))}
+ #v8tip{bottom:10px;max-width:175px}
+ #toast{top:87px}
+ #v6cinema{top:5px;width:min(230px,45vw);padding:4px 8px}
+}
+@media (max-width:370px){
+ #v8topactions button{width:33px;height:35px}
+ #v8mid{gap:5px;padding:4px 6px}
+ #v8mid .v8statline{font-size:7px}
+ #v8mid .v8statsmall{font-size:9px}
+ #v8waypoint{top:102px}
+}
+</style>
+<style id="v09-art-direction">
+:root{--v9gold:#efd49f}
+body{background:#4a7154}
+#v8brand{display:none!important}
+#v8top{left:10px;right:10px;top:5px;grid-template-columns:minmax(0,1fr) auto;gap:8px}
+#v8topcenter{padding:8px 12px;background:#202722c9;border-radius:15px;border:1px solid #efd4a396;backdrop-filter:blur(7px)}
+#v8levelname{color:#f2cc86;font-size:9px;letter-spacing:1.3px}
+#v8objective{font-size:15px;color:#fff4df}
+#v8topactions button{border:1px solid #f5ddb6d0;background:linear-gradient(145deg,#383532e5,#1a2728d9);border-radius:13px}
+#v8mid{top:76px;left:10px;right:auto;width:184px;display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:7px 9px;background:#202822bd;backdrop-filter:blur(5px);border:1px solid #ffdaaa90;border-radius:13px}
+#v8mid .v8statline{display:flex;flex-direction:column;gap:1px;font-size:8px}
+#v8mid .v8statsmall{grid-column:1/-1;display:flex;justify-content:space-between}
+#v8loot,#v8timer{display:inline!important;font-size:9px}
+#v8threatText{font-size:8px}
+#v09radar{position:fixed;right:10px;top:88px;display:block;width:106px;height:106px;object-fit:contain;aspect-ratio:1/1;
+ border-radius:50%;border:3px solid #fce0aa;box-shadow:0 7px 24px #11211c9c,inset 0 0 0 3px #c5b18b;overflow:hidden;background:#203d3a;pointer-events:auto;z-index:6}
+#v8waypoint{top:205px;right:9px;padding:5px 7px;font-size:10px;max-width:140px;background:#142929c8;border:1px solid #ffdbac7e;border-radius:10px}
+#v8tip{bottom:max(157px,calc(env(safe-area-inset-bottom) + 142px));font-size:10px;padding:5px 9px;background:#1f3027c7;border:1px solid #f2d6a78a;max-width:200px}
+#toast{top:215px;background:#212d24d9;box-shadow:0 6px 20px #14181555;color:#fff4dd;border:1px solid #f3d2a292}
+#controls{width:122px;height:122px;border:2px solid #ffefd3ad;background:radial-gradient(circle,#5b6456bd,#151c1fa8);box-shadow:0 5px 24px #0b170db5}
+#stick{background:linear-gradient(140deg,#ded8c6,#8d9085);border:3px solid #fff2d9;color:#2c413b;box-shadow:0 3px 13px #161616a8}
+#actions{gap:7px}
+#actions button,#actions #hide,#actions #interact{width:62px;height:62px;min-width:62px;max-width:62px;border-radius:50%;background:linear-gradient(145deg,#4b5750e8,#182424e9);border:2px solid #f3e2c9db;color:#fff4df;font-size:9px;box-shadow:0 4px 17px #151b19a8}
+#actions #run{background:linear-gradient(145deg,#7a443de9,#2f2c2be8)}
+#actions #hide{background:linear-gradient(145deg,#3e7260ee,#1c3a32e8)}
+#actions #interact{background:linear-gradient(145deg,#ead3aa,#a18463);color:#262523}
+#actions button span{font-size:24px}
+#panel .v8menu{border-radius:24px;background:linear-gradient(145deg,#2c3830f5,#152525f5)}
+#panel .v8menu .v8eyebrow{color:#f7c985}
+#v6cinema{background:#1b2928db;border:1px solid #e5c692a3}
+body.v8-capture-mode #v09radar{display:none!important}
+@media(orientation:landscape) and (max-height:550px){
+ #v8top{top:4px}
+ #v8mid{top:51px;width:184px}
+ #v09radar{right:9px;top:51px;width:86px;height:86px}
+ #v8waypoint{top:143px;right:9px}
+ #toast{top:130px}
+ #v8tip{bottom:10px}
+ #controls{height:102px;width:102px}
+ #actions button,#actions #hide,#actions #interact{height:57px;width:57px;min-width:57px;max-width:57px}
+}
+@media(max-width:360px){
+ #v09radar{top:92px;width:90px;height:90px}
+ #v8mid{width:167px}#v8loot,#v8timer{font-size:8px}
+}
+</style>
+<style id="v10-art">
+:root{--v10-ink:#152421;--v10-gold:#ffdab0}
+#v8topcenter{background:#122320d9;border:1px solid #eddbbd9a}
+#v8mid{background:#172822c6}
+#v8topactions button{background:linear-gradient(150deg,#314b40e6,#152623e9)}
+#v8tip{background:#15271ed1;border-color:#efdab67b}
+#controls{background:radial-gradient(circle at 45% 42%,#67685eb3,#16251dd4 76%)}
+#actions button,#actions #hide,#actions #interact{border:1.5px solid #f9e3c5}
+#v8waypoint{background:#132e27da}
+#v10stamp{display:none;position:fixed;bottom:155px;right:12px;z-index:7;pointer-events:none;
+ padding:6px 9px;font:800 9px system-ui;letter-spacing:.5px;color:#f6e4be;background:#102e26a6;border:1px solid #f1d09d86;border-radius:9px}
+body.v10-game #v10stamp{display:block}
+body.v8-capture-mode #v10stamp{display:none}
+@media(orientation:landscape){#v10stamp{bottom:82px;right:12px}}
+@media(max-width:390px){#v10stamp{bottom:154px;right:11px;font-size:8px;padding:4px 7px}}
+</style>
+<style id="v11-animation-design">
+/* Nonintrusive animation settings: gameplay HUD and camera remain as in v1.0. */
+.v11-mode-caption{font:700 11px system-ui;color:#d0dfd0;margin:8px 0 0}
+#v10mode{width:100%!important;height:auto!important;min-height:42px!important;white-space:normal!important;line-height:1.35!important;background:#355b4bcc!important;border-color:#e8d09c9c!important;text-align:center!important}
+@media(orientation:landscape) and (max-height:480px){#v10mode{min-height:36px!important;font-size:11px!important}}
+</style>
+<style id="v14-mobile-polish">
+/* Version 1.4: prioritize gameplay, not dashboard. The map remains one tap away. */
+#v8top{left:8px;right:8px;top:max(5px,env(safe-area-inset-top));gap:6px;grid-template-columns:minmax(0,1fr) auto}
+#v8topcenter{padding:5px 10px 6px;min-height:41px;border-radius:12px;background:#142b26e0;border-color:#f6d9a275;box-shadow:0 2px 10px #10221870}
+#v8levelname{font-size:8px;line-height:11px;letter-spacing:.7px}
+#v8objective{font-size:14px;line-height:18px;margin-top:0}
+#v8progress{gap:3px;margin-top:2px}
+#v8progress i{height:3px;width:23px}
+#v8topactions{gap:3px}
+#v8topactions button{width:38px;height:40px;border-radius:11px;font-size:18px}
+#v8mid{top:53px;left:8px;right:8px;width:auto;min-height:37px;display:flex;align-items:center;gap:8px;
+ padding:5px 8px;background:#142b26cf;border:1px solid #eed19a78;border-radius:11px;box-shadow:0 2px 12px #0002}
+#v8mid .v8stat{flex:1 1 0;min-width:0}
+#v8mid .v8statline{display:flex;flex-direction:row;justify-content:space-between;gap:3px;line-height:10px;font-size:8px;margin-bottom:3px;letter-spacing:0}
+#v8mid .v8statline span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#v8mid .v8statline span:last-child{max-width:48%;text-align:right}
+#v8mid .v8meter{height:4px}
+#v8mid .v8statsmall{display:flex;flex:0 0 auto;max-width:98px;min-width:0;gap:3px;font-size:10px;flex-direction:column;line-height:11px;align-items:flex-end}
+#v8lives{white-space:nowrap}
+#v8loot,#v8timer{display:none!important}
+#v09radar{display:none!important}
+#v8waypoint{top:96px;right:8px;max-width:145px;padding:5px 7px;border-radius:10px;font-size:10px;line-height:14px;background:#132d27bc}
+#v8tip{left:50%;bottom:max(145px,calc(env(safe-area-inset-bottom) + 122px));max-width:min(270px,76vw);
+ padding:5px 10px;border-radius:11px;font-size:11px;line-height:15px;background:#19302ad9;box-shadow:0 3px 14px #13282062}
+#toast{top:auto!important;bottom:max(204px,calc(env(safe-area-inset-bottom) + 185px));left:50%!important;transform:translateX(-50%)!important;
+ max-width:min(270px,72vw);padding:6px 10px;font-size:10px;border-radius:10px;box-shadow:0 2px 10px #0004}
+#v7help,#v5mission,#v5proximity,#v7mapTag{display:none!important}
+#v6cinema{top:max(6px,env(safe-area-inset-top));max-width:250px;font-size:11px;padding:5px 9px}
+#controls{width:115px;height:115px}
+#actions{gap:7px}
+#actions button,#actions #hide,#actions #interact{width:58px!important;min-width:58px!important;max-width:58px!important;height:62px!important;
+ border-radius:22px;font-size:9px;box-shadow:0 2px 12px #0006}
+#actions button span{font-size:23px}
+@media(orientation:landscape){
+ #v8top{top:3px;left:8px;right:8px}
+ #v8topcenter{min-height:34px;padding:3px 8px}
+ #v8levelname{font-size:7px;line-height:9px}
+ #v8objective{font-size:12px;line-height:15px}
+ #v8progress{margin-top:1px}
+ #v8topactions button{width:32px;height:34px}
+ #v8mid{top:41px;width:min(340px,48vw);right:auto;min-height:30px;padding:3px 7px}
+ #v8waypoint{top:45px}
+ #v8tip{bottom:7px;max-width:175px;font-size:9px}
+ #toast{bottom:105px}
+ #controls{width:96px;height:96px}
+ #actions button,#actions #hide,#actions #interact{width:51px!important;min-width:51px!important;max-width:51px!important;height:53px!important;border-radius:17px}
+}
+@media(max-width:370px){
+ #v8topactions button{width:33px;height:38px}
+ #v8mid{gap:5px;padding:4px 6px}
+ #v8mid .v8statline{font-size:7px}
+ #v8mid .v8statsmall{font-size:9px}
+ #actions{gap:5px}
+ #actions button,#actions #hide,#actions #interact{width:54px!important;min-width:54px!important;max-width:54px!important}
+}
+</style>
+<style id="v15-style">
+/* No new obstructive overlays; a single continuation control is shown only in the main menu. */
+#v15continue{display:block;width:100%;min-height:52px;margin:10px 0 8px;padding:9px 15px;border-radius:14px;
+ color:#fff5da;background:linear-gradient(135deg,#43856bea,#24624ee8);
+ border:1px solid #e7cf97af;font:800 15px system-ui;box-shadow:0 5px 14px #11292380;cursor:pointer;text-align:center}
+#v15continue small{display:block;color:#d7eac7;font-size:10px;margin-top:3px;font-weight:600}
+#v15continue:active{transform:scale(.99)}
+#v15checkpoint{font:600 10px system-ui;opacity:.76;margin-top:4px;color:#e5d8b7}
+@media(orientation:landscape) and (max-height:450px){#v15continue{min-height:36px;font-size:12px;padding:4px 9px;margin:4px 0}}
+</style><style id="v16-ui">
+#v16-toggle{display:block;width:100%;min-height:44px;margin:10px 0 2px;padding:10px 14px;border:1px solid #d6bc8b;border-radius:13px;background:linear-gradient(130deg,#5d6241,#1b3c38);color:#fff4d6;font:700 12px/1.3 system-ui;cursor:pointer}
+#v16-explanation{font:600 10px/1.5 system-ui;color:#e3cfaa;margin:4px auto 7px;text-align:center;max-width:340px}
+</style>
+<style id="v20-cinematic">
+body{background:#172b25}
+#v8topcenter{background:linear-gradient(115deg,#1d2925df,#1d211dd7);border:1px solid #f9d99aaa;box-shadow:0 6px 25px #0007}
+#v8mid{background:#1f2c26d9;box-shadow:0 4px 14px #0006}
+#v8topactions button{background:linear-gradient(145deg,#6d5138ec,#262823e9);border-color:#ead5a5}
+#v8waypoint{background:#212921e3}
+#v8tip{background:#21352fe9}
+#controls{background:radial-gradient(circle,#8d8f81c7,#1a2827db 72%);border-color:#e8dbbaaa}
+#actions button,#actions #hide,#actions #interact{border:2px solid #e9d1a4;
+ background:linear-gradient(155deg,#354636ef,#121e1dcf);box-shadow:0 6px 17px #0008}
+#actions #interact{background:linear-gradient(160deg,#f3daa5,#ad8655);color:#291f17}
+#actions #run{background:linear-gradient(160deg,#ac473ce5,#552522ea)}
+#panel .v8menu{background:linear-gradient(157deg,#1c302cec,#192524fb);border:1px solid #e7c89098;box-shadow:0 18px 48px #000a}
+#panel .v8menutitle{font-size:clamp(27px,6.5vw,44px);line-height:1.1}
+#panel .v8menudesc{font-size:13px;line-height:1.55}
+#v10mode,#v16-toggle,#v16-explanation{display:none!important}
+#v20artmode{display:block;width:100%;margin:8px 0 0;padding:9px 12px;border-radius:12px;border:1px solid #c7a87f;
+ background:#30483a;color:#fff1d5;font:750 12px/1.3 system-ui}
+#v20label{font:650 10px/1.4 system-ui;color:#ceb78e;margin:6px 0 0}
+#v8tip{font-size:10px!important}
+#v09radar{display:none!important}
+@media(orientation:portrait){#v8top{top:7px}#v8mid{top:58px}}
+@media(orientation:landscape){#v8mid{top:42px}}
+</style></head><body><div id="loadingHint" style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff6dc;color:#443323;padding:15px 20px;border-radius:16px;z-index:12;text-align:center;max-width:85%;font:600 15px system-ui">Загрузка игры… Если надпись не исчезает, открой эту страницу в Safari.</div><script>window.addEventListener('error',function(e){var x=document.getElementById('loadingHint');if(x){x.textContent='Ошибка запуска: '+(e.message||'не удалось загрузить игру');x.style.display='block'}});</script><canvas id="c"></canvas><div id="v8ui"><canvas id="v09radar" width="256" height="224" aria-label="Миникарта двора"></canvas><div id="v8top"><div id="v8brand"><span class="v8logo">👠</span><div><span class="v8brandtitle">БОЛЬШАЯ ЖЕНА</span><span class="v8subtitle">МЕЛКИЙ МУЖ · v0.8</span></div></div><div id="v8topcenter"><div id="v8levelname">ПОБЕГ ИЗ ДОМА</div><div id="v8objective">Найди ключ</div><div id="v8progress"><i class="active"></i><i></i><i></i></div></div><div id="v8topactions"><button id="v8map" title="Карта" aria-label="Открыть карту">◇</button><button id="v8music" title="Звук" aria-label="Переключить звук">♫</button><button id="v8pause" title="Пауза" aria-label="Меню паузы">☰</button></div></div><div id="v8mid"><div class="v8stat"><div class="v8statline"><span>БЕГ</span><span id="v8staminaText">100%</span></div><div class="v8meter"><i id="v8stamina"></i></div></div><div class="v8stat"><div class="v8statline"><span>ОБНАРУЖЕНИЕ</span><span id="v8threatText">ТИХО</span></div><div class="v8meter danger"><i id="v8threat"></i></div></div><div class="v8statsmall"><span id="v8lives">♥ ♥ ♥</span><span id="v8loot">★ 0/3 · ◈ 0/5</span><span id="v8timer">00:00</span></div></div><div id="v8tip"><span id="v8tipicon">✦</span><span id="v8tiptext">Следуй к отмеченной цели</span></div><div id="v8waypoint">↗ <span id="v8distance">Ключ</span></div></div><div id="v8modal" aria-hidden="true"><div id="v8modalCard"></div></div><div id="hud"><div id="quest">🎯 Доберись до ворот</div><div id="state">👠 Жена ищет тебя</div></div><button id="pause" style="position:fixed;right:10px;top:75px;width:48px;height:44px;font-size:20px;z-index:3">⏸</button><div id="hearts" style="position:fixed;left:10px;top:76px;background:#213a42dc;border-radius:10px;padding:8px 12px;font-size:21px;pointer-events:none">❤️❤️❤️</div><div id="toast"></div><div id="v5mission" aria-live="polite">🗝️ 1 / 3 · Найди ключ</div><div id="v5proximity" aria-live="polite"></div><button id="v7home" aria-label="Выбрать уровень" title="Выбрать уровень">🗺️</button><div id="v7mapTag">🏡 Уровень 1</div><div id="v7help">Найди ключ, активируй рычаг, открой ворота</div><div id="v6cinema" role="status" aria-live="polite"><div class="v6cinemaicon">👀</div><div id="v6stage">Жена заметила тебя!</div><div class="v6cinemabar"><div id="v6cinemafill"></div></div></div><button id="v5sound" aria-label="Включить или выключить звук" title="Звук">🔊</button><div id="controls" aria-label="Джойстик движения"><div id="stick">✥</div></div><div id="actions"><button id="hide"><span>🌿</span>Укрытие</button><button id="interact" aria-label="Взаимодействовать"><span>✋</span>Действие</button><button id="run"><span>🏃</span>БЕГ</button></div><div id="overlay"><div id="panel"><h2>🏡 Большая жена и мелкий муж</h2><p>Версия 0.8 · Новый интерфейс «Побег из дома». Ты — крошечный муж огромной великанши. Найди ключ у сарая, нажми «Действие», включи рычаг и открой ворота. Собирай звёзды и монеты, обходи ящики и пруд. Жена сама ходит по двору и пытается поймать тебя!</p><p>🕹️ Джойстик — движение · 🏃 — бег (слышен жене) · 🌿 — прятки у кустов · ✋ — взять ключ, включить рычаг, открыть ворота.</p><p>Жена замечает тебя взглядом, слышит бег и ищет возле последнего места встречи. Три попытки, бонусы и лучший результат сохраняются.</p><div id="v7levels"><button id="v7level1" class="v7levelbtn">🏡 Уровень 1 · Побег из дома</button><button id="v7level2" class="v7levelbtn">🌙 Уровень 2 · Ночной сад</button></div><button id="start" style="display:none">▶ Начать побег</button></div></div><script>
+const spriteWife=new Image(),spriteHusband=new Image();spriteWife.src='../assets/wife.svg?fullbody=20261027d';spriteHusband.src='../assets/husband.svg?fullbody=20261027b';let wifeRaster=null;
+const artSprites={wife:null,husband:null};const artPaths={wife:'../assets/wife_new.webp',husband:'../assets/husband_new.webp'};
+for(const role of ['wife','husband']){const im=new Image();im.onload=()=>{if(im.naturalWidth>0&&im.naturalHeight>0){artSprites[role]=im;console.info('Artwork loaded',role,im.naturalWidth,im.naturalHeight)}};im.onerror=()=>console.info('Artwork not installed yet:',role);im.src=artPaths[role]+'?art=32'}
+
+// Hand-illustrated character animation atlas: six transparent WebP strips, eight 128x210 cells each.
+const animatedSprites={};const animationEnabled=new URLSearchParams(location.search).get('art')!=='legacy';
+const animationCounts={wife_walk:7,wife_run:8,wife_search:5,wife_carry:8,husband_walk:8,husband_run:8};
+for(const name of (animationEnabled?Object.keys(animationCounts):[])){
+ const image=new Image();
+ image.onload=()=>{if(image.naturalWidth===1024&&image.naturalHeight===210){animatedSprites[name]=image;console.info('Animated artwork ready:',name)}};
+ image.onerror=()=>console.warn('Animation unavailable; using still art:',name);
+ image.src='../assets/animations/'+name+'.webp?v=34';
+}
+function animatedFigure(x,y,large){
+ let kind,frame=0,fps=8;
+ if(large){
+  kind=captureTimer>0?(v6CapturePose==='neutral'?'wife_walk':v6CapturePose==='reach'?'wife_search':'wife_carry'):wife.mode==='chase'?'wife_run':wife.mode==='search'?'wife_search':'wife_walk';
+  fps=kind==='wife_run'?11:kind==='wife_search'?3:7;
+  if(kind==='wife_search')frame=Math.floor(clock*3.1)%animationCounts[kind];
+  else if(kind==='wife_carry')frame=Math.floor(Math.max(0,4.6-captureTimer)*7)%animationCounts[kind];
+  else frame=wifeMoving?Math.floor(v6Gait.wife)%animationCounts[kind]:0;
+ }else{
+  kind=sprint&&manMoving&&stamina>1?'husband_run':'husband_walk';
+  fps=kind==='husband_run'?12:9;
+  frame=manMoving?Math.floor(v6Gait.husband)%animationCounts[kind]:0;
+ }
+ const image=animatedSprites[kind];
+ if(!image)return false;
+ const height=large?410:104;
+ const width=large?220:64;
+ const facing=large?wifeFacing:manFacing;
+ g.save();
+ g.fillStyle='#30241944';g.beginPath();g.ellipse(x,y+12,large?50:18,large?12:6,0,0,Math.PI*2);g.fill();
+ g.translate(x,y+13);g.scale(facing,1);
+ // Nine-argument crop is safe for WebP bitmaps (unlike the previous SVG crop on iOS).
+ g.drawImage(image,frame*128,0,128,210,-width/2,-height,width,height);
+ g.restore();
+ return true;
+}
+async function rasterizeWife(){
+ try{
+  const response=await fetch('../assets/wife.svg?contours=3',{cache:'no-store'});
+  if(!response.ok)throw Error('SVG HTTP '+response.status);
+  const xml=new DOMParser().parseFromString(await response.text(),'image/svg+xml');
+  if(xml.querySelector('parsererror'))throw Error('SVG parse error');
+  const off=document.createElement('canvas');off.width=250;off.height=610;
+  const ctx=off.getContext('2d');
+  if(!ctx)throw Error('No canvas');
+  const palette={'url(#skin)':'#f3a96f','url(#red)':'#d32a40','url(#dots)':'none'};
+  function color(v){return palette[v]||v||'none'}
+  function renderNode(node,style){
+   const tag=node.localName;if(!tag||tag==='defs'||tag==='linearGradient'||tag==='pattern'||tag==='stop')return;
+   const st={...style};
+   for(const name of ['fill','stroke','stroke-width','stroke-linecap','stroke-linejoin','opacity']){
+    if(node.hasAttribute(name))st[name]=node.getAttribute(name);
+   }
+   if(tag==='path'||tag==='circle'){
+    ctx.save();ctx.globalAlpha=Number(st.opacity||1);
+    ctx.lineWidth=Number(st['stroke-width']||1);ctx.lineCap=st['stroke-linecap']||'butt';ctx.lineJoin=st['stroke-linejoin']||'miter';
+    let path;
+    if(tag==='path'){path=new Path2D(node.getAttribute('d')||'')}
+    else{path=new Path2D();path.arc(Number(node.getAttribute('cx')),Number(node.getAttribute('cy')),Number(node.getAttribute('r')),0,Math.PI*2)}
+    const fill=color(st.fill);if(fill!=='none'){ctx.fillStyle=fill;ctx.fill(path)}
+    const stroke=color(st.stroke);if(stroke!=='none'){ctx.strokeStyle=stroke;ctx.stroke(path)}
+    ctx.restore()
+   }
+   for(const child of node.children)renderNode(child,st)
+  }
+  renderNode(xml.documentElement,{fill:'#000000',stroke:'none','stroke-width':'1'});
+  // The polka-dot dress is painted using a separate pattern layer in the SVG.
+  // Add white dots clipped to the same dress silhouette.
+  const dresses=Array.from(xml.querySelectorAll('path')).filter(p=>p.getAttribute('fill')==='url(#dots)');
+  for(const dress of dresses){ctx.save();ctx.clip(new Path2D(dress.getAttribute('d')));ctx.fillStyle='#fff4e9';for(let y=145;y<315;y+=31)for(let x=20;x<235;x+=29){ctx.beginPath();ctx.arc(x+9,y+10,4.5,0,Math.PI*2);ctx.fill()}ctx.restore()}
+  wifeRaster=off;
+ }catch(err){console.warn('Contour raster failed; SVG fallback',err)}
+}
+rasterizeWife();
+const c=document.getElementById('c');let g=c.getContext('2d');const quest=document.getElementById('quest'),state=document.getElementById('state'),toast=document.getElementById('toast'),overlay=document.getElementById('overlay'),panel=document.getElementById('panel');
+let W=innerWidth,H=innerHeight,playing=false,paused=false,lives=3,invulnerable=0,phase=0,hidden=false,sprint=false,caught=0,last=0,clock=0,noticeTime=0,manMoving=false,wifeMoving=false,manFacing=1,wifeFacing=1,captureTimer=0,capturePending=false,stamina=100,alertLevel=0;
+const medals=[{x:320,y:990,got:false},{x:835,y:620,got:false},{x:1270,y:390,got:false}];let medalsFound=0,elapsed=0,bestTime=null;try{const v=Number(localStorage.getItem('giant_escape_best'));if(v>0&&Number.isFinite(v))bestTime=v}catch(_){}const lever={x:1310,y:1110};let leverOn=false;const boosts=[{x:390,y:1040,used:false},{x:1160,y:340,used:false}];const crates=[{x:590,y:980,r:33},{x:1120,y:1160,r:33},{x:920,y:330,r:34}];const ponds=[{x:1100,y:570,rx:110,ry:68}];const coins=[{x:280,y:620,got:false},{x:720,y:1190,got:false},{x:1280,y:780,got:false},{x:900,y:280,got:false},{x:1430,y:1180,got:false}];let coinsFound=0,combo=0,comboTime=0,slowZone=false,gateHint=0;const flowerPatches=[{x:560,y:1080},{x:1280,y:520},{x:680,y:350}];const decoys=[{x:710,y:1180,used:false},{x:1200,y:470,used:false}];let decoyTimer=0,decoyTarget=null,trailTimer=0;const footsteps=[];const obstacles=[{x:590,y:980,r:33},{x:1120,y:1160,r:33},{x:920,y:330,r:34},{x:760,y:790,r:45},{x:1200,y:1030,r:51},{x:780,y:1110,r:40}];let screenShake=0,celebrate=0,ambientParticles=[];let soundEnabled=false;const joystick={x:0,y:0,id:null};const man={x:490,y:740},wife={x:460,y:390,tx:460,ty:390,mode:'patrol',timer:0},keys={};const gate={x:1400,y:220},key={x:1050,y:900},bushes=[{x:620,y:680,r:92},{x:890,y:510,r:95},{x:1170,y:680,r:90},{x:1040,y:1060,r:110},{x:340,y:1120,r:95},{x:1330,y:1060,r:95}];const trees=[{x:200,y:330},{x:800,y:220},{x:1370,y:850},{x:250,y:880}];const rnd=(a,b)=>a+Math.random()*(b-a),d=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y),cl=(v,a,b)=>Math.max(a,Math.min(b,v));
+function say(t){toast.textContent=t;toast.style.display='block';noticeTime=clock+2.5}
+function reset(){screenShake=0;celebrate=0;ambientParticles=[];coinsFound=0;combo=0;comboTime=0;gateHint=0;coins.forEach(c=>c.got=false);leverOn=false;boosts.forEach(b=>b.used=false);footsteps.length=0;trailTimer=0;decoyTimer=0;decoyTarget=null;decoys.forEach(p=>p.used=false);medalsFound=0;elapsed=0;medals.forEach(m=>m.got=false);resetStick();clock=0;noticeTime=0;toast.style.display='none';wife.tx=v7Start.wife.x;wife.ty=v7Start.wife.y;wifeFacing=1;manFacing=1;runButton.classList.remove('active');stamina=100;alertLevel=0;Object.keys(keys).forEach(k=>keys[k]=false);manFacing=1;wifeFacing=1;captureTimer=0;capturePending=false;stamina=100;alertLevel=0;manMoving=false;wifeMoving=false;lives=3;paused=false;document.getElementById('pause').textContent='⏸';document.getElementById('hearts').textContent='❤️❤️❤️';v7Spawn();wife.mode='patrol';wife.timer=0;wife.tx=v7Start.wife.x;wife.ty=v7Start.wife.y;phase=0;hidden=false;sprint=false;playing=true;overlay.style.display='none';updateHud();say('Тихо! Жена вышла во двор...')}
+function updateHud(){document.getElementById('hearts').textContent='❤️'.repeat(lives)+'🖤'.repeat(3-lives);quest.textContent=phase===0?'🎯 Найди ключ у сарая':!leverOn?'🎯 Включи рычаг ворот':'🎯 Доберись до ворот';state.textContent=captureTimer>0?'👠 Жена несёт тебя домой':hidden?'🌿 Ты спрятался':wife.mode==='chase'?'🚨 Жена преследует!':wife.mode==='search'?'👀 Жена ищет тебя':'👠 Жена патрулирует'}
+if(document.getElementById('start'))document.getElementById('start').onclick=reset;document.getElementById('pause').onclick=()=>{if(!playing)return;paused=!paused;document.getElementById('pause').textContent=paused?'▶️':'⏸';say(paused?'Пауза':'Побег продолжается')};
+document.getElementById('hide').onclick=()=>{if(!playing||paused||captureTimer>0)return;const near=bushes.some(b=>d(man,b)<b.r*.78);if(!near){say('Подойди к кустам, чтобы спрятаться');return}hidden=!hidden;if(hidden){resetStick();Object.keys(keys).forEach(k=>keys[k]=false)}say(hidden?'Тсс! Ты спрятался в кустах':'Ты вышел из укрытия');updateHud()};
+document.getElementById('run').onpointerdown=e=>{e.preventDefault();if(playing&&!paused&&captureTimer<=0)sprint=true};document.getElementById('run').onpointerup=document.getElementById('run').onpointercancel=()=>sprint=false;
+const pad=document.getElementById('controls'),knob=document.getElementById('stick');
+function resetStick(){joystick.x=0;joystick.y=0;joystick.id=null;knob.style.transform='translate(0px,0px)'}
+function moveStick(e){const r=pad.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2,dx=e.clientX-cx,dy=e.clientY-cy,max=r.width*.33,mag=Math.hypot(dx,dy)||1,dist=Math.min(mag,max);joystick.x=dx/mag*dist/max;joystick.y=dy/mag*dist/max;knob.style.transform='translate('+Math.round(joystick.x*max)+'px,'+Math.round(joystick.y*max)+'px)'}
+pad.addEventListener('pointerdown',e=>{if(joystick.id!==null)return;e.preventDefault();joystick.id=e.pointerId;pad.setPointerCapture(e.pointerId);moveStick(e)});
+pad.addEventListener('pointermove',e=>{if(e.pointerId===joystick.id){e.preventDefault();moveStick(e)}});
+for(const ev of ['pointerup','pointercancel','lostpointercapture'])pad.addEventListener(ev,e=>{if(e.pointerId===joystick.id)resetStick()});
+const runButton=document.getElementById('run');
+runButton.addEventListener('pointerdown',e=>{e.preventDefault();runButton.classList.add('active');try{runButton.setPointerCapture(e.pointerId)}catch(_){}});
+for(const ev of ['pointerup','pointercancel','lostpointercapture'])runButton.addEventListener(ev,()=>{sprint=false;runButton.classList.remove('active')});
+document.addEventListener('visibilitychange',()=>{if(document.hidden){resetStick();runButton.classList.remove('active');Object.keys(keys).forEach(k=>keys[k]=false);sprint=false;if(playing&&!paused){paused=true;document.getElementById('pause').textContent='▶️'}}});
+onkeydown=e=>{const k={ArrowUp:'up',ArrowDown:'down',ArrowLeft:'left',ArrowRight:'right'}[e.key];if(k){keys[k]=true;e.preventDefault()}if(e.key===' '&&playing&&!paused&&captureTimer<=0)sprint=true};onkeyup=e=>{const k={ArrowUp:'up',ArrowDown:'down',ArrowLeft:'left',ArrowRight:'right'}[e.key];if(k)keys[k]=false;if(e.key===' ')sprint=false};
+function end(win){if(win&&(bestTime===null||elapsed<bestTime)){bestTime=elapsed;try{localStorage.setItem(v7Level===2?'wife_escape_best_night':'giant_escape_best',String(bestTime))}catch(_){}}playing=false;resetStick();sprint=false;runButton.classList.remove('active');overlay.style.display='flex';panel.innerHTML=win?'<h2>🏆 Побег удался!</h2><p>Ты добрался до ворот и обхитрил великаншу! ⭐ '+medalsFound+'/3 · 🪙 '+coinsFound+'/5 · ⏱ '+Math.floor(elapsed/60)+':'+String(Math.floor(elapsed%60)).padStart(2,'0')+' · Лучшее: '+(bestTime===null?'—':Math.floor(bestTime/60)+':'+String(Math.floor(bestTime%60)).padStart(2,'0'))+'</p><button id="again">Сыграть ещё</button>':'<h2>👠 Попался!</h2><p>Огромная жена схватила тебя и унесла домой под мышкой. Попробуй спрятаться в кустах и обойти её!</p><button id="again">Попробовать снова</button>';document.getElementById('again').onclick=reset}
+function moveAroundObstacles(entity,oldX,oldY,pad){for(const o of obstacles){let dx=entity.x-o.x,dy=entity.y-o.y,dist=Math.hypot(dx,dy),limit=o.r+pad;if(dist<limit){if(dist<.01){entity.x=oldX;entity.y=oldY;continue}entity.x=o.x+dx/dist*limit;entity.y=o.y+dy/dist*limit}}}function update(dt){if(!playing||paused)return;clock+=dt;if(captureTimer<=0)elapsed+=dt;screenShake=Math.max(0,screenShake-dt*2);celebrate=Math.max(0,celebrate-dt);comboTime=Math.max(0,comboTime-dt);if(comboTime===0)combo=0;gateHint=Math.max(0,gateHint-dt);trailTimer-=dt;for(let i=footsteps.length-1;i>=0;i--){footsteps[i].age+=dt;if(footsteps[i].age>4.5)footsteps.splice(i,1)}decoyTimer=Math.max(0,decoyTimer-dt);if(captureTimer>0){captureTimer-=dt;wifeMoving=true;manMoving=false;if(captureTimer<2.35){wife.x+=(v7Start.wife.x-wife.x)*Math.min(1,dt*1.1);wife.y+=(v7Start.wife.y-wife.y)*Math.min(1,dt*1.1);}if(captureTimer<=0){if(capturePending){end(false)}else{v7Spawn();wife.mode='patrol';wife.timer=0;invulnerable=3;say('Снова дома! Осталось попыток: '+lives)}capturePending=false}return}invulnerable=Math.max(0,invulnerable-dt);if(clock>noticeTime)toast.style.display='none';let vx=(keys.right?1:0)-(keys.left?1:0)+joystick.x,vy=(keys.down?1:0)-(keys.up?1:0)+joystick.y,n=Math.max(1,Math.hypot(vx,vy));const moving=Math.hypot(vx,vy)>.08;manMoving=!!moving;const fast=sprint&&stamina>1&&!!moving;stamina=cl(stamina+(fast?-33:19)*dt,0,100);slowZone=ponds.some(p=>Math.pow((man.x-p.x)/p.rx,2)+Math.pow((man.y-p.y)/p.ry,2)<1);const speed=(fast?260:165)*(slowZone?.58:1);if(moving){if(Math.abs(vx)>.05)manFacing=vx>0?1:-1;if(hidden){hidden=false;say('Ты вышел из укрытия')}man.x=cl(man.x+vx/n*speed*dt,60,1530);man.y=cl(man.y+vy/n*speed*dt,85,1330);moveAroundObstacles(man,man.x-vx/n*speed*dt,man.y-vy/n*speed*dt,16);if(fast&&trailTimer<=0){footsteps.push({x:man.x,y:man.y,age:0});if(footsteps.length>22)footsteps.shift();trailTimer=.22}}
+for(const coin of coins){if(!coin.got&&d(man,coin)<47){coin.got=true;celebrate=.65;coinsFound++;combo=comboTime>0?combo+1:1;comboTime=7;say('🪙 Монета '+coinsFound+'/5'+(combo>1?' · серия ×'+combo:''));if(navigator.vibrate)navigator.vibrate(20)}}for(const b of boosts){if(!b.used&&d(man,b)<52){b.used=true;stamina=100;say('⚡ Запас сил восстановлен')}}if(phase===1&&!leverOn&&d(man,lever)<103&&v5ActionPulse>0){leverOn=true;celebrate=1.3;say('⚙️ Ворота разблокированы');updateHud()}for(const trap of decoys){if(!trap.used&&d(man,trap)<57){trap.used=true;decoyTarget={x:trap.x,y:trap.y};decoyTimer=5.5;say('🔔 Ты задел колокольчик! Жена услышала шум')}}
+for(const medal of medals){if(!medal.got&&d(man,medal)<53){medal.got=true;celebrate=1;medalsFound++;say('⭐ Найдена звезда: '+medalsFound+'/3')}}
+if(phase===0&&d(man,key)<95&&v5ActionPulse>0){if(navigator.vibrate)navigator.vibrate(45);phase=1;say('🗝️ Ключ найден! Теперь к воротам');updateHud()}
+if(phase===1&&!leverOn&&d(man,gate)<110&&gateHint<=0){say('🔒 Ворота закрыты! Сначала включи рычаг');gateHint=4}if(phase===1&&leverOn&&d(man,gate)<110&&v5ActionPulse>0){if(navigator.vibrate)navigator.vibrate([60,40,60]);end(true);return}
+wife.timer-=dt;let dist=d(man,wife);const concealed=bushes.some(b=>d(man,b)<b.r*.78);const visible=!hidden&&!concealed&&v5CanSee(dist,fast);alertLevel=cl(alertLevel+(visible?dt*1.6:-dt*.65),0,1);if(visible){wife.mode='chase';wife.tx=man.x;wife.ty=man.y;wife.timer=v7Level===2?4.1:2.8}else if(wife.mode==='chase'&&wife.timer<=0){wife.mode='search';wife.timer=3}else if(wife.mode==='search'&&wife.timer<=0){wife.mode='patrol';wife.timer=0}
+if(!visible&&!hidden&&fast&&dist<(v7Level===2?610:470)&&wife.mode!=='chase'){wife.mode='search';wife.tx=man.x;wife.ty=man.y;wife.timer=Math.max(2.1,wife.timer)}if(!visible&&wife.mode==='patrol'&&footsteps.length){const fresh=footsteps.findLast?footsteps.findLast(p=>p.age<2.4):footsteps.slice().reverse().find(p=>p.age<2.4);if(fresh&&d(wife,fresh)<190){wife.mode='search';wife.tx=fresh.x;wife.ty=fresh.y;wife.timer=2.5}}if(decoyTimer>0&&decoyTarget&&!visible&&wife.mode!=='chase'){wife.mode='search';wife.tx=decoyTarget.x;wife.ty=decoyTarget.y;wife.timer=Math.max(wife.timer,decoyTimer)}
+if(wife.mode==='patrol'&&wife.timer<=0){wife.tx=rnd(180,1400);wife.ty=rnd(200,1180);wife.timer=rnd(2,4)}if(wife.mode==='search'&&wife.timer>0&&decoyTimer<=0&&d(wife,{x:wife.tx,y:wife.ty})<45){wife.tx=cl(wife.x+rnd(-210,210),90,1500);wife.ty=cl(wife.y+rnd(-210,210),90,1300)}
+if(wife.mode==='chase'){wife.tx=man.x;wife.ty=man.y}if(wife.mode==='search'&&decoyTimer<=0&&footsteps.length){const fresh=footsteps[footsteps.length-1];if(fresh.age<1.8&&d(wife,fresh)<160){wife.tx=fresh.x;wife.ty=fresh.y}}
+let dx=wife.tx-wife.x,dy=wife.ty-wife.y,dd=Math.hypot(dx,dy);wifeMoving=dd>4;if(Math.abs(dx)>5)wifeFacing=dx>0?1:-1;if(dd>4){let v=wife.mode==='chase'?(v7Level===2?228:205):(v7Level===2?121:95);const ox=wife.x,oy=wife.y;wife.x+=dx/dd*Math.min(dd,v*dt);wife.y+=dy/dd*Math.min(dd,v*dt);moveAroundObstacles(wife,ox,oy,37)}
+if(dist<76&&!hidden&&!concealed&&invulnerable<=0){screenShake=1.5;caught++;lives--;captureTimer=4.6;capturePending=lives<=0;wife.mode='caught';manMoving=false;sprint=false;Object.keys(keys).forEach(k=>keys[k]=false);resetStick();runButton.classList.remove('active');if(navigator.vibrate)navigator.vibrate([100,60,120]);say('👠 Попался! Жена несёт тебя домой под мышкой');updateHud();return}updateHud()}
+function path(){g.fillStyle='#a9cb8c';g.fillRect(0,0,1600,1400);g.fillStyle='#e7c794';g.beginPath();g.moveTo(440,690);g.lineTo(480,750);g.lineTo(1050,900);g.lineTo(1420,230);g.lineTo(1470,230);g.lineTo(1100,970);g.lineTo(460,810);g.closePath();g.fill();g.fillStyle='#e6d6b5';g.fillRect(190,140,510,370);g.fillStyle='#bf664c';g.fillRect(170,115,550,75);g.fillStyle='#633c31';g.fillRect(460,405,100,105);g.fillStyle='#fff1cb';g.fillRect(250,230,100,90);g.fillStyle='#56808c';g.fillRect(263,242,74,67);g.fillStyle='#a57245';g.fillRect(960,760,200,160);g.fillStyle='#995738';g.fillRect(930,735,260,42);g.strokeStyle='#8b5b3c';g.lineWidth=24;g.strokeRect(40,40,1520,1320);g.strokeStyle='#4b8b58';g.lineWidth=10;for(let i=50;i<1560;i+=65){g.beginPath();g.moveTo(i,42);g.lineTo(i,72);g.stroke()}g.fillStyle='#794a32';g.fillRect(1340,100,22,220);g.fillRect(1500,100,22,220);g.fillStyle='#6d8c50';g.fillRect(1360,120,140,130);g.fillStyle='#c9b06d';g.font='bold 33px system-ui';g.fillText('ВЫХОД',1360,160)}
+let gardenLayer=null;function gardenDetail(){
+g.save();
+// cobblestones, drawn only inside the diagonal garden walkway
+g.beginPath();g.moveTo(440,690);g.lineTo(480,750);g.lineTo(1050,900);g.lineTo(1420,230);g.lineTo(1470,230);g.lineTo(1100,970);g.lineTo(460,810);g.closePath();g.clip();
+for(let yy=185;yy<1010;yy+=29){for(let xx=420+(Math.floor(yy/29)%2)*24;xx<1520;xx+=49){const v=Math.sin(xx*.091+yy*.17);g.fillStyle=v>0?'#efd5a6':'#d9b68a';g.strokeStyle='#b99570';g.lineWidth=1.7;g.beginPath();g.roundRect(xx,yy,45,24,5);g.fill();g.stroke()}}g.restore();
+// terracotta roof and roof tiles
+g.fillStyle='#914431';g.beginPath();g.moveTo(142,119);g.lineTo(425,42);g.lineTo(744,119);g.closePath();g.fill();
+g.fillStyle='#bd6545';for(let i=0;i<14;i++){g.beginPath();g.moveTo(175+i*39,110);g.lineTo(425,47);g.lineTo(192+i*39,110);g.fill()}
+g.strokeStyle='#f4ba77';g.lineWidth=5;g.beginPath();g.moveTo(142,119);g.lineTo(425,42);g.lineTo(744,119);g.stroke();
+// detailed house windows, frame and flower boxes
+for(const wx of [250,585]){g.fillStyle='#e8bb82';g.fillRect(wx-13,218,122,128);g.fillStyle='#6b9ca3';g.fillRect(wx,229,96,96);g.strokeStyle='#f7e7cb';g.lineWidth=7;g.strokeRect(wx,229,96,96);g.beginPath();g.moveTo(wx+48,229);g.lineTo(wx+48,325);g.moveTo(wx,277);g.lineTo(wx+96,277);g.stroke();g.fillStyle='#a86746';g.fillRect(wx-8,326,114,17);for(let j=0;j<7;j++){const px=wx+5+j*14;g.fillStyle=j%2?'#ee6990':'#f6d16d';g.beginPath();g.arc(px,322+(j%3)*2,8,0,7);g.fill()}}
+// gate boards and hardware
+g.fillStyle='#87503a';g.fillRect(1360,120,140,130);
+for(let j=0;j<7;j++){g.fillStyle=j%2?'#995b3e':'#a96846';g.fillRect(1362+j*20,121,18,126)}
+g.strokeStyle='#523b30';g.lineWidth=6;g.strokeRect(1360,120,140,130);g.beginPath();g.moveTo(1360,162);g.lineTo(1500,162);g.moveTo(1360,211);g.lineTo(1500,211);g.stroke();g.fillStyle='#e8b957';g.beginPath();g.arc(1482,193,5,0,7);g.fill();
+// garden borders and flowering bushes
+for(let i=0;i<85;i++){let xx=80+((i*131)%1450),yy=520+((i*97)%750);if(xx>390&&xx<1170&&Math.abs(yy-(690+(xx-440)*.24))<95)continue;const rr=4+(i%3)*2;g.fillStyle=i%4===0?'#fff5d6':i%3===0?'#f9d34d':'#ed6c8e';for(let p=0;p<5;p++){const a=p*Math.PI*2/5;g.beginPath();g.arc(xx+Math.cos(a)*rr,yy+Math.sin(a)*rr,rr*.65,0,7);g.fill()}g.fillStyle='#f9cb54';g.beginPath();g.arc(xx,yy,rr*.5,0,7);g.fill()}
+}
+const illustratedProps=new Image();
+illustratedProps.onload=()=>{worldLayer=null};
+illustratedProps.src='../assets/garden-props.webp?v=35';
+function paintIllustratedProps(){
+ if(!illustratedProps.complete||!illustratedProps.naturalWidth)return;
+ // Source is a three-column illustrated atlas; keep UI and characters separate.
+ const items=[
+  {sx:0,x:927,y:662,w:268,h:316},
+  {sx:290,x:1215,y:405,w:250,h:245},
+  {sx:580,x:310,y:1020,w:230,h:185}
+ ];
+ for(const p of items){g.drawImage(illustratedProps,p.sx,0,290,340,p.x,p.y,p.w,p.h)}
+}
+function scenery(){gardenDetail();if(!(illustratedGround.complete&&illustratedGround.naturalWidth))paintUpgrade();illustratedGarden();paintIllustratedProps();for(const p of ponds){g.save();g.fillStyle='#b6a27e';g.beginPath();g.ellipse(p.x,p.y,p.rx+14,p.ry+12,-.1,0,7);g.fill();g.fillStyle='#5ca9b5';g.beginPath();g.ellipse(p.x,p.y,p.rx,p.ry,-.1,0,7);g.fill();g.strokeStyle='#a7e5e5';g.lineWidth=4;for(let i=0;i<3;i++){g.beginPath();g.ellipse(p.x-25+i*31,p.y-8+i*9,18,5,-.1,0,7);g.stroke()}g.restore()}for(const box of crates){g.fillStyle='#8c5939';g.fillRect(box.x-31,box.y-31,62,62);g.strokeStyle='#dbad73';g.lineWidth=5;g.strokeRect(box.x-27,box.y-27,54,54);g.beginPath();g.moveTo(box.x-23,box.y-23);g.lineTo(box.x+23,box.y+23);g.moveTo(box.x+23,box.y-23);g.lineTo(box.x-23,box.y+23);g.stroke()}g.fillStyle='#79523e';g.fillRect(lever.x-25,lever.y-25,50,44);g.fillStyle='#a97b4c';g.fillRect(lever.x-15,lever.y-15,30,20);for(const p of flowerPatches){g.fillStyle='#397f47';g.beginPath();g.ellipse(p.x,p.y,70,31,-.2,0,7);g.fill();for(let i=0;i<9;i++){const x=p.x+Math.sin(i*2.3)*51,y=p.y+Math.cos(i*2.3)*22;g.fillStyle=i%2?'#e9799b':'#f9e7aa';g.beginPath();g.arc(x,y,9,0,7);g.fill();g.fillStyle='#efba39';g.beginPath();g.arc(x,y,3,0,7);g.fill()}}for(const p of decoys){g.fillStyle='#80533b';g.fillRect(p.x-13,p.y-10,26,19);g.font='30px system-ui';g.fillText(p.used?'🔕':'🔔',p.x-17,p.y-13)}for(const o of obstacles){g.fillStyle='#685343';g.beginPath();g.ellipse(o.x,o.y+13,o.r+6,o.r*.44,0,0,Math.PI*2);g.fill();g.fillStyle='#b9a28a';g.beginPath();g.ellipse(o.x,o.y-5,o.r,o.r*.68,-.18,0,Math.PI*2);g.fill();g.strokeStyle='#8b7866';g.lineWidth=5;g.stroke();g.fillStyle='#e2d1b9';g.beginPath();g.ellipse(o.x-o.r*.25,o.y-o.r*.22,o.r*.3,o.r*.12,-.3,0,Math.PI*2);g.fill()}for(const a of trees){g.fillStyle='#72503a';g.fillRect(a.x-15,a.y-50,30,110);for(let j=0;j<4;j++){g.fillStyle=j%2?'#498b4c':'#6b9e4b';g.beginPath();g.arc(a.x+Math.sin(j*2)*38,a.y-90+Math.cos(j*2)*30,68,0,7);g.fill()}}for(const b of bushes){g.fillStyle='#367b45';g.beginPath();g.arc(b.x,b.y,b.r,0,7);g.fill();g.fillStyle='#5caa5e';for(let j=0;j<5;j++){g.beginPath();g.arc(b.x+Math.sin(j*2.7)*b.r*.55,b.y+Math.cos(j*2.7)*b.r*.55,b.r*.4,0,7);g.fill()}}g.font='28px system-ui';g.fillStyle='#513f35';g.fillText('Сарай',990,970)}
+function figure(x,y,large){if(animatedFigure(x,y,large))return;const upgraded=artSprites[large?'wife':'husband'];const img=upgraded||(large?(wifeRaster||spriteWife):spriteHusband);if((img instanceof HTMLCanvasElement)||(img.complete&&img.naturalWidth)){const height=large?350:95,width=upgraded?(large?170:58):(large?144:39),moving=large?wifeMoving:manMoving;const bob=moving?Math.abs(Math.sin(clock*(large?7:12)))*3:0;g.save();g.fillStyle='#38281b44';g.beginPath();g.ellipse(x,y+13,large?48:17,large?13:6,0,0,Math.PI*2);g.fill();g.translate(x,y+16-bob);g.scale(large?wifeFacing:manFacing,1);
+// Render the SVG as a single image. Safari may clip 9-argument drawImage SVG source rectangles.
+g.drawImage(img,-width/2,-height,width,height);
+g.restore();return}g.save();g.translate(x,y);if(large){g.fillStyle='#3c302c';g.beginPath();g.ellipse(0,-180,46,56,0,0,7);g.fill();g.fillStyle='#f0a26b';g.beginPath();g.arc(0,-184,36,0,7);g.fill();g.fillStyle='#251d20';g.beginPath();g.arc(-12,-190,4,0,7);g.arc(12,-190,4,0,7);g.fill();g.strokeStyle='#6d2029';g.lineWidth=4;g.beginPath();g.moveTo(-12,-168);g.lineTo(10,-168);g.stroke();g.fillStyle='#d72b3d';g.beginPath();g.moveTo(-50,-130);g.quadraticCurveTo(-94,-15,-65,5);g.lineTo(65,5);g.quadraticCurveTo(94,-15,50,-130);g.closePath();g.fill();g.fillStyle='#fff1d5';for(let i=0;i<26;i++){let a=i*2.4;g.beginPath();g.arc(Math.sin(a)*52,-110+(i%6)*20,3.5,0,7);g.fill()}g.strokeStyle='#ed9b65';g.lineWidth=21;g.beginPath();g.moveTo(-45,-112);g.lineTo(-76,-48);g.moveTo(45,-112);g.lineTo(76,-48);g.stroke();g.strokeStyle='#f2a56e';g.lineWidth=28;g.beginPath();g.moveTo(-30,0);g.lineTo(-32,85);g.moveTo(30,0);g.lineTo(32,85);g.stroke();g.fillStyle='#c62535';g.fillRect(-49,76,34,17);g.fillRect(17,76,34,17);g.fillStyle='#e9b02d';g.beginPath();g.arc(-34,-175,8,0,7);g.arc(34,-175,8,0,7);g.fill();g.fillStyle='#d32638';for(let i=-2;i<=2;i++){g.beginPath();g.arc(i*11,-143,6,0,7);g.fill()}}else{g.fillStyle='#473027';g.fillRect(-15,-21,12,29);g.fillRect(3,-21,12,29);g.fillStyle='#f5f0e4';g.fillRect(-19,-80,38,62);g.fillStyle='#784a2c';g.fillRect(-20,-20,40,10);g.fillStyle='#b23c2b';g.beginPath();g.moveTo(-4,-77);g.lineTo(5,-77);g.lineTo(2,-38);g.closePath();g.fill();g.fillStyle='#efb280';g.beginPath();g.arc(0,-96,24,0,7);g.fill();g.fillStyle='#2c1e1b';g.beginPath();g.arc(0,-111,24,Math.PI,6.2);g.fill();g.fillStyle='#2d211d';g.fillRect(-13,-94,26,5);g.fillStyle='#fff';g.beginPath();g.arc(-8,-100,4,0,7);g.arc(8,-100,4,0,7);g.fill();g.fillStyle='#1f1816';g.beginPath();g.arc(-8,-100,2,0,7);g.arc(8,-100,2,0,7);g.fill()}g.restore()}
+let worldLayer=null;function paintUpgrade(){g.save();
+const lawn=g.createLinearGradient(0,0,1600,1400);lawn.addColorStop(0,'#b6d795');lawn.addColorStop(.48,'#9fc77c');lawn.addColorStop(1,'#82b66e');g.globalAlpha=.13;g.fillStyle=lawn;g.fillRect(0,0,1600,1400);g.globalAlpha=1;
+for(let i=0;i<480;i++){const x=65+(i*137.41)%1465,y=75+(i*211.37)%1240;if(x>150&&x<760&&y<530)continue;g.globalAlpha=.22+(i%4)*.07;g.strokeStyle=i%3?'#376f3d':'#e1e99a';g.lineWidth=1.5;g.beginPath();g.moveTo(x,y);g.lineTo(x-4,y-10-(i%7));g.moveTo(x,y);g.lineTo(x+5,y-8-(i%5));g.stroke()}g.globalAlpha=1;
+for(const p of [{x:90,y:550},{x:1480,y:560},{x:90,y:1220},{x:1450,y:1220}]){g.save();g.translate(p.x,p.y);g.fillStyle='#5a7149';g.beginPath();g.ellipse(10,19,82,31,0,0,7);g.fill();for(let i=0;i<8;i++){const a=i*2.399,r=15+i*7;const x=Math.cos(a)*r,y=Math.sin(a)*r*.56;const grad=g.createRadialGradient(x-14,y-15,3,x,y,45);grad.addColorStop(0,'#a6d57a');grad.addColorStop(1,i%2?'#417b47':'#508f51');g.fillStyle=grad;g.beginPath();g.arc(x,y,38-i%3*3,0,7);g.fill()}g.restore()}
+g.fillStyle='#00000021';g.beginPath();g.ellipse(456,515,330,32,0,0,7);g.fill();g.beginPath();g.ellipse(1060,934,185,29,0,0,7);g.fill();
+for(let i=0;i<22;i++){const x=80+i*66;g.fillStyle=i%2?'#82583c':'#986849';g.beginPath();g.roundRect(x,1336,17,36,3);g.fill();g.fillStyle='#e3b97b';g.fillRect(x+3,1341,4,23)}
+for(let i=0;i<15;i++){const y=65+i*83;g.fillStyle=i%2?'#8d6544':'#a67a52';g.fillRect(29,y,20,63);g.fillStyle='#dbad75';g.fillRect(32,y+5,4,44)}
+g.save();g.translate(1060,820);g.fillStyle='#523e3499';g.beginPath();g.ellipse(0,115,155,31,0,0,7);g.fill();g.fillStyle='#c08b59';g.fillRect(-119,-46,239,149);g.fillStyle='#a76442';g.beginPath();g.moveTo(-145,-47);g.lineTo(0,-127);g.lineTo(145,-47);g.closePath();g.fill();g.strokeStyle='#f3c58e';g.lineWidth=7;g.stroke();g.fillStyle='#684b39';g.fillRect(-35,12,72,91);g.fillStyle='#f1d7a7';g.fillRect(55,-12,44,41);g.fillStyle='#6897a1';g.fillRect(61,-7,32,30);g.fillStyle='#e6b766';g.beginPath();g.arc(24,56,5,0,7);g.fill();g.restore();
+for(let i=0;i<14;i++){const x=170+(i*199)%1270,y=550+(i*167)%680;g.save();g.translate(x,y);g.fillStyle='#456c3a';g.beginPath();g.ellipse(0,0,27,8,-.3,0,7);g.fill();g.fillStyle=i%2?'#e5ae66':'#d8c7a2';g.beginPath();g.ellipse(0,-8,17,10,-.3,0,7);g.fill();g.restore()}
+g.restore()}
+function movingGardenArt(){g.save();for(let i=0;i<8;i++){const x=140+(i*193)%1260+Math.sin(clock*.6+i*3)*25,y=250+(i*171)%890+Math.cos(clock*.9+i)*18;g.save();g.translate(x,y);g.rotate(Math.sin(clock*2+i)*.2);g.fillStyle=i%2?'#f7df78':'#f8a4c2';g.beginPath();g.ellipse(-6,0,7*Math.abs(Math.sin(clock*13+i))+.7,10,-.5,0,7);g.ellipse(6,0,7*Math.abs(Math.sin(clock*13+i))+.7,10,.5,0,7);g.fill();g.fillStyle='#654a36';g.fillRect(-1,-4,2,9);g.restore()}g.restore()}
+function illustratedGarden(){g.save();
+const beds=[{x:285,y:610,w:160,h:105},{x:1315,y:610,w:145,h:115},{x:470,y:1185,w:170,h:100}];
+for(const b of beds){g.fillStyle='#65503b55';g.beginPath();g.roundRect(b.x-b.w/2+9,b.y-b.h/2+12,b.w,b.h,24);g.fill();g.fillStyle='#d5a56c';g.beginPath();g.roundRect(b.x-b.w/2,b.y-b.h/2,b.w,b.h,20);g.fill();g.fillStyle='#795d42';g.beginPath();g.roundRect(b.x-b.w/2+11,b.y-b.h/2+11,b.w-22,b.h-22,13);g.fill();for(let i=0;i<18;i++){const px=b.x-b.w/2+23+(i*43)%(b.w-44),py=b.y-b.h/2+22+(i*29)%(b.h-42);g.fillStyle=i%3===0?'#e987a7':i%3===1?'#f4d37e':'#8dc879';g.beginPath();g.arc(px,py,6+(i%3),0,7);g.fill();g.fillStyle='#eac65c';g.beginPath();g.arc(px,py,2,0,7);g.fill()}}
+for(const lamp of [{x:790,y:485},{x:1240,y:940},{x:420,y:870}]){g.fillStyle='#273b33aa';g.beginPath();g.ellipse(lamp.x+14,lamp.y+9,32,10,.3,0,7);g.fill();g.fillStyle='#534739';g.fillRect(lamp.x-5,lamp.y-60,10,65);g.fillStyle='#f9d48a';g.beginPath();g.roundRect(lamp.x-14,lamp.y-86,28,32,5);g.fill();g.strokeStyle='#634c39';g.lineWidth=5;g.strokeRect(lamp.x-14,lamp.y-86,28,32);g.fillStyle='#805a3b';g.beginPath();g.moveTo(lamp.x-19,lamp.y-88);g.lineTo(lamp.x,lamp.y-104);g.lineTo(lamp.x+19,lamp.y-88);g.closePath();g.fill()}
+for(const bench of [{x:340,y:560},{x:1240,y:1220}]){g.save();g.translate(bench.x,bench.y);g.fillStyle='#4a3427aa';g.fillRect(-56,17,117,17);g.fillStyle='#996b47';g.fillRect(-54,-10,108,17);g.fillRect(-54,12,108,16);g.fillStyle='#e6b27d';g.fillRect(-52,-7,104,4);g.fillRect(-52,15,104,4);g.fillStyle='#564638';g.fillRect(-42,27,9,19);g.fillRect(34,27,9,19);g.restore()}
+for(let i=0;i<10;i++){const x=120+(i*233)%1390,y=160+(i*367)%1120;if((x>150&&x<740&&y<540)||(x>890&&x<1240&&y>700&&y<1000))continue;g.fillStyle='#4c7049';g.beginPath();g.ellipse(x+8,y+11,28,9,0,0,7);g.fill();for(let j=0;j<5;j++){g.fillStyle=j%2?'#a9ca71':'#79a95d';g.beginPath();g.ellipse(x+(j-2)*7,y-13-(j%2)*7,9,25,(j-2)*.2,0,7);g.fill()}}
+g.restore()}
+function dynamicWorldDetails(){g.save();
+g.fillStyle=leverOn?'#6ae6a3':'#f8bf63';g.shadowColor=leverOn?'#48f6b1':'#ffbd63';g.shadowBlur=18;g.beginPath();g.arc(lever.x,lever.y-16,13,0,7);g.fill();g.shadowBlur=0;
+g.fillStyle=leverOn?'#a7e8b0':'#e6a45d';g.beginPath();g.arc(1430,190,8,0,7);g.fill();
+if(leverOn){g.strokeStyle='#6beaab';g.lineWidth=7;g.beginPath();g.moveTo(1367,235);g.lineTo(1493,235);g.stroke()}
+for(const p of ponds){g.strokeStyle='#d5f7ef88';g.lineWidth=2.5;for(let j=0;j<3;j++){const shift=Math.sin(clock*1.5+j*2)*12;g.beginPath();g.ellipse(p.x+shift-30+j*27,p.y+Math.cos(clock+j)*10,15+j*4,5,0,0,7);g.stroke()}}
+for(const b of bushes){const sway=Math.sin(clock*1.8+b.x)*5;g.fillStyle='#a5d27b77';g.beginPath();g.ellipse(b.x-24+sway,b.y-b.r*.5,b.r*.34,b.r*.16,-.2,0,7);g.fill()}
+g.restore()}
+function celebrationEffects(){if(celebrate<=0)return;g.save();for(let i=0;i<24;i++){const a=i*2.399+clock*.8,r=(1.4-celebrate)*95+22+(i%4)*12;g.globalAlpha=Math.min(1,celebrate);g.fillStyle=i%3===0?'#ffe17a':i%3===1?'#ff8fae':'#d8f8b5';g.save();g.translate(man.x+Math.cos(a)*r,man.y-85+Math.sin(a)*r);g.rotate(a+clock*3);g.fillRect(-4,-9,8,18);g.restore()}g.restore()}function cinematicOverlay(){g.save();const shade=g.createRadialGradient(W/2,H*.43,Math.min(W,H)*.13,W/2,H*.48,Math.max(W,H)*.75);shade.addColorStop(0,'#00000000');shade.addColorStop(1,'#152a2445');g.fillStyle=shade;g.fillRect(0,0,W,H);if(alertLevel>.15){g.strokeStyle='rgba(228,60,72,'+(alertLevel*.35)+')';g.lineWidth=8;g.strokeRect(4,4,W-8,H-8)}g.restore()}
+const illustratedGround=new Image();illustratedGround.onload=()=>{worldLayer=null};illustratedGround.src='../assets/garden-art.svg?version=33';function drawWorld(){if(worldLayer)return;const layer=document.createElement('canvas');layer.width=1600;layer.height=1400;const context=layer.getContext('2d');if(!context)return;const old=g;g=context;try{if(illustratedGround.complete&&illustratedGround.naturalWidth){g.drawImage(illustratedGround,0,0,1600,1400)}path();scenery();worldLayer=layer}finally{g=old}}function effects(){for(const coin of coins){if(coin.got)continue;g.save();g.translate(coin.x,coin.y-23+Math.sin(clock*3+coin.x)*6);g.fillStyle='#f3c348';g.strokeStyle='#fff2a5';g.lineWidth=4;g.beginPath();g.ellipse(0,0,14+Math.abs(Math.sin(clock*2))*6,22,0,0,7);g.fill();g.stroke();g.font='bold 20px system-ui';g.fillStyle='#8b5a20';g.textAlign='center';g.fillText('★',0,7);g.restore()}if(phase===1&&!leverOn){g.font='34px system-ui';g.fillText('⚙️',lever.x-20,lever.y-45)}for(const b of boosts){if(!b.used){g.font='36px system-ui';g.fillText('⚡',b.x-18,b.y-24)}}for(const p of footsteps){g.save();g.globalAlpha=Math.max(0,.42*(1-p.age/4.5));g.fillStyle='#6e5944';g.beginPath();g.ellipse(p.x,p.y,7,12,Math.PI/5,0,7);g.fill();g.restore()}for(const medal of medals){if(medal.got)continue;g.save();g.translate(medal.x,medal.y-17+Math.sin(clock*3+medal.x)*7);g.rotate(Math.sin(clock*2)*.13);g.font='bold 44px system-ui';g.textAlign='center';g.fillText('⭐',0,0);g.restore()}if(decoyTimer>0&&decoyTarget){g.strokeStyle='#f4c36e99';g.lineWidth=4;g.beginPath();g.arc(decoyTarget.x,decoyTarget.y,40+(5.5-decoyTimer)*25,0,7);g.stroke()}if(phase===0){g.font='54px system-ui';g.fillText('🗝️',key.x-30,key.y)}if(manMoving&&!hidden){for(let i=0;i<3;i++){const age=(clock*5+i/3)%1;g.fillStyle='rgba(237,216,170,'+(1-age)*.45+')';g.beginPath();g.arc(man.x-manFacing*(9+age*18),man.y+9-age*13,3+age*7,0,7);g.fill()}}if(wifeMoving){for(let i=0;i<2;i++){const age=(clock*2+i/2)%1;g.fillStyle='rgba(228,207,168,'+(1-age)*.32+')';g.beginPath();g.arc(wife.x-wifeFacing*(30+age*20),wife.y+9-age*10,8+age*13,0,7);g.fill()}}if(phase===0){g.save();g.translate(key.x,key.y-36);g.rotate(clock*1.3);g.strokeStyle='#fff4a7';g.lineWidth=4;g.beginPath();g.moveTo(-17,0);g.lineTo(17,0);g.moveTo(0,-17);g.lineTo(0,17);g.stroke();g.restore()}}function drawMiniMap(){const size=W>H?112:94,x=W-size-12,y=H>W?145:49,scale=size/1600;g.save();g.fillStyle='#1c3a42d9';g.beginPath();g.roundRect(x-5,y-5,size+10,size*.875+10,9);g.fill();g.beginPath();g.rect(x,y,size,size*.875);g.clip();g.fillStyle='#8bb77d';g.fillRect(x,y,size,size*.875);g.fillStyle='#e6c69b';g.fillRect(x+190*scale,y+140*scale,510*scale,370*scale);g.fillStyle='#d9b88c';g.fillRect(x+930*scale,y+735*scale,260*scale,185*scale);for(const p of decoys){g.fillStyle=p.used?'#6a6862':'#e6a840';g.beginPath();g.arc(x+p.x*scale,y+p.y*scale,3,0,7);g.fill()}for(const o of obstacles){g.fillStyle='#857461';g.beginPath();g.arc(x+o.x*scale,y+o.y*scale,Math.max(2,o.r*scale),0,7);g.fill()}for(const b of bushes){g.fillStyle='#316f46';g.beginPath();g.arc(x+b.x*scale,y+b.y*scale,Math.max(2,b.r*scale),0,7);g.fill()}for(const p of ponds){g.fillStyle='#63b1be';g.beginPath();g.ellipse(x+p.x*scale,y+p.y*scale,p.rx*scale,p.ry*scale,0,0,7);g.fill()}for(const coin of coins){if(!coin.got){g.fillStyle='#ffd54d';g.fillRect(x+coin.x*scale-2,y+coin.y*scale-2,4,4)}}const dots=[[wife,'#e64c66',5],[man,'#ffffff',4],[phase===0?key:leverOn?gate:lever,'#ffe36e',4]];for(const [p,color,r] of dots){g.fillStyle=color;g.beginPath();g.arc(x+p.x*scale,y+p.y*scale,r,0,7);g.fill();g.strokeStyle='#1b3340';g.lineWidth=1.3;g.stroke()}g.restore()}function render(){
+ W=innerWidth;H=innerHeight;
+ const ratio=Math.min(devicePixelRatio||1,W<650?1.6:1.85),cw=Math.round(W*ratio),ch=Math.round(H*ratio);
+ if(c.width!==cw||c.height!==ch){c.width=cw;c.height=ch}
+ g.setTransform(ratio,0,0,ratio,0,0);g.fillStyle=v7Level===2?'#0b2630':'#537c68';g.fillRect(0,0,W,H);
+ const fit=(W>H?Math.min(W/950,H/600):Math.min(W/550,H/850));
+ const desiredZoom=fit*v14Zoom();
+ const follow=captureTimer>0?wife:man;
+ const lookX=captureTimer>0?0:manFacing*cl(Math.abs(joystick.x)*62,12,62);
+ const lookY=v14LookY();
+ const fx=cl(follow.x+lookX,W/desiredZoom/2,1600-W/desiredZoom/2);
+ const fy=cl(follow.y+lookY,H/desiredZoom/2,1400-H/desiredZoom/2);
+ if(!v8Camera.ready){v8Camera.x=fx;v8Camera.y=fy;v8Camera.zoom=desiredZoom;v8Camera.ready=true}
+ const ease=Math.min(1,.12+(captureTimer>0?.07:0));
+ v8Camera.x+=(fx-v8Camera.x)*ease;v8Camera.y+=(fy-v8Camera.y)*ease;v8Camera.zoom+=(desiredZoom-v8Camera.zoom)*.1;
+ const zoom=v8Camera.zoom;
+ g.save();g.translate(W/2-v8Camera.x*zoom+(screenShake?Math.sin(clock*75)*screenShake*5:0),H/2-v8Camera.y*zoom+(screenShake?Math.cos(clock*63)*screenShake*4:0));g.scale(zoom,zoom);
+ drawWorld();if(worldLayer)g.drawImage(worldLayer,0,0);else{path();scenery()}
+ effects();if(v7Level===2){dynamicWorldDetails();movingGardenArt();}celebrationEffects();v8WorldAtmosphere();if(v7Level===1)v10VisionGlow();
+ if(v7Level===1)v14GoalHalo();
+ if(wife.mode==='chase'&&captureTimer<=0){g.save();g.globalAlpha=.5;g.strokeStyle='#d95054';g.lineWidth=5;g.beginPath();g.arc(wife.x,wife.y,72+Math.sin(clock*6)*4,0,Math.PI*2);g.stroke();g.restore()}
+ const drawMan=()=>{if(!hidden){if(invulnerable<=0||Math.floor(clock*6)%2===0)figure(man.x,man.y,false)}else{if(v13Enabled&&v13Ready&&v7Level===1)v13DrawFrame('husband_hide',Math.floor(v13HideTime*3),man.x,man.y,false);else{g.save();g.font='25px system-ui';g.fillText('👀',man.x-20,man.y-70);g.restore()}}};
+ if(captureTimer>0)v6DrawCapture();
+ else if(man.y<wife.y){drawMan();figure(wife.x,wife.y,true)}
+ else{figure(wife.x,wife.y,true);drawMan()}
+ if(v7Level===1){v09Foreground();v10Foreground();v10Footsteps();}
+ g.restore();
+ v8ScreenAtmosphere();
+ if(playing&&captureTimer<=0&&phase===0&&d(man,key)<230){g.save();g.fillStyle='#fff0bc';g.font='800 13px system-ui';g.textAlign='center';g.fillText('✦ Ключ поблизости',W/2,H*.26);g.restore()}
+ if(paused){g.save();g.fillStyle='#06152175';g.fillRect(0,0,W,H);g.restore()}
+}
+
+/* v0.5: mobile gameplay extension. Kept separate from the stable v0.4 logic. */
+let v5ActionPulse=0,v5PreviousMode='patrol',v5LastFootstep=0,v5Audio=null,v5Muted=false;
+const v5ActionButton=document.getElementById('interact'),v5Mission=document.getElementById('v5mission'),v5Proximity=document.getElementById('v5proximity'),v5SoundButton=document.getElementById('v5sound');
+try{v5Muted=localStorage.getItem('wife_game_mute')==='1'}catch(_){}
+v5SoundButton.textContent=v5Muted?'🔇':'🔊';
+function v5AudioUnlock(){
+ if(v5Muted)return;
+ try{const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;if(!v5Audio)v5Audio=new AC();if(v5Audio.state==='suspended')v5Audio.resume().catch(()=>{})}catch(_){}
+}
+function v5Tone(freq=520,duration=.12,type='sine',volume=.055){
+ if(v5Muted||!v5Audio||v5Audio.state!=='running')return;
+ try{const now=v5Audio.currentTime,osc=v5Audio.createOscillator(),gain=v5Audio.createGain();osc.type=type;osc.frequency.setValueAtTime(freq,now);gain.gain.setValueAtTime(Math.max(.0001,volume),now);gain.gain.exponentialRampToValueAtTime(.0001,now+duration);osc.connect(gain);gain.connect(v5Audio.destination);osc.start(now);osc.stop(now+duration+.01)}catch(_){}
+}
+function v5Sound(name){
+ if(name==='step')v5Tone(115,.045,'triangle',.015);
+ if(name==='key'){v5Tone(660,.12,'sine',.07);setTimeout(()=>v5Tone(880,.19,'sine',.055),105)}
+ if(name==='lever'){v5Tone(360,.17,'square',.027);setTimeout(()=>v5Tone(640,.14,'sine',.048),130)}
+ if(name==='alert'){v5Tone(310,.22,'sawtooth',.045);setTimeout(()=>v5Tone(245,.24,'sawtooth',.04),170)}
+ if(name==='caught'){v5Tone(240,.35,'sawtooth',.065);setTimeout(()=>v5Tone(170,.4,'triangle',.045),225)}
+ if(name==='win'){[523,659,784,1047].forEach((f,i)=>setTimeout(()=>v5Tone(f,.35,'sine',.052),i*125))}
+}
+v5SoundButton.onclick=()=>{v5Muted=!v5Muted;v5SoundButton.textContent=v5Muted?'🔇':'🔊';try{localStorage.setItem('wife_game_mute',v5Muted?'1':'0')}catch(_){}if(!v5Muted){v5AudioUnlock();v5Tone(650,.14)}};
+function v5CanSee(distance,running){
+ if(distance<118)return true;
+ const range=running?(v7Level===2?605:510):(v7Level===2?430:355);
+ if(distance>range)return false;
+ const dx=man.x-wife.x,dy=man.y-wife.y;
+ const inFront=dx*wifeFacing>-(running?100:15);
+ if(!inFront&&distance>175)return false;
+ for(const box of crates){
+  const vx=man.x-wife.x,vy=man.y-wife.y,den=vx*vx+vy*vy;
+  const t=den>0?Math.max(0,Math.min(1,((box.x-wife.x)*vx+(box.y-wife.y)*vy)/den)):0;
+  const px=wife.x+t*vx,py=wife.y+t*vy;
+  if(t>.08&&t<.92&&Math.hypot(px-box.x,py-box.y)<box.r*.83)return false;
+ }
+ return true;
+}
+function v5Nearby(){
+ if(phase===0&&d(man,key)<95)return {name:'🗝️ Подобрать ключ',target:key};
+ if(phase===1&&!leverOn&&d(man,lever)<103)return {name:'⚙️ Включить рычаг',target:lever};
+ if(phase===1&&leverOn&&d(man,gate)<110)return {name:'🚪 Открыть ворота',target:gate};
+ return null;
+}
+function v5Act(){
+ if(!playing||paused||captureTimer>0)return;
+ v5AudioUnlock();
+ const near=v5Nearby();
+ if(!near){say('Подойди к подсвеченной цели');v5Tone(165,.12);return}
+ v5ActionPulse=.2;
+ v5Tone(510,.085,'triangle',.027);
+}
+v5ActionButton.onclick=v5Act;
+document.addEventListener('keydown',e=>{if((e.code==='KeyE'||e.code==='Enter')&&!e.repeat){v5Act();e.preventDefault()}});
+const v5OriginalReset=reset;
+reset=function(){v5AudioUnlock();v5ActionPulse=0;v5PreviousMode='patrol';v5LastFootstep=0;v5OriginalReset();v5Mission.textContent='🗝️ 1 / 3 · Найди ключ';v5Proximity.style.display='none';};
+if(document.getElementById('start'))document.getElementById('start').onclick=reset;
+const v5OriginalEnd=end;
+end=function(won){v5Sound(won?'win':'caught');v5OriginalEnd(won);const heading=panel.querySelector('h2');if(heading)heading.textContent=won?'🏆 Побег удался!':'👠 Жена поймала тебя!';const para=panel.querySelector('p');if(para&&!won)para.textContent='Жена нашла тебя, подняла и унесла домой. Прячься в кустах, не беги у неё на виду и пользуйся укрытиями. Попробуй снова!';};
+const v5OriginalUpdate=update;
+update=function(dt){
+ const prevPhase=phase,prevLever=leverOn,prevLives=lives,prevMode=wife.mode,wasPlaying=playing;
+ v5OriginalUpdate(dt);
+ if(!wasPlaying||paused)return;
+ if(phase!==prevPhase)v5Sound('key');
+ if(!prevLever&&leverOn)v5Sound('lever');
+ if(prevLives>lives)v5Sound('caught');
+ if(prevMode!=='chase'&&wife.mode==='chase')v5Sound('alert');
+ if(manMoving&&!hidden&&clock>v5LastFootstep){v5LastFootstep=clock+(sprint?.27:.48);v5Sound('step')}
+ if(v5ActionPulse>0)v5ActionPulse=0;
+ v5Mission.textContent=phase===0?'🗝️ 1 / 3 · Подбери ключ':!leverOn?'⚙️ 2 / 3 · Включи рычаг':'🚪 3 / 3 · Открой ворота';
+ const n=v5Nearby();
+ v5ActionButton.classList.toggle('ready',!!n);
+ v5ActionButton.querySelector('span').textContent=n?(phase===0?'🗝️':!leverOn?'⚙️':'🚪'):'✋';
+ v5Proximity.textContent=n?'Нажми «Действие»: '+n.name:'';
+ v5Proximity.style.display=n?'block':'none';
+};
+const v5OriginalEffects=effects;
+effects=function(){
+ v5OriginalEffects();
+ if(!playing)return;
+ const target=phase===0?key:!leverOn?lever:gate;
+ const t=clock*3.5,rad=38+5*Math.sin(t),tag=phase===0?'КЛЮЧ':!leverOn?'РЫЧАГ':'ВОРОТА';
+ g.save();g.lineWidth=5;g.strokeStyle='#ffdc56';g.fillStyle='rgba(255,222,88,.13)';g.beginPath();g.ellipse(target.x,target.y,rad,rad*.6,0,0,Math.PI*2);g.fill();g.stroke();
+ g.fillStyle='#fff3cc';g.strokeStyle='#65401c';g.lineWidth=4;g.font='bold 21px system-ui';g.textAlign='center';g.strokeText(tag,target.x,target.y-52);g.fillText(tag,target.x,target.y-52);
+ if(d(man,target)<180){g.font='bold 16px system-ui';g.strokeText('✋ ДЕЙСТВИЕ',target.x,target.y-80);g.fillText('✋ ДЕЙСТВИЕ',target.x,target.y-80)}
+ g.restore();
+};
+
+
+/* v0.6 Motion: stride-driven animation and 4-stage capture cutscene. */
+const v6Gait={wife:0,husband:0};
+let v6CapturePose='neutral',v6CaptureWasActive=false,v6CaptureStage=-1;
+const v6Cinema=document.getElementById('v6cinema'),v6StageLabel=document.getElementById('v6stage'),v6StageFill=document.getElementById('v6cinemafill');
+const v6CaptureTitles=['Жена тебя заметила!','Она наклоняется...','Поднимает тебя!','Несёт домой'];
+const v6CaptureEmojis=['❗','👀','🙌','👠'];
+function v6Ease(t){t=Math.max(0,Math.min(1,t));return t*t*(3-2*t)}
+function v6DrawMiniAt(x,y,angle=0,scale=1){
+ const sheet=animatedSprites.husband_walk;
+ const portrait=artSprites.husband||spriteHusband;
+ g.save();g.translate(x,y);g.rotate(angle);g.scale(scale*wifeFacing,scale);
+ if(sheet){g.drawImage(sheet,0,0,128,210,-32,-104,64,104)}
+ else if(portrait && portrait.complete && portrait.naturalWidth){g.drawImage(portrait,-29,-104,58,104)}
+ else{g.fillStyle='#f1b38e';g.beginPath();g.arc(0,-84,16,0,Math.PI*2);g.fill();g.fillStyle='#f5eee1';g.fillRect(-15,-69,30,43);g.fillStyle='#4f3526';g.fillRect(-13,-26,10,26);g.fillRect(3,-26,10,26)}
+ g.restore();
+}
+function v6DrawCapture(){
+ const age=Math.max(0,4.6-captureTimer);
+ const dir=wifeFacing;
+ const miniStandX=man.x,miniStandY=man.y;
+ if(age<.48){
+  v6CapturePose='neutral';figure(wife.x,wife.y,true);
+  v6DrawMiniAt(miniStandX,miniStandY,Math.sin(clock*42)*.07,1);
+  g.save();g.font='bold 48px system-ui';g.textAlign='center';g.fillText('❗',wife.x+dir*40,wife.y-440);g.restore();return;
+ }
+ if(age<1.32){
+  v6CapturePose='reach';
+  const lower=v6Ease((age-.48)/.84);
+  g.save();g.translate(wife.x,wife.y);g.scale(1+.02*lower,1-.26*lower);figure(0,0,true);g.restore();
+  v6DrawMiniAt(miniStandX,miniStandY,Math.sin(clock*24)*.1,1);
+  g.save();g.strokeStyle='#ffdb9b';g.lineWidth=9;g.lineCap='round';g.beginPath();g.moveTo(wife.x+dir*42,wife.y-196);g.quadraticCurveTo(wife.x+dir*91,wife.y-126,miniStandX,miniStandY-83);g.stroke();g.restore();
+  return;
+ }
+ if(age<2.12){
+  v6CapturePose='reach';const lift=v6Ease((age-1.32)/.8);
+  g.save();g.translate(wife.x,wife.y);g.scale(1, .74+.26*lift);figure(0,0,true);g.restore();
+  const x=miniStandX*(1-lift)+(wife.x+dir*74)*lift;
+  const y=miniStandY*(1-lift)+(wife.y-135)*lift;
+  v6DrawMiniAt(x,y,dir*.18*lift,1-.17*lift);
+  g.save();g.fillStyle='#ffeec2';g.font='bold 28px system-ui';g.textAlign='center';g.fillText('!',x,y-122);g.restore();
+  return;
+ }
+ v6CapturePose='carry';
+ // The existing wife_carry strip already contains both characters.
+ if(animatedSprites.wife_carry){figure(wife.x,wife.y,true)}
+ else{figure(wife.x,wife.y,true);v6DrawMiniAt(wife.x+dir*64,wife.y-164,dir*.27,.85)}
+ g.save();g.globalAlpha=.7;g.font='bold 24px system-ui';g.textAlign='center';
+ if(Math.floor(age*3)%2===0)g.fillText('🏠',wife.x+dir*120,wife.y-405);
+ g.restore();
+}
+function v6CaptureUi(){
+ if(captureTimer<=0){v6Cinema.style.display='none';v6CaptureStage=-1;v6CaptureWasActive=false;return}
+ const age=Math.max(0,4.6-captureTimer);
+ const stage=age<.48?0:age<1.32?1:age<2.12?2:3;
+ if(stage!==v6CaptureStage){v6CaptureStage=stage;
+  if(stage===1)v5Tone(240,.17,'triangle',.04);
+  if(stage===2)v5Tone(470,.22,'sine',.045);
+  if(stage===3)v5Tone(190,.27,'triangle',.05);
+ }
+ v6Cinema.style.display='block';
+ v6Cinema.querySelector('.v6cinemaicon').textContent=v6CaptureEmojis[stage];
+ v6StageLabel.textContent=v6CaptureTitles[stage];
+ v6StageFill.style.width=Math.round(age/4.6*100)+'%';
+ v6CaptureWasActive=true;
+}
+const v6PreReset=reset;
+reset=function(){v6Gait.wife=0;v6Gait.husband=0;v6CapturePose='neutral';v6CaptureWasActive=false;v6CaptureStage=-1;v6Cinema.style.display='none';v6PreReset()};
+if(document.getElementById('start'))document.getElementById('start').onclick=reset;
+const v6PreviousEnd=end;
+end=function(won){v6Cinema.style.display='none';v6PreviousEnd(won);};
+const v6PreviousUpdate=update;
+update=function(dt){
+ const wx=wife.x,wy=wife.y,mx=man.x,my=man.y;
+ v6PreviousUpdate(dt);
+ if(!playing||paused){if(!playing)v6Cinema.style.display='none';return}
+ if(captureTimer<=0){
+  if(wifeMoving)v6Gait.wife+=Math.hypot(wife.x-wx,wife.y-wy)/18;
+  if(manMoving)v6Gait.husband+=Math.hypot(man.x-mx,man.y-my)/15;
+ }
+ v6CaptureUi();
+};
+
+
+/* v0.7 — two-level campaign with independent level geometry and night garden rendering. */
+let v7Level=1,v7PreviousLevel=1;
+const v7Start={man:{x:490,y:740},wife:{x:460,y:390}};
+const v7MapTag=document.getElementById('v7mapTag'),v7Help=document.getElementById('v7help');
+const v7Base={
+ key:{...key},lever:{...lever},gate:{...gate},
+ medals:medals.map(p=>({...p})),coins:coins.map(p=>({...p})),
+ crates:crates.map(p=>({...p})),ponds:ponds.map(p=>({...p})),
+ boosts:boosts.map(p=>({...p})),decoys:decoys.map(p=>({...p})),
+ bushes:bushes.map(p=>({...p})),obstacles:obstacles.map(p=>({...p})),
+ trees:trees.map(p=>({...p})),flowerPatches:flowerPatches.map(p=>({...p}))
+};
+const v7Night={
+ key:{x:410,y:315},lever:{x:1200,y:260},gate:{x:1460,y:1150},
+ medals:[{x:260,y:440},{x:890,y:360},{x:1260,y:990}],
+ coins:[{x:290,y:990},{x:510,y:230},{x:765,y:1140},{x:1130,y:510},{x:1430,y:760}],
+ crates:[{x:490,y:780,r:33},{x:920,y:1040,r:33},{x:1220,y:740,r:33}],
+ ponds:[{x:910,y:770,rx:145,ry:96},{x:340,y:585,rx:90,ry:60}],
+ boosts:[{x:245,y:680},{x:1080,y:250}],
+ decoys:[{x:610,y:320},{x:1170,y:940},{x:900,y:1210}],
+ bushes:[{x:260,y:1030,r:84},{x:485,y:565,r:88},{x:720,y:410,r:96},{x:1080,y:430,r:90},{x:1315,y:660,r:96},{x:1170,y:1110,r:92},{x:620,y:1190,r:82},{x:1430,y:360,r:82}],
+ obstacles:[
+ {x:550,y:580,r:77},{x:800,y:575,r:90},{x:1030,y:585,r:73},
+ {x:430,y:905,r:68},{x:640,y:895,r:84},{x:1120,y:900,r:78},
+ {x:490,y:780,r:33},{x:920,y:1040,r:33},{x:1220,y:740,r:33},
+ {x:845,y:270,r:62},{x:1240,y:430,r:53},{x:730,y:1260,r:58}
+ ],
+ trees:[{x:160,y:290},{x:590,y:190},{x:1020,y:145},{x:1520,y:520},{x:1480,y:1340}],
+ flowerPatches:[{x:320,y:380},{x:1370,y:450},{x:950,y:1190}]
+};
+function v7ReplaceList(list,items){list.splice(0,list.length,...items.map(o=>({...o})))}
+function v7Spawn(){
+ const a=v7Level===2?{man:{x:200,y:1170},wife:{x:1130,y:660}}:{man:{x:490,y:740},wife:{x:460,y:390}};
+ v7Start.man={...a.man};v7Start.wife={...a.wife};
+ man.x=a.man.x;man.y=a.man.y;wife.x=a.wife.x;wife.y=a.wife.y;
+ wife.tx=wife.x;wife.ty=wife.y;
+}
+function v7InstallLevel(){
+ const data=v7Level===2?v7Night:v7Base;
+ for(const tag of ['medals','coins','crates','ponds','boosts','decoys','bushes','obstacles','trees','flowerPatches']){
+  v7ReplaceList(({medals,coins,crates,ponds,boosts,decoys,bushes,obstacles,trees,flowerPatches})[tag],data[tag]);
+ }
+ Object.assign(key,data.key);Object.assign(lever,data.lever);Object.assign(gate,data.gate);
+ v7Spawn();
+ worldLayer=null; // Important: invalidate cached daytime background when switching levels.
+ v7MapTag.textContent=v7Level===2?'🌙 Уровень 2 · Ночной сад':'🏡 Уровень 1 · Побег из дома';
+ v7Help.textContent=v7Level===2?'Тише! Жена слышит тебя издалека':'Найди ключ, включи рычаг, открой ворота';
+}
+function v7Menu(){
+ v7CinemaHide();
+ playing=false;paused=false;overlay.style.display='flex';resetStick();
+ const prefix='<h2>👠 Большая жена и мелкий муж</h2><p>Выбери уровень. Муж ростом до колена жены. Управление: джойстик, БЕГ, Укрытие и Действие.</p>';
+ panel.innerHTML=prefix+'<div id="v7levels"><button id="v7level1" class="v7levelbtn">🏡 Уровень 1 · Побег из дома</button><button id="v7level2" class="v7levelbtn">🌙 Уровень 2 · Ночной сад</button></div>';
+ document.getElementById('v7level1').onclick=()=>v7Choose(1);
+ document.getElementById('v7level2').onclick=()=>v7Choose(2);
+}
+function v7CinemaHide(){v6Cinema.style.display='none'}
+function v7Choose(level){v7Level=level===2?2:1;reset()}
+const v7OldReset=reset;
+reset=function(){
+ v7InstallLevel();
+ // Separate best records by level: restore the record before the existing end() logic uses it.
+ const record=v7Level===2?'wife_escape_best_night':'giant_escape_best';
+ try{const n=Number(localStorage.getItem(record));bestTime=n>0&&Number.isFinite(n)?n:null}catch(_){bestTime=null}
+ v7OldReset();
+ if(v7Level===2){
+  // A smarter night patrol starts near the maze instead of at the daytime front door.
+  wife.timer=2.2;wife.tx=960;wife.ty=585;
+  say('🌙 Ночной сад: найди ключ и обойди лабиринт!');
+ }else say('🏡 Уровень 1: побег из дома');
+ v7MapTag.textContent=v7Level===2?'🌙 Уровень 2 · Ночной сад':'🏡 Уровень 1 · Побег из дома';
+};
+document.getElementById('v7home').onclick=v7Menu;
+const v7OldEnd=end;
+end=function(won){
+ v7OldEnd(won);
+ if(won&&v7Level===2&&bestTime!==null){try{localStorage.setItem('wife_escape_best_night',String(bestTime))}catch(_){}}
+ const title=panel.querySelector('h2');
+ if(title)title.textContent=won?(v7Level===2?'🏆 Ночной сад пройден!':'🏆 Побег удался!'):'👠 Жена поймала тебя!';
+ if(won&&v7Level===1){const next=document.createElement('button');next.textContent='🌙 Следующий уровень — Ночной сад';next.onclick=()=>v7Choose(2);panel.appendChild(next)}
+ const btn=document.createElement('button');btn.textContent='🗺️ Выбор уровней';btn.onclick=v7Menu;panel.appendChild(btn);
+};
+const v7OldHud=updateHud;
+updateHud=function(){
+ v7OldHud();
+ if(v7Level===2){
+  quest.textContent=phase===0?'🌙 Найди ключ у фонарей':!leverOn?'🌙 Запусти механизм ворот':'🌙 Выбегай к воротам';
+ }
+};
+const v7OldCanSee=v5CanSee;
+v5CanSee=function(distance,running){
+ if(v7Level===2&&distance>145&&!running){ // Dense hedges make creeping through the maze viable.
+  for(const b of bushes){
+   if(d(man,b)<b.r*.75)return false;
+  }
+ }
+ return v7OldCanSee(distance,running);
+};
+const v7OldUpdate=update;
+update=function(dt){
+ v7OldUpdate(dt);
+ if(!playing||paused)return;
+ v7Help.style.display=captureTimer>0?'none':'block';
+ v7Help.textContent=v7Level===2?('🌙 '+(wife.mode==='chase'?'Беги к кустам!':wife.mode==='search'?'Она ищет твои следы':'Не шуми — жена слышит бег')):'🏡 Избегай взгляда жены';
+};
+const v7OriginalDrawWorld=drawWorld;
+drawWorld=function(){
+ if(v7Level!==2){v7OriginalDrawWorld();return}
+ if(worldLayer)return;
+ const background=document.createElement('canvas');background.width=1600;background.height=1400;
+ const ctx=background.getContext('2d');if(!ctx)return;
+ const orig=g;g=ctx;try{v7PaintNight()}finally{g=orig}
+ worldLayer=background;
+};
+function v7PaintNight(){
+ const sky=g.createLinearGradient(0,0,1600,1400);
+ sky.addColorStop(0,'#173a47');sky.addColorStop(.55,'#183d43');sky.addColorStop(1,'#0e313c');
+ g.fillStyle=sky;g.fillRect(0,0,1600,1400);
+ // Stars and fireflies, deterministic so cached map is stable.
+ for(let i=0;i<105;i++){
+  const x=(i*379+83)%1550+20,y=(i*193+117)%1300+45;
+  g.globalAlpha=.1+(i%5)*.04;g.fillStyle=i%3?'#d7edbd':'#fff6c6';
+  g.beginPath();g.arc(x,y,1.6+(i%4),0,Math.PI*2);g.fill()
+ }g.globalAlpha=1;
+ // Maze routes and moonlit paving.
+ g.lineCap='round';g.lineJoin='round';
+ g.strokeStyle='#31544f';g.lineWidth=132;
+ g.beginPath();g.moveTo(200,1170);g.lineTo(330,870);g.lineTo(400,320);g.lineTo(720,250);g.lineTo(1200,260);g.lineTo(1300,770);g.lineTo(1460,1150);g.stroke();
+ g.strokeStyle='#c5b397';g.lineWidth=112;g.stroke();
+ g.strokeStyle='#ead9aa';g.lineWidth=8;g.setLineDash([12,26]);g.stroke();g.setLineDash([]);
+ // Crossings to prevent cul-de-sacs.
+ g.strokeStyle='#bea98a';g.lineWidth=85;
+ const crossroads=[[[320,980],[1050,1140]],[[420,710],[1390,690]],[[690,330],[630,1160]],[[990,340],[1160,1090]]];
+ for(const line of crossroads){g.beginPath();g.moveTo(...line[0]);g.lineTo(...line[1]);g.stroke()}
+ // Formal perimeter.
+ g.strokeStyle='#b39a78';g.lineWidth=22;g.strokeRect(42,42,1516,1316);
+ g.strokeStyle='#2b5945';g.lineWidth=12;
+ for(let k=65;k<1550;k+=62){g.beginPath();g.moveTo(k,44);g.lineTo(k,78);g.stroke()}
+ // Pond with moonlight ripple.
+ for(const pond of ponds){g.fillStyle='#163e56';g.beginPath();g.ellipse(pond.x,pond.y,pond.rx+13,pond.ry+9,0,0,Math.PI*2);g.fill();
+ g.fillStyle='#468b95';g.beginPath();g.ellipse(pond.x,pond.y,pond.rx,pond.ry,0,0,Math.PI*2);g.fill();
+ g.strokeStyle='#a8d6d1';g.lineWidth=3;
+ for(let k=0;k<3;k++){g.beginPath();g.ellipse(pond.x+(-1+k)*34,pond.y-8+k*11,25,7,0,0,Math.PI*2);g.stroke()}}
+ // Bushes are both visible landmarks and gameplay cover.
+ for(const b of bushes){
+  g.fillStyle='#092923';g.beginPath();g.ellipse(b.x,b.y+18,b.r*1.1,b.r*.58,0,0,Math.PI*2);g.fill();
+  for(let k=0;k<7;k++){
+   const xx=b.x+Math.cos(k*2.4)*b.r*.56,yy=b.y+Math.sin(k*2.4)*b.r*.35;
+   g.fillStyle=k%2?'#316a47':'#3e7750';g.beginPath();g.arc(xx,yy,b.r*.42,0,Math.PI*2);g.fill()}
+  g.fillStyle='#b0d2a2';g.font='bold 17px system-ui';g.textAlign='center';g.fillText('🌿',b.x,b.y-19)
+ }
+ // Massive stone columns, hedge islands and obstructions.
+ for(const p of obstacles){
+  g.fillStyle='#0b2229a9';g.beginPath();g.ellipse(p.x+6,p.y+12,p.r+8,p.r*.67,0,0,Math.PI*2);g.fill();
+  g.fillStyle='#415a50';g.beginPath();g.ellipse(p.x,p.y,p.r,p.r*.69,0,0,Math.PI*2);g.fill();
+  g.strokeStyle='#99a78b';g.lineWidth=6;g.stroke();
+  g.fillStyle='#50715c';g.beginPath();g.ellipse(p.x-9,p.y-12,p.r*.62,p.r*.34,-.3,0,Math.PI*2);g.fill()
+ }
+ for(const box of crates){g.fillStyle='#80503a';g.fillRect(box.x-32,box.y-32,64,64);g.strokeStyle='#deb884';g.lineWidth=4;g.strokeRect(box.x-27,box.y-27,54,54)}
+ // Trees, lanterns, and shadow pools.
+ for(const t of trees){g.fillStyle='#644a3d';g.fillRect(t.x-14,t.y-45,28,100);
+  for(let n=0;n<5;n++){g.fillStyle=n%2?'#2a593f':'#255341';g.beginPath();g.arc(t.x+Math.sin(n*2)*42,t.y-64+Math.cos(n*2)*35,54,0,Math.PI*2);g.fill()}}
+ for(const lamp of [{x:340,y:265},{x:925,y:205},{x:1170,y:305},{x:1380,y:1020}]){
+  const glow=g.createRadialGradient(lamp.x,lamp.y,0,lamp.x,lamp.y,135);glow.addColorStop(0,'#ffdf8a89');glow.addColorStop(1,'#ffdf8a00');
+  g.fillStyle=glow;g.beginPath();g.arc(lamp.x,lamp.y,135,0,Math.PI*2);g.fill();
+  g.fillStyle='#263740';g.fillRect(lamp.x-4,lamp.y-20,8,63);g.fillStyle='#ffd98a';g.beginPath();g.arc(lamp.x,lamp.y-28,13,0,Math.PI*2);g.fill();
+ }
+ // Distinct night exit, clearly different from original daytime exit.
+ g.fillStyle='#573a38';g.fillRect(1380,1080,160,110);
+ for(let i=0;i<7;i++){g.fillStyle=i%2?'#93623f':'#7d4a39';g.fillRect(1386+i*20,1086,18,96)}
+ g.strokeStyle='#f7ca73';g.lineWidth=7;g.strokeRect(1380,1080,160,110);
+ g.font='bold 27px system-ui';g.fillStyle='#ffdd91';g.fillText('ВЫХОД',1384,1063);
+ g.font='bold 24px system-ui';g.fillText('🌙 НОЧНОЙ САД',80,119);
+}
+const v7BaseMoving=movingGardenArt;
+movingGardenArt=function(){if(v7Level!==2)v7BaseMoving()};
+const v7BaseDynamic=dynamicWorldDetails;
+dynamicWorldDetails=function(){if(v7Level!==2)v7BaseDynamic()};
+const v7BaseCelebration=celebrationEffects;
+celebrationEffects=function(){v7BaseCelebration()};
+v7Menu();
+
+
+/* v0.8 cohesive UI, responsive camera, illustrated atmospherics, navigation. */
+const v8Camera={x:0,y:0,zoom:1,ready:false};
+const v8Top=document.getElementById('v8ui'),v8Modal=document.getElementById('v8modal'),v8ModalCard=document.getElementById('v8modalCard');
+const v8Els={level:document.getElementById('v8levelname'),objective:document.getElementById('v8objective'),progress:document.getElementById('v8progress'),stamina:document.getElementById('v8stamina'),staminaText:document.getElementById('v8staminaText'),threat:document.getElementById('v8threat'),threatText:document.getElementById('v8threatText'),lives:document.getElementById('v8lives'),loot:document.getElementById('v8loot'),timer:document.getElementById('v8timer'),tip:document.getElementById('v8tiptext'),tipicon:document.getElementById('v8tipicon'),waypoint:document.getElementById('v8waypoint'),distance:document.getElementById('v8distance')};
+let v8HudClock=0,v8MapWasPaused=false,v8ModalType='';
+function v8WorldAtmosphere(){
+ g.save();
+ if(v7Level===2){
+  for(let i=0;i<36;i++){
+   const xx=(i*389+73)%1480+70,yy=(i*223+81)%1260+70,tw=Math.sin(clock*1.7+i*3.2);
+   g.globalAlpha=.23+Math.max(0,tw)*.36;
+   g.fillStyle='#e1efb0';g.beginPath();g.arc(xx+Math.sin(clock*.38+i)*14,yy+Math.cos(clock*.31+i)*11,1.6+(i%3)*.5,0,Math.PI*2);g.fill()
+  }
+  for(const lamp of [{x:340,y:265},{x:925,y:205},{x:1170,y:305},{x:1380,y:1020}]){
+   const rad=g.createRadialGradient(lamp.x,lamp.y,5,lamp.x,lamp.y,130);
+   rad.addColorStop(0,'#ffe2a22b');rad.addColorStop(1,'#ffd98000');g.globalAlpha=1;g.fillStyle=rad;
+   g.beginPath();g.arc(lamp.x,lamp.y,130,0,Math.PI*2);g.fill()
+  }
+ }else{
+  // Moving patches of light add depth without obscuring the original illustrated garden.
+  for(let i=0;i<22;i++){
+   const xx=80+(i*179)%1460,yy=140+(i*263)%1150;
+   g.globalAlpha=.11;g.fillStyle=i%2?'#fff2a9':'#f7e9c2';
+   g.beginPath();g.ellipse(xx+Math.sin(clock*.13+i)*7,yy+Math.cos(clock*.12+i)*5,6+(i%5)*2,2+(i%3),-.3,0,Math.PI*2);g.fill()
+  }
+ }
+ g.restore();
+}
+function v8ScreenAtmosphere(){
+ g.save();
+ const warm=v7Level===2?'#081628':'#402510';
+ const vignette=g.createRadialGradient(W*.5,H*.45,Math.max(W,H)*.19,W*.5,H*.5,Math.max(W,H)*.72);
+ vignette.addColorStop(0,'#00000000');vignette.addColorStop(1,v7Level===2?'#040b1b8f':'#37250c70');
+ g.fillStyle=vignette;g.fillRect(0,0,W,H);
+ if(v7Level===2){const haze=g.createLinearGradient(0,0,0,H);haze.addColorStop(0,'#13285230');haze.addColorStop(1,'#080a180d');g.fillStyle=haze;g.fillRect(0,0,W,H)}
+ g.restore();
+}
+function v8Time(s){return String(Math.floor(s/60)).padStart(2,'0')+':'+String(Math.floor(s%60)).padStart(2,'0')}
+function v8CurrentTarget(){return phase===0?key:!leverOn?lever:gate}
+function v8UpdateHud(){
+ document.body.classList.toggle('v8-capture-mode',playing&&captureTimer>0);
+ const p=phase===0?0:!leverOn?1:2;
+ v8Els.level.textContent=v7Level===2?'УРОВЕНЬ 02 · НОЧНОЙ САД':'УРОВЕНЬ 01 · ПОБЕГ ИЗ ДОМА';
+ v8Els.objective.textContent=p===0?'Найти ключ':p===1?'Запустить механизм':'Открыть ворота';
+ for(let i=0;i<3;i++){const bar=v8Els.progress.children[i];if(bar)bar.className=i<p?'done':i===p?'active':''}
+ v8Els.stamina.style.width=Math.round(stamina)+'%';v8Els.staminaText.textContent=Math.round(stamina)+'%';
+ v8Els.threat.style.width=Math.round(alertLevel*100)+'%';
+ v8Els.threatText.textContent=wife.mode==='chase'?'ПОГОНЯ':wife.mode==='search'?'ПОИСК':alertLevel>.3?'НАСТОРОЖЕ':'ТИХО';
+ v8Els.lives.textContent='♥ '.repeat(lives)+'♡ '.repeat(3-lives);
+ v8Els.loot.textContent='★ '+medalsFound+'/3 · ◈ '+coinsFound+'/5';
+ v8Els.timer.textContent=v8Time(elapsed);
+ const target=v8CurrentTarget(),distance=Math.round(d(man,target));
+ const label=p===0?'КЛЮЧ':p===1?'РЫЧАГ':'ВОРОТА';
+ v8Els.distance.textContent=label+' · '+distance+' м';
+ const dx=target.x-man.x,dy=target.y-man.y,theta=Math.atan2(dy,dx);
+ const arrow=['→','↘','↓','↙','←','↖','↑','↗'][(Math.round(theta/(Math.PI/4))+8)%8];
+ v8Els.waypoint.textContent=arrow+' '+label+' · '+distance+' м';
+ v8Els.tipicon.textContent=wife.mode==='chase'?'!':hidden?'✿':p===2?'➜':'✦';
+ v8Els.tip.textContent=wife.mode==='chase'?'Жена рядом! Найди укрытие':hidden?'Ты в укрытии — не двигайся':captureTimer>0?'Жена несёт тебя домой':v5Nearby()?'Нажми «Действие» рядом с целью':p===0?'Ищи ключ около сарая':p===1?'Найди и запусти рычаг':'Доберись до ворот';
+ v8Els.waypoint.style.display=captureTimer>0?'none':'block';
+ document.getElementById('v8music').textContent=v5Muted?'♩':'♫';
+ v8Top.style.display=playing?'block':'none';
+}
+function v8Menu(){
+ document.body.classList.remove('v8-capture-mode');
+ v7CinemaHide();playing=false;paused=false;overlay.style.display='flex';resetStick();v8Modal.style.display='none';v8ModalType='';v8Top.style.display='none';
+ const best=(key)=>{try{const x=Number(localStorage.getItem(key));return x>0&&Number.isFinite(x)?'Рекорд '+v8Time(x):'Новый вызов'}catch(_){return 'Новый вызов'}};
+ panel.innerHTML='<section class="v8menu"><div class="v8eyebrow">ИНТЕРАКТИВНОЕ ПРИКЛЮЧЕНИЕ · 2D GAME</div><div class="v8menutitle">Большая жена<br><em>и мелкий муж</em></div><p class="v8menudesc">Тихо выберись из сада, найди ключ и ворота. Но огромная жена внимательно следит за каждым твоим шагом.</p><div class="v8menulevels"><button id="v8level1" class="v8levelcard"><div class="v8levelart day">🏡</div><div class="v8leveldetails"><div><b>01 · Побег из дома</b><small>'+best('giant_escape_best')+'</small></div><span class="v8levelarrow">▶</span></div></button><button id="v8level2" class="v8levelcard"><div class="v8levelart night">🌙</div><div class="v8leveldetails"><div><b>02 · Ночной сад</b><small>'+best('wife_escape_best_night')+'</small></div><span class="v8levelarrow">▶</span></div></button></div><button id="v8how" class="v8secondary">⌘ Как играть</button><div class="v8menufooter">Два уровня · Плавная камера · Сенсорное управление · Достижения</div></section>';
+ document.getElementById('v8level1').onclick=()=>v8Start(1);
+ document.getElementById('v8level2').onclick=()=>v8Start(2);
+ document.getElementById('v8how').onclick=v8Help;
+}
+function v8Start(level){document.body.classList.remove('v8-capture-mode');v7Level=level===2?2:1;v8Camera.ready=false;reset();v8Modal.style.display='none';v8ModalType='';v8Top.style.display='block';v8UpdateHud()}
+function v8ModalShow(title,body,buttons){
+ v8ModalCard.innerHTML='<h2>'+title+'</h2>'+body+'<div id="v8modalActions" class="v8modalactions"></div>';
+ const actions=document.getElementById('v8modalActions');
+ for(const b of buttons){const btn=document.createElement('button');btn.textContent=b.label;if(b.quiet)btn.className='quiet';btn.onclick=b.action;actions.appendChild(btn)}
+ v8Modal.style.display='flex';v8Modal.setAttribute('aria-hidden','false');
+}
+function v8CloseModal(){v8Modal.style.display='none';v8ModalType='';v8Modal.setAttribute('aria-hidden','true');if(playing){paused=false;document.getElementById('pause').textContent='⏸'}}
+function v8Help(){v8ModalType='help';v8ModalShow('Как играть','<p>🕹️ Джойстик — перемещение. 🏃 БЕГ — быстрее, но шумнее. 🌿 УКРЫТИЕ — прячься в кустах. ✋ ДЕЙСТВИЕ — взять ключ, активировать рычаг, открыть ворота.</p><p>Следи за индикатором обнаружения. Жена видит впереди себя и слышит бег. Отмечай цель по стрелке или открой большую карту.</p>',[{label:'Понятно',action:()=>{if(!playing){v8Modal.style.display='none';v8ModalType=''}else v8CloseModal()}}])}
+function v8Pause(){
+ if(!playing)return;
+ paused=true;v8ModalType='pause';
+ v8ModalShow('Игра на паузе','<p>Текущий уровень: '+(v7Level===2?'Ночной сад':'Побег из дома')+' · Время '+v8Time(elapsed)+'</p>',[
+  {label:'▶ Продолжить',action:v8CloseModal},
+  {label:'◇ Большая карта',quiet:true,action:v8Map},
+  {label:'↻ Начать заново',quiet:true,action:()=>v8Start(v7Level)},
+  {label:'⌂ Выбрать уровень',quiet:true,action:v8Menu}]);
+}
+function v8DrawMap(ctx,width,height){
+ const w=width,h=height,sx=w/1600,sy=h/1400;
+ ctx.clearRect(0,0,w,h);ctx.fillStyle=v7Level===2?'#183940':'#78a477';ctx.fillRect(0,0,w,h);
+ ctx.save();ctx.scale(sx,sy);
+ if(v7Level===1){ctx.fillStyle='#d8c2a0';ctx.fillRect(190,140,510,370);ctx.fillStyle='#aa7855';ctx.fillRect(960,760,200,160)}
+ else{ctx.strokeStyle='#cfb59a';ctx.lineWidth=105;ctx.beginPath();ctx.moveTo(200,1170);ctx.lineTo(330,870);ctx.lineTo(400,320);ctx.lineTo(720,250);ctx.lineTo(1200,260);ctx.lineTo(1300,770);ctx.lineTo(1460,1150);ctx.stroke()}
+ for(const p of ponds){ctx.fillStyle='#5ba1ae';ctx.beginPath();ctx.ellipse(p.x,p.y,p.rx,p.ry,0,0,Math.PI*2);ctx.fill()}
+ for(const p of obstacles){ctx.fillStyle=v7Level===2?'#486353':'#797262';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()}
+ for(const p of bushes){ctx.fillStyle='#275940';ctx.beginPath();ctx.arc(p.x,p.y,p.r*.75,0,Math.PI*2);ctx.fill()}
+ function dot(p,color,r){ctx.fillStyle='#0b1725';ctx.beginPath();ctx.arc(p.x,p.y,r+6,0,Math.PI*2);ctx.fill();ctx.fillStyle=color;ctx.beginPath();ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.fill()}
+ dot(gate,'#ecdb9c',24);dot(lever,'#f6b964',22);dot(key,'#ffd466',20);dot(wife,'#f15e71',27);dot(man,'#fff',22);
+ const tar=v8CurrentTarget();ctx.lineWidth=8;ctx.setLineDash([14,12]);ctx.strokeStyle='#ffdf7b';ctx.beginPath();ctx.moveTo(man.x,man.y);ctx.lineTo(tar.x,tar.y);ctx.stroke();ctx.setLineDash([]);
+ ctx.restore();
+}
+function v8Map(){
+ if(!playing)return;
+ paused=true;v8ModalType='map';
+ v8ModalShow('Карта территории','<p>Белая точка — муж, красная — жена, жёлтая линия — направление к цели.</p><canvas id="v8mapCanvas" width="640" height="560"></canvas>',[
+  {label:'▶ Вернуться в игру',action:v8CloseModal},
+  {label:'⌂ Выбор уровня',quiet:true,action:v8Menu}]);
+ const canvas=document.getElementById('v8mapCanvas'),ctx=canvas&&canvas.getContext('2d');
+ if(ctx)v8DrawMap(ctx,640,560);
+}
+const v8ResetPrevious=reset;
+reset=function(){v8Camera.ready=false;v8ResetPrevious();v8Top.style.display='block';v8UpdateHud()};
+if(document.getElementById('start'))document.getElementById('start').onclick=reset;
+const v8EndPrevious=end;
+end=function(won){
+ document.body.classList.remove('v8-capture-mode');
+ v8EndPrevious(won);
+ const mission=won?'Побег удался!':'Тебя поймали!';
+ const title=won?'🏆 '+mission:'👠 '+mission;
+ const best=bestTime===null?'—':v8Time(bestTime);
+ panel.innerHTML='<section class="v8menu"><div class="v8eyebrow">'+(v7Level===2?'НОЧНОЙ САД':'ПОБЕГ ИЗ ДОМА')+'</div><h2>'+title+'</h2><p>★ Звёзды: '+medalsFound+'/3 · ◈ Монеты: '+coinsFound+'/5 · ⏱ Время: '+v8Time(elapsed)+' · Рекорд: '+best+'</p><div class="v8modalactions"><button id="v8again">↻ Ещё раз</button><button id="v8levels" class="quiet">⌂ К выбору уровней</button></div></section>';
+ document.getElementById('v8again').onclick=()=>v8Start(v7Level);
+ document.getElementById('v8levels').onclick=v8Menu;
+ if(won&&v7Level===1){const btn=document.createElement('button');btn.className='v8secondary';btn.textContent='🌙 Следующий уровень';btn.onclick=()=>v8Start(2);panel.querySelector('.v8menu').appendChild(btn)}
+ v8Top.style.display='none';
+};
+const v8UpdatePrevious=update;
+update=function(dt){v8UpdatePrevious(dt);v8HudClock+=dt;if(v8HudClock>.11){v8HudClock=0;v8UpdateHud()}};
+document.getElementById('v8map').onclick=v8Map;
+document.getElementById('v8pause').onclick=v8Pause;
+document.getElementById('v8music').onclick=()=>document.getElementById('v5sound').click();
+document.addEventListener('keydown',e=>{if(e.code==='Escape'&&playing){if(v8Modal.style.display==='flex')v8CloseModal();else v8Pause()}if(e.code==='KeyM'&&playing)v8Map()});
+
+/* v0.9 — new illustrated level, using the EXISTING game physics / chase / touch controls.
+   All visual work is separate and can be rolled back by opening v0.8. */
+const v09Courtyard=new Image();
+let v09ArtLoaded=false;
+v09Courtyard.onload=()=>{v09ArtLoaded=!!v09Courtyard.naturalWidth;worldLayer=null;console.info('Painterly courtyard loaded',v09Courtyard.naturalWidth)};
+v09Courtyard.onerror=()=>{v09ArtLoaded=false;worldLayer=null;console.warn('Painterly courtyard unavailable, using stable original map')};
+v09Courtyard.src='../assets/courtyard_illustrated_v09.svg?art=1';
+const v09DrawBase=drawWorld;
+drawWorld=function(){
+ if(v7Level!==1||!v09ArtLoaded){v09DrawBase();return}
+ if(worldLayer)return;
+ const target=document.createElement('canvas');target.width=1600;target.height=1400;
+ const context=target.getContext('2d');if(!context){v09DrawBase();return}
+ context.drawImage(v09Courtyard,0,0,1600,1400);
+ worldLayer=target;
+};
+const v09AnimatedPrevious=animatedFigure;
+animatedFigure=function(x,y,large){
+ // High-resolution master art while stationary; genuine frame strips while moving.
+ if(captureTimer<=0&&v7Level===1){
+  if(large&&!wifeMoving&&artSprites.wife)return false;
+  if(!large&&!manMoving&&artSprites.husband)return false;
+ }
+ return v09AnimatedPrevious(x,y,large);
+};
+function v09Foreground(){
+ // Foreground veil: legs slip behind the nearest bush while passing its lower edge.
+ if(hidden||captureTimer>0)return;
+ for(const b of bushes){
+  const dx=man.x-b.x,dy=man.y-b.y;
+  if(Math.abs(dx)<b.r*.72&&dy>0&&dy<b.r*.6){
+   g.save();
+   const g1=g.createLinearGradient(b.x,b.y,b.x,b.y+b.r*.6);
+   g1.addColorStop(0,'#33694800');g1.addColorStop(.65,'#3d8051b8');g1.addColorStop(1,'#244d4290');
+   g.fillStyle=g1;g.beginPath();g.ellipse(b.x,b.y+b.r*.31,b.r*.79,b.r*.3,0,0,Math.PI*2);g.fill();g.restore();
+  }
+ }
+}
+const v09Radar=document.getElementById('v09radar');
+v09Radar.onclick=()=>{if(playing)v8Map()};
+const v09UpdatePrev=update;let v09RadarTick=0;
+update=function(dt){
+ v09UpdatePrev(dt);
+ if(!playing||paused)return;
+ v09RadarTick+=dt;
+ if(v09RadarTick>.18){v09RadarTick=0;try{const context=v09Radar.getContext('2d');if(context)v8DrawMap(context,256,224)}catch(e){console.warn('Mini-map error',e)}}
+};
+function v09Menu(){
+ v7CinemaHide();document.body.classList.remove('v8-capture-mode');playing=false;paused=false;overlay.style.display='flex';
+ resetStick();v8Modal.style.display='none';v8Top.style.display='none';
+ panel.innerHTML='<section class="v8menu"><div class="v8eyebrow">ХУДОЖЕСТВЕННЫЙ ПРОТОТИП · 0.9</div><div class="v8menutitle">Большая жена<br><em>и мелкий муж</em></div><p class="v8menudesc">Первый участок средиземноморского двора — новая иллюстрированная сцена. Найди ключ возле сарая, включи рычаг и открой ворота. Жена ищет тебя, а кусты помогают спрятаться.</p><div class="v8menulevels"><button id="v09play" class="v8levelcard"><div class="v8levelart day">🌺</div><div class="v8leveldetails"><div><b>Солнечный двор</b><small>Новая графика · Проверка механики</small></div><span class="v8levelarrow">▶</span></div></button><a id="v09old" href="../play-v08/?compare=1" class="v8levelcard" style="text-decoration:none;display:block"><div class="v8levelart night" style="display:flex">👠</div><div class="v8leveldetails"><div><b>Сравнить с v0.8</b><small>Прежняя игровая версия</small></div><span class="v8levelarrow">↗</span></div></a></div><button id="v09help" class="v8secondary">⌘ Управление</button><div class="v8menufooter">Один новый участок · Те же два героя · Все действия настоящие</div></section>';
+ document.getElementById('v09play').onclick=()=>v8Start(1);
+ document.getElementById('v09help').onclick=v8Help;
+}
+v8Menu=v09Menu;
+v7Menu=v09Menu;
+v09Menu();
+
+
+
+/* v1.0 layer: preserve original logic and switch between high-resolution master art
+   and legacy sprite strips. No fabricated animation frames are claimed. */
+const v10ForegroundImg=new Image();let v10ForegroundReady=false;
+v10ForegroundImg.onload=()=>{v10ForegroundReady=!!v10ForegroundImg.naturalWidth};
+v10ForegroundImg.onerror=()=>{v10ForegroundReady=false};
+v10ForegroundImg.src='../assets/courtyard_foreground_v10.svg?layer=1';
+let v10Quality=true;
+try{v10Quality=localStorage.getItem('v10_master_characters')!=='false'}catch(_){}
+const v10StepParticles=[];let v10StepAccumulator=0;
+const v10OriginalFigure=figure;
+function v10MasterDrawing(x,y,large,img){
+ const height=large?410:104, width=large?200:64;
+ const dir=large?wifeFacing:manFacing;
+ const isMoving=large?wifeMoving:manMoving;
+ const rate=large?(wife.mode==='chase'?8.5:5.4):(sprint?11:7);
+ const cycle=clock*rate+(large?0:1.7);
+ const speed=large?Math.hypot(wife.x-v10LastWife.x,wife.y-v10LastWife.y):Math.hypot(man.x-v10LastHusband.x,man.y-v10LastHusband.y);
+ const power=isMoving?Math.min(1,Math.max(.28,speed/4)):.09;
+ const sway=Math.sin(cycle)*(.013*power);
+ const bob=Math.abs(Math.sin(cycle))*(large?5.2:2.3)*power;
+ const inflate=1+Math.sin(clock*(large?2:3))* (large?.003:.006);
+ g.save();
+ const ground=g.createRadialGradient(x,y+7,5,x,y+7,large?70:24);
+ ground.addColorStop(0,'rgba(30,29,20,.39)');ground.addColorStop(.55,'rgba(30,30,20,.22)');ground.addColorStop(1,'rgba(30,30,20,0)');
+ g.fillStyle=ground;g.beginPath();g.ellipse(x,y+12,large?70:23,large?23:9,0,0,Math.PI*2);g.fill();
+ g.translate(x,y+13-bob);
+ g.scale(dir*(isMoving?(inflate+.002):inflate),1+(isMoving?Math.sin(cycle)*.004:0));
+ g.transform(1,0,sway,1,0,0);
+ g.drawImage(img,-width/2,-height,width,height);
+ if(isMoving){
+  // tiny footfall glint and ground contact; original silhouette remains intact.
+  g.fillStyle='rgba(255,226,162,.22)';g.beginPath();g.ellipse(0,2,width*.29,3.1,0,0,Math.PI*2);g.fill();
+ }
+ g.restore();
+}
+const v10LastWife={x:460,y:390},v10LastHusband={x:490,y:740};
+figure=function(x,y,large){
+ const high=artSprites[large?'wife':'husband'];
+ if(v10Quality&&v7Level===1&&captureTimer<=0&&high&&high.complete&&high.naturalWidth>10){
+  v10MasterDrawing(x,y,large,high);return;
+ }
+ v10OriginalFigure(x,y,large);
+};
+function v10Foreground(){
+ if(!v10ForegroundReady)return;
+ g.save();g.globalAlpha=.88;
+ g.drawImage(v10ForegroundImg,0,0,1600,1400);
+ g.restore();
+}
+function v10VisionGlow(){
+ if(!playing||captureTimer>0)return;
+ if(wife.mode==='chase'){
+  g.save();
+  const spread=wifeFacing,dist=260;
+  const grad=g.createRadialGradient(wife.x,wife.y,8,wife.x+spread*180,wife.y-7,360);
+  grad.addColorStop(0,'rgba(237,120,95,.2)');
+  grad.addColorStop(1,'rgba(237,120,95,0)');
+  g.fillStyle=grad;
+  g.beginPath();g.moveTo(wife.x,wife.y+8);
+  g.lineTo(wife.x+spread*dist,wife.y-130);
+  g.lineTo(wife.x+spread*dist,wife.y+130);g.closePath();g.fill();
+  g.restore()
+ }
+}
+function v10Footsteps(){
+ if(v10StepParticles.length===0)return;
+ g.save();
+ for(const p of v10StepParticles){
+  const life=Math.min(1,p.age/p.max);
+  g.globalAlpha=(1-life)*.25;
+  g.fillStyle=p.color;
+  g.beginPath();g.arc(p.x+p.vx*p.age,p.y+p.vy*p.age,p.r*(1+.7*life),0,Math.PI*2);g.fill();
+ }
+ g.restore();
+}
+const v10OldUpdate=update;
+update=function(dt){
+ const px=man.x,py=man.y,wx=wife.x,wy=wife.y;
+ v10OldUpdate(dt);
+ for(let i=v10StepParticles.length-1;i>=0;i--){const p=v10StepParticles[i];p.age+=dt;if(p.age>p.max)v10StepParticles.splice(i,1)}
+ v10LastWife.x=wx;v10LastWife.y=wy;v10LastHusband.x=px;v10LastHusband.y=py;
+ if(!playing||paused||captureTimer>0)return;
+ if(manMoving&&v7Level===1){
+  v10StepAccumulator+=Math.hypot(man.x-px,man.y-py);
+  if(v10StepAccumulator>38){v10StepAccumulator=0;
+   const t=Math.sin(clock*10),a=Math.atan2(man.y-py,man.x-px);
+   for(let j=0;j<3;j++)v10StepParticles.push({
+    x:man.x-8*Math.cos(a)+(Math.random()-.5)*20,
+    y:man.y+6+(Math.random()-.5)*8,
+    vx:-Math.cos(a)*8+(Math.random()-.5)*14,
+    vy:-4+Math.random()*3,
+    age:0,max:.35+Math.random()*.35,r:2.8+Math.random()*3.9,color:'#f3d6a3'
+   });
+   if(v10StepParticles.length>32)v10StepParticles.splice(0,v10StepParticles.length-32);
+  }
+ }
+};
+const v10OldStart=v8Start;
+v8Start=function(level){
+ v10StepParticles.length=0;v10StepAccumulator=0;
+ document.body.classList.toggle('v10-game',true);
+ v10OldStart(level);
+};
+const v10PreviousMenu=v8Menu;
+function v10Menu(){
+ document.body.classList.remove('v10-game');
+ v09Menu();
+ const title=panel.querySelector('.v8eyebrow');
+ if(title)title.textContent='НОВАЯ ГРАФИКА · v1.0';
+ const subtitle=panel.querySelector('.v8menudesc');
+ if(subtitle)subtitle.textContent='Художественный прототип с новым двором, детализированными персонажами и растениями на переднем плане. Муж по-прежнему ростом до колена жены. Проверь движение, кусты, ключ и поимку.';
+ const playButton=document.getElementById('v09play');
+ if(playButton)playButton.onclick=()=>v8Start(1);
+ const footer=panel.querySelector('.v8menufooter');
+ if(footer)footer.textContent='Высокодетализированная модель доступна во время движения · Сравнение с v0.9';
+ const toggle=document.createElement('button');toggle.id='v10mode';toggle.className='v8secondary';
+ toggle.textContent=v10Quality?'✓ Детальные герои (включено)':'▢ Обычные спрайты (включено)';
+ toggle.onclick=()=>{v10Quality=!v10Quality;try{localStorage.setItem('v10_master_characters',String(v10Quality))}catch(_){}
+ toggle.textContent=v10Quality?'✓ Детальные герои (включено)':'▢ Обычные спрайты (включено)';};
+ panel.querySelector('.v8menu')?.appendChild(toggle);
+}
+const v10OldPause=v8Pause;
+v8Pause=function(){
+ v10OldPause();
+ const actions=document.getElementById('v8modalActions');
+ if(actions){const btn=document.createElement('button');btn.className='quiet';
+ btn.textContent=v10Quality?'Переключить на старую покадровую графику':'Переключить на детальных героев';
+ btn.onclick=()=>{v10Quality=!v10Quality;try{localStorage.setItem('v10_master_characters',String(v10Quality))}catch(_){}
+ v8CloseModal();};
+ actions.appendChild(btn)}
+};
+document.getElementById('v8pause').onclick=v8Pause;
+const v10OriginalEnd=end;end=function(won){document.body.classList.remove('v10-game');v10OriginalEnd(won)};
+v8Menu=v10Menu;v7Menu=v10Menu;
+v10Menu();
+
+
+/* v1.1 -- distance-driven animation of the EXISTING 44 usable frames in
+ six source strips, with seamless blend to original high-detail stills.
+ No invented images: every action uses a real PNG/WebP already in assets/. */
+const v11Modes=['cinematic','detailed','classic'];
+const v11ModeNames={cinematic:'Плавная анимация + детальные позы',detailed:'Детальные изображения',classic:'Покадровые спрайты'};
+let v11Mode='cinematic';
+try{const saved=localStorage.getItem('wife_game_v11_animation');if(v11Modes.includes(saved))v11Mode=saved}catch(_){}
+const v11Gaits={
+ wife:{distance:0,blend:0,search:0,velocity:0,kind:'wife_walk',wasMoving:false},
+ husband:{distance:0,blend:0,search:0,velocity:0,kind:'husband_walk',wasMoving:false}
+};
+function v11ResetGaits(){
+ for(const s of Object.values(v11Gaits)){s.distance=0;s.blend=0;s.search=0;s.velocity=0;s.wasMoving=false;s.kind=''}
+}
+function v11SetMode(mode){
+ v11Mode=v11Modes.includes(mode)?mode:'cinematic';
+ try{localStorage.setItem('wife_game_v11_animation',v11Mode)}catch(_){}
+ const button=document.getElementById('v10mode');
+ if(button)button.textContent='🎞️ '+v11ModeNames[v11Mode]+' (сменить)';
+}
+function v11NextMode(){v11SetMode(v11Modes[(v11Modes.indexOf(v11Mode)+1)%v11Modes.length])}
+function v11GaitUpdate(state,oldPos,newPos,dt,large){
+ const delta=Math.hypot(newPos.x-oldPos.x,newPos.y-oldPos.y);
+ const trulyMoving=delta>.2&&captureTimer<=0;
+ const want=trulyMoving?1:0;
+ state.blend=Math.max(0,Math.min(1,state.blend+(want?Math.min(.19,dt*5.4):-Math.min(.14,dt*4.3))));
+ state.velocity+=((dt>0?delta/dt:0)-state.velocity)*Math.min(1,dt*9);
+ if(trulyMoving)state.distance+=delta/(large?18.4:20.8);
+ if(large&&wife.mode==='search'&&captureTimer<=0)state.search+=dt*2.6;
+ state.wasMoving=trulyMoving;
+}
+const v11BeforeUpdate=update;
+update=function(dt){
+ if(!playing||paused){v11BeforeUpdate(dt);return}
+ const w={x:wife.x,y:wife.y},m={x:man.x,y:man.y};
+ const wasCapture=captureTimer>0;
+ v11BeforeUpdate(dt);
+ if(captureTimer>0||wasCapture){v11Gaits.wife.blend=0;v11Gaits.husband.blend=0;return}
+ v11GaitUpdate(v11Gaits.wife,w,wife,dt,true);
+ v11GaitUpdate(v11Gaits.husband,m,man,dt,false);
+};
+function v11DrawFrame(img,index,x,y,w,h,dir,opacity){
+ if(!img||opacity<.01)return;
+ const count=Math.floor(img.naturalWidth/128)||8;
+ const f=((index%count)+count)%count;
+ g.save();g.globalAlpha*=Math.max(0,Math.min(1,opacity));
+ g.translate(x,y+13);g.scale(dir,1);
+ g.drawImage(img,f*128,0,128,210,-w/2,-h,w,h);
+ g.restore();
+}
+function v11FrameKind(large,state){
+ if(!large)return sprint&&state.velocity>190&&stamina>1?'husband_run':'husband_walk';
+ if(wife.mode==='chase')return 'wife_run';
+ if(wife.mode==='search'&&!state.wasMoving)return 'wife_search';
+ return 'wife_walk';
+}
+function v11Animate(large,x,y){
+ const role=large?'wife':'husband',state=v11Gaits[role];
+ const still=artSprites[role];
+ const kind=v11FrameKind(large,state),sprite=animatedSprites[kind];
+ const hasStill=!!(still&&still.complete&&still.naturalWidth>0);
+ const hasSprite=!!(sprite&&sprite.complete&&sprite.naturalWidth===1024&&sprite.naturalHeight===210);
+ if(v11Mode==='classic'){
+  if(hasSprite){const index=Math.floor((kind==='wife_search'?state.search:state.distance))%animationCounts[kind];v11SpriteWithShadow(sprite,index,x,y,large,1);return true}
+  if(hasStill){v10MasterDrawing(x,y,large,still);return true}
+  return false;
+ }
+ if(v11Mode==='detailed'){
+  if(hasStill){v10MasterDrawing(x,y,large,still);return true}
+  if(hasSprite){v11SpriteWithShadow(sprite,Math.floor(state.distance),x,y,large,1);return true}
+  return false;
+ }
+ if(!hasStill&&!hasSprite)return false;
+ if(!hasSprite){v10MasterDrawing(x,y,large,still);return true}
+ if(!hasStill){
+  const frame=Math.floor(kind==='wife_search'?state.search:state.distance)%animationCounts[kind];
+  v11SpriteWithShadow(sprite,frame,x,y,large,1);
+  return true;
+ }
+ // Blend only during transitions. While standing, detailed master art wins;
+ // when moving, a real frame atlas wins. This prevents the cardboard sliding.
+ let blend=state.blend;
+ if(large&&wife.mode==='search'&&!state.wasMoving)blend=.88;
+ const frame=Math.floor(kind==='wife_search'?state.search:state.distance)%animationCounts[kind];
+ if(blend<.99){g.save();g.globalAlpha*=1-blend;v10MasterDrawing(x,y,large,still);g.restore()}
+ if(blend>.01)v11SpriteWithShadow(sprite,frame,x,y,large,blend);
+ return true;
+}
+function v11SpriteWithShadow(sheet,frame,x,y,large,alpha){
+ const w=large?220:64,h=large?410:104,dir=large?wifeFacing:manFacing;
+ g.save();g.globalAlpha*=alpha;
+ const shadow=g.createRadialGradient(x,y+13,0,x,y+13,large?70:24);
+ shadow.addColorStop(0,'rgba(40,33,25,.30)');shadow.addColorStop(1,'rgba(40,33,25,0)');
+ g.fillStyle=shadow;g.beginPath();g.ellipse(x,y+12,large?70:24,large?19:8,0,0,Math.PI*2);g.fill();
+ g.restore();
+ const max=large?(wife.mode==='chase'?8:wife.mode==='search'&&!v11Gaits.wife.wasMoving?5:7):8;
+ const idx=((frame%max)+max)%max;
+ v11DrawFrame(sheet,idx,x,y,w,h,dir,alpha);
+}
+const v11OldFigure=figure;
+figure=function(x,y,large){
+ if(v7Level===1&&captureTimer<=0&&v11Animate(large,x,y))return;
+ v11OldFigure(x,y,large);
+};
+const v11OldStart=v8Start;
+v8Start=function(level){v11ResetGaits();v11OldStart(level)};
+const v11OldMenu=v10Menu;
+function v11Menu(){
+ v11OldMenu();
+ const title=panel.querySelector('.v8eyebrow');
+ if(title)title.textContent='АНИМАЦИЯ ГЕРОЕВ · v1.1';
+ const desc=panel.querySelector('.v8menudesc');
+ if(desc)desc.textContent='Новая версия первого уровня: реальные кадры ходьбы и бега, плавные переходы к детальным изображениям, поиск жены и сцена поимки. Выбери вариант графики для сравнения.';
+ const b=document.getElementById('v10mode');
+ if(b){b.onclick=v11NextMode;v11SetMode(v11Mode)}
+ const footer=panel.querySelector('.v8menufooter');
+ if(footer)footer.textContent='Анимация из существующих кадров · Рост мужа до колена жены · Старые версии сохранены';
+}
+v8Pause=function(){
+ // Reuse the original v0.8 pause modal, avoiding the obsolete v1.0 renderer toggle.
+ v10OldPause();
+ const actions=document.getElementById('v8modalActions');
+ if(actions){const b=document.createElement('button');b.className='quiet';
+ b.textContent='🎞️ '+v11ModeNames[v11Mode]+' · сменить режим';
+ b.onclick=()=>{v11NextMode();v8CloseModal()};actions.appendChild(b)}
+};
+document.getElementById('v8pause').onclick=v8Pause;
+v8Menu=v11Menu;v7Menu=v11Menu;
+v11Menu();
+
+
+/* v1.2: advances EXISTING frames by real distance. Avoids mid-stride switch,
+  constant ghost overlays, and sliding when the character is standing still. */
+const v12States={
+ wife:{kind:'wife_walk',next:'',hold:0,phase:0,speed:0,lean:0},
+ husband:{kind:'husband_walk',next:'',hold:0,phase:0,speed:0,lean:0}
+};
+const v12Limit=(v,a,b)=>Math.max(a,Math.min(b,v));
+const v12Ease=t=>{t=v12Limit(t,0,1);return t*t*(3-2*t)};
+function v12Reset(){
+ for(const [role,s] of Object.entries(v12States)){
+  s.kind=role==='wife'?'wife_walk':'husband_walk';s.next='';s.hold=0;s.phase=0;s.speed=0;s.lean=0;
+ }
+}
+const v12PrevUpdate=update;
+update=function(dt){
+ const w0={x:wife.x,y:wife.y},h0={x:man.x,y:man.y};
+ const running=playing&&!paused&&captureTimer<=0;
+ v12PrevUpdate(dt);
+ if(!running||!playing||captureTimer>0)return;
+ for(const [name,obj,last] of [['wife',wife,w0],['husband',man,h0]]){
+  const s=v12States[name],dx=obj.x-last.x,dy=obj.y-last.y;
+  const travelled=Math.hypot(dx,dy);
+  const rate=travelled/Math.max(.001,dt);
+  s.speed+=(rate-s.speed)*Math.min(1,dt*12);
+  s.lean+=(Math.sign(dx||0)-s.lean)*Math.min(1,dt*8);
+  if(travelled>.25)s.phase+=travelled/(name==='wife'?(wife.mode==='chase'?23:27):(sprint?20:25));
+  s.hold=Math.max(0,s.hold-dt);
+ }
+};
+function v12Kind(role,s){
+ const target=role==='wife'?(wife.mode==='chase'?'wife_run':wife.mode==='search'&&s.speed<12?'wife_search':'wife_walk'):(sprint&&s.speed>190&&stamina>2?'husband_run':'husband_walk');
+ if(s.kind===target){s.next='';return target}
+ if(s.next!==target){s.next=target;s.hold=.11}
+ if(s.hold<=0&&(Math.abs(s.phase-Math.round(s.phase))<.22||s.speed<18)){s.kind=target;s.next=''}
+ return s.kind;
+}
+function v12DrawStrip(img,idx,x,y,large,alpha,lean){
+ const w=large?220:64,h=large?410:104,dir=large?wifeFacing:manFacing;
+ const cell=((idx%8)+8)%8;
+ g.save();g.globalAlpha*=alpha;g.translate(x,y+13);g.scale(dir,1);
+ if(lean)g.transform(1,0,lean,1,0,0);
+ g.drawImage(img,cell*128,0,128,210,-w/2,-h,w,h);g.restore();
+}
+function v12Animate(x,y,large){
+ if(v7Level!==1||captureTimer>0)return false;
+ const role=large?'wife':'husband',s=v12States[role],kind=v12Kind(role,s);
+ const master=artSprites[role],sheet=animatedSprites[kind],count=animationCounts[kind]||8;
+ const hasMaster=!!(master&&master.complete&&master.naturalWidth>0);
+ const hasSheet=!!(sheet&&sheet.complete&&sheet.naturalWidth===1024&&sheet.naturalHeight===210);
+ if(v11Mode==='detailed'&&hasMaster){v10MasterDrawing(x,y,large,master);return true}
+ if(!hasSheet){if(hasMaster){v10MasterDrawing(x,y,large,master);return true}return false}
+ const moving=s.speed>13||(large&&wife.mode==='search');
+ const phase=kind==='wife_search'?v11Gaits.wife.search:s.phase;
+ const frame=Math.floor(phase)%count,fraction=phase-Math.floor(phase);
+ const opacity=(v11Mode==='classic'||!hasMaster)?1:v12Ease((s.speed-8)/42);
+ if(opacity<.01&&hasMaster){v10MasterDrawing(x,y,large,master);return true}
+ // One shared ground shadow anchors every pose at exactly the same world coordinate.
+ const shadow=g.createRadialGradient(x,y+12,1,x,y+12,large?70:24);
+ shadow.addColorStop(0,'rgba(32,30,24,.32)');shadow.addColorStop(1,'rgba(32,30,24,0)');
+ g.save();g.fillStyle=shadow;g.beginPath();g.ellipse(x,y+12,large?70:24,large?19:8,0,0,Math.PI*2);g.fill();g.restore();
+ if(opacity<.995&&hasMaster){
+  const w=large?200:64,h=large?410:104,dir=large?wifeFacing:manFacing;
+  g.save();g.globalAlpha*=1-opacity;g.translate(x,y+13);g.scale(dir,1);g.drawImage(master,-w/2,-h,w,h);g.restore();
+ }
+ const lean=moving?(large?.012:.018)*v12Limit(s.speed/(large?150:190),0,1)*s.lean:0;
+ const dissolve=v11Mode==='cinematic'&&moving?v12Ease((fraction-.86)/.14)*.16:0;
+ v12DrawStrip(sheet,frame,x,y,large,opacity*(1-dissolve),lean);
+ if(dissolve>.01)v12DrawStrip(sheet,(frame+1)%count,x,y,large,opacity*dissolve,lean);
+ return true;
+}
+const v12PrevFigure=figure;
+figure=function(x,y,large){if(v12Animate(x,y,large))return;v12PrevFigure(x,y,large)};
+const v12PrevStart=v8Start;
+v8Start=function(level){v12Reset();v12PrevStart(level)};
+const v12PrevMenu=v11Menu;
+function v12Menu(){
+ v12PrevMenu();
+ const header=panel.querySelector('.v8eyebrow');if(header)header.textContent='ДВИЖЕНИЕ ГЕРОЕВ · v1.2';
+ const desc=panel.querySelector('.v8menudesc');if(desc)desc.textContent='Ровнее ходьба и бег, устойчивые переходы между кадрами, остановка без скольжения. Можно сравнить три режима графики.';
+ const foot=panel.querySelector('.v8menufooter');if(foot)foot.textContent='44 существующих кадра · Рост мужа до колена жены · v1.1 сохранена';
+ const play=document.getElementById('v09play');if(play)play.onclick=()=>v8Start(1);
+}
+v8Menu=v12Menu;v7Menu=v12Menu;v12Menu();
+
+
+/* v1.3: real replacement game sprite atlas from newly illustrated source.
+   8 rows x 8 cells, preprocessed with transparent backgrounds.
+   Prior animations remain available instantly if images fail or user disables.
+   Contains repeated frames in shorter source action sequences. */
+const v13Atlas=new Image();
+const v13Rows={wife_walk:0,wife_run:1,wife_search:2,wife_bend:3,wife_carry:4,husband_walk:5,husband_run:6,husband_hide:7};
+const v13Counts={wife_walk:8,wife_run:7,wife_search:6,wife_bend:6,wife_carry:8,husband_walk:7,husband_run:7,husband_hide:3};
+let v13Ready=false,v13ImageError=false,v13HideTime=0;
+let v13Enabled=true;
+try{v13Enabled=localStorage.getItem('wife_game_v13_redrawn')!=='false'}catch(_){}
+function v13Label(){return v13Enabled?(v13Ready?'✓ Новые нарисованные кадры':'◌ Новые кадры загружаются'):'↩ Прежняя анимация'}
+function v13RefreshButton(){const b=document.getElementById('v10mode');if(b)b.textContent=v13Label()+' · переключить'}
+v13Atlas.onload=()=>{
+ v13Ready=!!(v13Atlas.naturalWidth>=400&&v13Atlas.naturalHeight>=400);
+ if(!v13Ready)v13ImageError=true;
+ v13RefreshButton();
+};
+v13Atlas.onerror=()=>{if(!v13Atlas.src.includes('redraw_v14.png')){console.warn('Original HD atlas unavailable; using compressed backup');v13Atlas.src='../assets/animations/redraw_v14.png?build=15fallback';return}v13Ready=false;v13ImageError=true;v13RefreshButton();console.warn('Character atlases unavailable: falling back to classic sprites')};
+v13Atlas.src='../assets/animation_atlas_v13.png?build=15hd';
+function v13Toggle(){
+ v13Enabled=!v13Enabled;
+ try{localStorage.setItem('wife_game_v13_redrawn',String(v13Enabled))}catch(_){}
+ v13RefreshButton();
+}
+function v13DrawFrame(kind,frame,x,y,large,alpha=1){
+ if(!v13Ready||v13Rows[kind]===undefined)return false;
+ const count=v13Counts[kind]||8,idx=((Math.floor(frame)%count)+count)%count;
+ const sw=v13Atlas.naturalWidth/8,sh=v13Atlas.naturalHeight/8;
+ const rw=large?220:64,rh=large?410:104,dir=large?wifeFacing:manFacing;
+ g.save();g.globalAlpha*=Math.max(0,Math.min(1,alpha));
+ const radius=large?72:23;
+ const ground=g.createRadialGradient(x,y+11,0,x,y+11,radius);
+ ground.addColorStop(0,'rgba(28,31,22,.33)');ground.addColorStop(1,'rgba(28,31,22,0)');
+ g.fillStyle=ground;g.beginPath();g.ellipse(x,y+12,radius,large?18:7,0,0,Math.PI*2);g.fill();
+ g.translate(x,y+13);g.scale(dir,1);
+ g.drawImage(v13Atlas,sw*idx,sh*v13Rows[kind],sw,sh,-rw/2,-rh,rw,rh);
+ g.restore();
+ return true;
+}
+function v13DrawActor(x,y,large){
+ if(!v13Enabled||!v13Ready||v7Level!==1||captureTimer>0)return false;
+ const s=v12States[large?'wife':'husband'];
+ let kind;
+ if(large){
+  kind=wife.mode==='chase'?'wife_run':wife.mode==='search'&&s.speed<20?'wife_search':'wife_walk';
+ }else{
+  kind=hidden?'husband_hide':sprint&&s.speed>180&&stamina>2?'husband_run':'husband_walk';
+ }
+ const step=(kind==='wife_search')?clock*2.6:(kind==='husband_hide'?v13HideTime*3.2:s.phase);
+ const frame=(s.speed<8&&kind!=='wife_search'&&kind!=='husband_hide')?0:Math.floor(step);
+ return v13DrawFrame(kind,frame,x,y,large);
+}
+const v13PrevFigure=figure;
+figure=function(x,y,large){if(v13DrawActor(x,y,large))return;v13PrevFigure(x,y,large)};
+const v13OldMini=v6DrawMiniAt;
+v6DrawMiniAt=function(x,y,angle=0,scale=1){
+ if(v13Enabled&&v13Ready&&v7Level===1){
+  g.save();g.translate(x,y);g.rotate(angle);g.scale(scale,scale);
+  v13DrawFrame('husband_hide',Math.floor(Math.max(0,4.6-captureTimer)*3),0,0,false);
+  g.restore();return;
+ }
+ return v13OldMini(x,y,angle,scale);
+};
+const v13PrevCapture=v6DrawCapture;
+v6DrawCapture=function(){
+ if(!v13Enabled||!v13Ready||v7Level!==1){v13PrevCapture();return}
+ const age=Math.max(0,4.6-captureTimer),dir=wifeFacing;
+ if(age<.48){
+  v13DrawFrame('wife_walk',0,wife.x,wife.y,true);
+  v6DrawMiniAt(man.x,man.y,Math.sin(clock*21)*.04,1);
+  return;
+ }
+ if(age<1.32){
+  const t=v6Ease((age-.48)/.84);
+  v13DrawFrame('wife_bend',Math.round(t*5),wife.x,wife.y,true);
+  v6DrawMiniAt(man.x,man.y,0,1);
+  return;
+ }
+ if(age<2.12){
+  const t=v6Ease((age-1.32)/.8);
+  v13DrawFrame('wife_bend',5,wife.x,wife.y,true);
+  const x=man.x*(1-t)+(wife.x+dir*61)*t;
+  const y=man.y*(1-t)+(wife.y-144)*t;
+  v6DrawMiniAt(x,y,dir*.2*t,1-.13*t);
+  return;
+ }
+ v13DrawFrame('wife_carry',Math.floor((age-2.12)*4),wife.x,wife.y,true);
+};
+const v13PrevUpdate=update;
+update=function(dt){v13PrevUpdate(dt);if(playing&&!paused&&hidden&&captureTimer<=0)v13HideTime+=dt;else v13HideTime=0};
+const v13PrevStart=v8Start;
+v8Start=function(level){v13HideTime=0;v13PrevStart(level)};
+const v13PrevMenu=v12Menu;
+function v13Menu(){
+ v13PrevMenu();
+ const a=panel.querySelector('.v8eyebrow');if(a)a.textContent='НОВЫЕ АНИМАЦИОННЫЕ КАДРЫ · v1.3';
+ const d=panel.querySelector('.v8menudesc');if(d)d.textContent='В игру установлен новый набор изображений жены и мужа: ходьба, бег, поиск, наклон, поимка, перенос и укрытие. Набор можно включать и выключать прямо здесь.';
+ const f=panel.querySelector('.v8menufooter');if(f)f.textContent='Первый уровень · Новый прозрачный атлас · Старые версии сохранены';
+ const b=document.getElementById('v10mode');if(b){b.onclick=v13Toggle;v13RefreshButton()}
+ const play=document.getElementById('v09play');if(play)play.onclick=()=>v8Start(1);
+}
+const v13PrevPause=v8Pause;
+v8Pause=function(){
+ v13PrevPause();
+ const actions=document.getElementById('v8modalActions');
+ if(actions){const b=document.createElement('button');b.className='quiet';
+ b.textContent=v13Enabled?'🎨 Вернуть прежние кадры':'🎨 Включить новые кадры';
+ b.onclick=()=>{v13Toggle();v8CloseModal()};actions.appendChild(b)}
+};
+document.getElementById('v8pause').onclick=v8Pause;
+v8Menu=v13Menu;v7Menu=v13Menu;v13Menu();
+
+
+/* v1.4 polish release: calm start, dynamic portrait framing, contextual UI,
+   cleaner foot anchoring and brighter landmark treatment. */
+let v14SafeStart=4.0;
+function v14Nearness(){
+ if(v7Level!==1||!playing||captureTimer>0)return 0;
+ const distance=Math.hypot(wife.x-man.x,wife.y-man.y);
+ return Math.max(0,Math.min(1,(530-distance)/480));
+}
+function v14Zoom(){
+ if(v7Level===2)return captureTimer>0?1.15:1.30;
+ if(captureTimer>0)return 1.07;
+ return 1.28-.24*v14Nearness();
+}
+function v14LookY(){
+ if(captureTimer>0)return -175;
+ if(v7Level===2)return joystick.y*24;
+ return -42-260*v14Nearness()+joystick.y*15;
+}
+function v14GoalHalo(){
+ if(!playing||captureTimer>0)return;
+ const target=phase===0?key:!leverOn?lever:gate;
+ const distance=Math.hypot(target.x-man.x,target.y-man.y);
+ if(distance>380)return;
+ g.save();
+ const brightness=.13+.08*Math.sin(clock*4);
+ const halo=g.createRadialGradient(target.x,target.y,5,target.x,target.y,56);
+ halo.addColorStop(0,'rgba(255,234,177,'+Math.max(.07,brightness)+')');
+ halo.addColorStop(1,'rgba(255,234,177,0)');
+ g.fillStyle=halo;g.beginPath();g.ellipse(target.x,target.y,56,36,0,0,Math.PI*2);g.fill();
+ g.strokeStyle='rgba(255,230,163,.53)';g.lineWidth=2.5;
+ g.beginPath();g.ellipse(target.x,target.y+5,28+Math.sin(clock*3)*3,12,0,0,Math.PI*2);g.stroke();
+ g.restore();
+}
+const v14PreviousCanSee=v5CanSee;
+v5CanSee=function(distance,running){
+ if(v7Level===1&&v14SafeStart>0)return false;
+ return v14PreviousCanSee(distance,running);
+};
+const v14PreviousUpdate=update;
+update=function(dt){
+ const wasCapturing=captureTimer>0,wasPlaying=playing&&!paused;
+ v14PreviousUpdate(dt);
+ if(wasPlaying&&playing&&!paused){
+  if(wasCapturing&&captureTimer<=0&&v7Level===1)v14SafeStart=2.7;
+  else if(captureTimer<=0)v14SafeStart=Math.max(0,v14SafeStart-dt);
+ }
+};
+const v14PreviousStart=v8Start;
+v8Start=function(level){
+ v14SafeStart=level===1?4.0:0;
+ v14PreviousStart(level);
+};
+const v14PreviousHud=v8UpdateHud;
+v8UpdateHud=function(){
+ v14PreviousHud();
+ if(!playing||paused||captureTimer>0)return;
+ const nearBush=bushes.some(b=>d(man,b)<b.r*.95);
+ const t=phase===0?key:!leverOn?lever:gate;
+ const nearGoal=d(man,t)<95;
+ const runningDanger=wife.mode==='chase';
+ let content='',symbol='✦',show=true;
+ if(v7Level===1&&v14SafeStart>0){
+  symbol='✧';content='Осмотрись: жена пока тебя не замечает';
+ }else if(runningDanger){
+  symbol='!';content='Жена близко — беги к кустам';
+ }else if(nearGoal){
+  symbol='✋';content=phase===0?'Нажми «Действие»: взять ключ':!leverOn?'Нажми «Действие»: включить рычаг':'Нажми «Действие»: открыть ворота';
+ }else if(nearBush&&!hidden){
+  symbol='🌿';content='Здесь можно спрятаться';
+ }else if(hidden){
+  symbol='🌿';content='Ты спрятался — не двигайся';
+ }else if(elapsed<11){
+  symbol='✦';content='Иди к ключу около сарая';
+ }else show=false;
+ v8Els.tipicon.textContent=symbol;
+ v8Els.tip.textContent=content;
+ const tipElement=document.getElementById('v8tip');
+ if(tipElement)tipElement.style.display=show?'flex':'none';
+};
+const v14OldMenu=v13Menu;
+function v14Menu(){
+ v14OldMenu();
+ const eyebrow=panel.querySelector('.v8eyebrow');if(eyebrow)eyebrow.textContent='ОБНОВЛЁННЫЙ ПРОТОТИП · v1.4';
+ const desc=panel.querySelector('.v8menudesc');
+ if(desc)desc.textContent='Новые кадры героев с улучшенной чёткостью, компактный мобильный экран и камера, показывающая разницу в росте. У тебя есть несколько секунд, чтобы осмотреться до начала преследования.';
+ const footer=panel.querySelector('.v8menufooter');
+ if(footer)footer.textContent='Новые кадры · Спокойный старт · Интерактивные подсказки · Старые версии сохранены';
+ const play=document.getElementById('v09play');
+ if(play)play.onclick=()=>v8Start(1);
+}
+v8Menu=v14Menu;v7Menu=v14Menu;v14Menu();
+
+
+/* v1.5: consistent actor silhouettes anchored by feet, not cell padding.
+   Reads alpha bounds once from same-origin atlas; fallback to v1.4 if unavailable. */
+const v15AtlasCells=Array.from({length:8},()=>Array(8).fill(null));
+let v15AtlasProcessed=false,v15AtlasFramesFound=0;
+function v15InspectAtlas(){
+ v15AtlasProcessed=false;v15AtlasFramesFound=0;
+ if(!v13Ready||!v13Atlas.naturalWidth||!v13Atlas.naturalHeight)return false;
+ const aw=v13Atlas.naturalWidth,ah=v13Atlas.naturalHeight;
+ if(aw>2048||ah>2048)return false;
+ try{
+  const c=document.createElement('canvas');c.width=aw;c.height=ah;
+  const context=c.getContext('2d',{willReadFrequently:true});
+  if(!context||typeof context.getImageData!=='function')return false;
+  context.clearRect(0,0,aw,ah);context.drawImage(v13Atlas,0,0);
+  const pix=context.getImageData(0,0,aw,ah).data;
+  if(!pix||pix.length<aw*ah*4)return false;
+  const cellW=aw/8,cellH=ah/8;
+  const metadata=[];
+  for(let row=0;row<8;row++){
+   const slots=[];
+   for(let col=0;col<8;col++){
+    const x0=Math.round(cellW*col),x1=Math.round(cellW*(col+1));
+    const y0=Math.round(cellH*row),y1=Math.round(cellH*(row+1));
+    let minX=x1,maxX=x0-1,minY=y1,maxY=y0-1;
+    for(let y=y0;y<y1;y++){
+     let p=(y*aw+x0)*4+3;
+     for(let x=x0;x<x1;x++,p+=4){
+      if(pix[p]>35){if(x<minX)minX=x;if(x>maxX)maxX=x;if(y<minY)minY=y;if(y>maxY)maxY=y}
+     }
+    }
+    if(maxX<minX||maxY<minY){slots.push(null);continue}
+    const pad=1.5;
+    const box={
+     sx:Math.max(x0,Math.floor(minX-pad)),
+     sy:Math.max(y0,Math.floor(minY-pad)),
+     ex:Math.min(x1,Math.ceil(maxX+pad+1)),
+     ey:Math.min(y1,Math.ceil(maxY+pad+1))
+    };
+    box.w=box.ex-box.sx;box.h=box.ey-box.sy;
+    slots.push(box);v15AtlasFramesFound++;
+   }
+   metadata.push(slots);
+  }
+  // Same scale within every actor. Bending actually becomes shorter; running wider.
+  const median=(arr)=>{const a=arr.filter(Number.isFinite).sort((x,y)=>x-y);return a.length?a[Math.floor(a.length/2)]:1};
+  const wifeH=median(metadata[0].map(x=>x&&x.h));
+  const husbandH=median(metadata[5].map(x=>x&&x.h));
+  for(let row=0;row<8;row++){
+   for(let col=0;col<8;col++){
+    const box=metadata[row][col];if(!box)continue;
+    box.unit=(row<=4?410/Math.max(5,wifeH):104/Math.max(5,husbandH));
+    v15AtlasCells[row][col]=box;
+   }
+  }
+  v15AtlasProcessed=v15AtlasFramesFound>=36;
+  return v15AtlasProcessed;
+ }catch(e){console.warn('Sprite crop/anchors unavailable, using safe drawing',e);return false}
+}
+const v15OldLoad=v13Atlas.onload;
+v13Atlas.onload=function(){if(typeof v15OldLoad==='function')v15OldLoad.call(this);v15InspectAtlas()};
+if(v13Atlas.complete&&v13Atlas.naturalWidth>0)v15InspectAtlas();
+const v15OldDrawFrame=v13DrawFrame;
+v13DrawFrame=function(kind,frame,x,y,large,alpha=1){
+ if(!v15AtlasProcessed||!v13Ready||v13Rows[kind]===undefined)return v15OldDrawFrame(kind,frame,x,y,large,alpha);
+ const row=v13Rows[kind],count=v13Counts[kind]||8,slot=((Math.floor(frame)%count)+count)%count;
+ const b=v15AtlasCells[row][slot];
+ if(!b)return v15OldDrawFrame(kind,frame,x,y,large,alpha);
+ const facing=large?wifeFacing:manFacing;
+ const scale=b.unit;
+ // World-size correction: a crouch keeps its actual pose height, never stretches to 410 px.
+ const dw=b.w*scale,dh=b.h*scale;
+ const anchorY=y+13;
+ g.save();g.globalAlpha*=Math.min(1,Math.max(0,alpha));
+ const radius=large?65:21;
+ const shadow=g.createRadialGradient(x,anchorY,0,x,anchorY,radius);
+ shadow.addColorStop(0,'rgba(22,30,23,.27)');shadow.addColorStop(1,'rgba(22,30,23,0)');
+ g.fillStyle=shadow;g.beginPath();g.ellipse(x,anchorY,radius,large?17:7,0,0,Math.PI*2);g.fill();
+ g.translate(x,anchorY);g.scale(facing,1);
+ g.imageSmoothingEnabled=true;g.imageSmoothingQuality='high';
+ g.drawImage(v13Atlas,b.sx,b.sy,b.w,b.h,-dw/2,-dh,dw,dh);
+ g.restore();return true;
+};
+// Save complete level progress as a compact, validated offline browser checkpoint.
+const v15SaveKey='big-wife-little-husband-checkpoint-v20';
+let v15SaveClock=0,v15LastSaveStatus=false;
+function v15Save(){
+ if(!playing||captureTimer>0||paused)return false;
+ const level=v7Level;
+ if(level!==1&&level!==2)return false;
+ const snapshot={
+  version:1,at:Date.now(),level,
+  man:{x:man.x,y:man.y},wife:{x:wife.x,y:wife.y,tx:wife.tx,ty:wife.ty,mode:wife.mode,timer:wife.timer},
+  phase,leverOn,lives,stamina,alertLevel,elapsed,
+  hidden,safeStart:v14SafeStart,
+  coins:coins.map(x=>!!x.got),medals:medals.map(x=>!!x.got),
+  boosts:boosts.map(x=>!!x.used),decoys:decoys.map(x=>!!x.used)
+ };
+ try{localStorage.setItem(v15SaveKey,JSON.stringify(snapshot));v15LastSaveStatus=true;return true}catch(_){v15LastSaveStatus=false;return false}
+}
+function v15Load(){
+ try{
+  const raw=localStorage.getItem(v15SaveKey);if(!raw)return null;
+  const z=JSON.parse(raw);
+  if(!z||z.version!==1||![1,2].includes(z.level)||!Number.isFinite(z.at)||Date.now()-z.at>1000*60*60*24*30)return null;
+  if(!z.man||!z.wife||![z.man.x,z.man.y,z.wife.x,z.wife.y,z.elapsed,z.lives,z.phase].every(Number.isFinite))return null;
+  if(!Array.isArray(z.coins)||!Array.isArray(z.medals)||z.coins.length!==5||z.medals.length!==3)return null;
+  if(z.phase<0||z.phase>2||z.lives<1||z.lives>3)return null;
+  return z;
+ }catch(_){return null}
+}
+function v15Clear(){
+ try{localStorage.removeItem(v15SaveKey)}catch(_){}
+}
+const v15OldUpdate=update;
+update=function(dt){
+ v15OldUpdate(dt);
+ if(playing&&!paused&&captureTimer<=0){
+  v15SaveClock+=dt;
+  if(v15SaveClock>=1.5){v15SaveClock=0;v15Save()}
+ }
+};
+const v15OldEnd=end;
+end=function(won){v15Clear();v15OldEnd(won)};
+const v15OldStart=v8Start;
+v8Start=function(level){
+ v15SaveClock=0;
+ v15OldStart(level);
+ v15Save();
+};
+function v15Resume(){
+ const s=v15Load();if(!s)return false;
+ // Bypass v1.5 start checkpoint write until progress has been restored.
+ v15OldStart(s.level);
+ const num=(x,min,max,def)=>Number.isFinite(x)?Math.max(min,Math.min(max,x)):def;
+ man.x=num(s.man.x,60,1530,man.x);man.y=num(s.man.y,85,1330,man.y);
+ wife.x=num(s.wife.x,60,1530,wife.x);wife.y=num(s.wife.y,85,1330,wife.y);
+ wife.tx=num(s.wife.tx,60,1530,wife.x);wife.ty=num(s.wife.ty,85,1330,wife.y);
+ wife.mode='patrol';wife.timer=2.5;
+ phase=Math.floor(num(s.phase,0,2,0));leverOn=!!s.leverOn;
+ lives=Math.floor(num(s.lives,1,3,3));stamina=num(s.stamina,0,100,100);
+ alertLevel=0;elapsed=num(s.elapsed,0,36000,0);
+ hidden=!!s.hidden;v14SafeStart=s.level===1?Math.max(3,num(s.safeStart,0,4,0)):0;
+ invulnerable=3;capturePending=false;captureTimer=0;
+ for(let i=0;i<coins.length;i++)coins[i].got=!!s.coins[i];
+ for(let i=0;i<medals.length;i++)medals[i].got=!!s.medals[i];
+ for(let i=0;i<boosts.length;i++)boosts[i].used=!!(s.boosts&&s.boosts[i]);
+ for(let i=0;i<decoys.length;i++)decoys[i].used=!!(s.decoys&&s.decoys[i]);
+ coinsFound=coins.filter(x=>x.got).length;medalsFound=medals.filter(x=>x.got).length;
+ v15SaveClock=0;v8Camera.ready=false;v8UpdateHud();v15Save();
+ say('Продолжаем с последнего сохранения!');
+ return true;
+}
+const v15OldMenu=v14Menu;
+function v15Menu(){
+ if(playing&&captureTimer<=0)v15Save();
+ v15OldMenu();
+ const eyebrow=panel.querySelector('.v8eyebrow');if(eyebrow)eyebrow.textContent='СОХРАНЕНИЕ И АНИМАЦИЯ · v1.5';
+ const desc=panel.querySelector('.v8menudesc');
+ if(desc)desc.textContent='Персонажи теперь привязаны к линии пола: при наклоне рост меняется естественно, а кадры не прыгают по высоте. Игра сохраняет прохождение для продолжения после перезагрузки.';
+ const save=v15Load(),parent=panel.querySelector('.v8menu');
+ if(save&&parent){
+  const b=document.createElement('button');b.id='v15continue';
+  const title=save.level===2?'Ночной сад':'Солнечный двор';
+  b.innerHTML='▶ Продолжить прохождение<small>'+title+' · '+(save.phase===0?'Поиск ключа':save.leverOn?'К воротам':'Включить рычаг')+' · '+Math.round(save.elapsed)+' сек.</small>';
+  b.onclick=()=>v15Resume();
+  const cards=parent.querySelector('.v8menulevels');
+  if(cards&&cards.parentNode)cards.parentNode.insertBefore(b,cards);else parent.appendChild(b);
+ }
+ const footer=panel.querySelector('.v8menufooter');if(footer)footer.textContent='Автосохранение в Safari · Прежняя v1.4 сохранена · Без новых панелей поверх игры';
+}
+v8Menu=v15Menu;v7Menu=v15Menu;v15Menu();
+
+
+/* v1.6: Independent high-resolution PNGs extracted from the ORIGINAL character
+ illustrations. These genuinely replace character draw calls in gameplay.
+ Incomplete or cropped animation frames are NOT substituted for walk cycles. */
+const v16Images={};
+const v16Files={
+ wife_idle:'../assets/characters/v16_wife_idle.png',
+ wife_point:'../assets/characters/v16_wife_point.png',
+ wife_search:'../assets/characters/v16_wife_search.png',
+ husband_idle:'../assets/characters/v16_husband_idle.png',
+ husband_hide:'../assets/characters/v16_husband_hide.png'
+};
+let v16Enabled=true;
+try{v16Enabled=localStorage.getItem('wife_game_v16_portraits')!=='false'}catch(_){}
+let v16ReadyCount=0;
+for(const [kind,path] of Object.entries(v16Files)){
+ const image=new Image();
+ image.onload=()=>{if(image.naturalWidth>20&&image.naturalHeight>20){v16ReadyCount++;v16MenuStatus()}};
+ image.onerror=()=>{console.warn('High-res pose missing',kind)};
+ image.src=path+'?v=16';
+ v16Images[kind]=image;
+}
+function v16MenuStatus(){
+ const e=document.getElementById('v16-explanation');
+ if(e)e.textContent='Загружено детализированных поз: '+v16ReadyCount+'/5. Ходьба и бег пока используют старую анимацию; повреждённые кадры исключены.';
+}
+function v16CanDraw(kind){
+ const im=v16Images[kind];
+ return !!(v16Enabled&&im&&im.complete&&im.naturalWidth>20&&im.naturalHeight>20);
+}
+function v16DrawPose(kind,x,y,large,alpha=1,scale=1){
+ if(!v16CanDraw(kind))return false;
+ const image=v16Images[kind];
+ const h=(large?410:104)*scale;
+ const w=h*image.naturalWidth/image.naturalHeight;
+ const dir=large?wifeFacing:manFacing;
+ g.save();g.globalAlpha*=Math.max(0,Math.min(1,alpha));
+ const r=large?68:21;
+ const grad=g.createRadialGradient(x,y+11,1,x,y+11,r);
+ grad.addColorStop(0,'rgba(29,32,23,.34)');
+ grad.addColorStop(1,'rgba(29,32,23,0)');
+ g.fillStyle=grad;g.beginPath();g.ellipse(x,y+12,r,large?20:8,0,0,Math.PI*2);g.fill();
+ g.translate(x,y+12);g.scale(dir,1);
+ g.imageSmoothingEnabled=true;g.imageSmoothingQuality='high';
+ g.drawImage(image,-w/2,-h,w,h);
+ g.restore();
+ return true;
+}
+const v16PriorFigure=figure;
+figure=function(x,y,large){
+ if(v7Level===1&&captureTimer<=0&&v16Enabled){
+  const speed=v12States[large?'wife':'husband'].speed;
+  if(large&&wife.mode==='search'&&speed<38){
+   if(v16DrawPose('wife_search',x,y,true))return;
+   if(v16DrawPose('wife_point',x,y,true))return;
+  }
+  if(speed<15){
+   if(v16DrawPose(large?'wife_idle':'husband_idle',x,y,large))return;
+  }
+ }
+ v16PriorFigure(x,y,large);
+};
+// Hide the husband behind foliage with his real new crouching drawing,
+// replacing the emoji/small low-detail atlas when the transparent PNG is loaded.
+const v16PreviousRender=render;
+render=function(){
+ if(!playing||!hidden||v7Level!==1||captureTimer>0||!v16CanDraw('husband_hide')){
+  v16PreviousRender();return;
+ }
+ // Do not override camera/scene rendering. The normal render draws the bush and
+ // leaves the hiding man out of the actor layer; this next overlay is world-aligned.
+ v16PreviousRender();
+ const zoom=v8Camera.zoom,Ww=innerWidth,Hh=innerHeight;
+ const x=Ww/2+(man.x-v8Camera.x)*zoom;
+ const y=Hh/2+(man.y-v8Camera.y)*zoom;
+ g.save();g.globalAlpha=.90;
+ // Display only the upper part of the silhouette in bushes; not another HUD panel.
+ const im=v16Images.husband_hide;
+ const height=104*zoom,width=height*im.naturalWidth/im.naturalHeight;
+ const clipY=y-height*.53;
+ g.beginPath();g.rect(x-width/2-5,clipY-6,width+10,height*.58);g.clip();
+ g.drawImage(im,x-width/2,y-height,width,height);
+ g.restore();
+};
+const v16PreviousCapture=v6DrawCapture;
+v6DrawCapture=function(){
+ if(!v16Enabled||v7Level!==1||!v16CanDraw('wife_point')){v16PreviousCapture();return}
+ const age=Math.max(0,4.6-captureTimer);
+ if(age<.48){
+  v16DrawPose('wife_point',wife.x,wife.y,true);
+  v16DrawPose('husband_hide',man.x,man.y,false);
+  return;
+ }
+ if(age<1.32){
+  // Existing crouch animation remains in control; it has genuine bent-leg frames.
+  v16PreviousCapture();return;
+ }
+ if(age<2.12){
+  v16PreviousCapture();return;
+ }
+ // Preserve the carry pose where both figures form one coherent silhouette.
+ v16PreviousCapture();
+};
+const v16OldMenu=v15Menu;
+function v16Menu(){
+ v16OldMenu();
+ const eyebrow=panel.querySelector('.v8eyebrow');
+ if(eyebrow)eyebrow.textContent='НОВЫЕ ИГРОВЫЕ ПЕРСОНАЖИ · v1.6';
+ const desc=panel.querySelector('.v8menudesc');
+ if(desc)desc.textContent='Подключены отдельные детализированные изображения героев: неподвижные позы, поиск, укрытие и начало сцены поимки. Вся механика и сохранения остались рабочими.';
+ const root=panel.querySelector('.v8menu');
+ if(root){
+  const button=document.createElement('button');
+  button.id='v16-toggle';
+  button.textContent=v16Enabled?'✓ Новые персонажи включены · сравнить со старыми':'↩ Прежняя графика включена · включить новые';
+  button.onclick=()=>{
+   v16Enabled=!v16Enabled;
+   try{localStorage.setItem('wife_game_v16_portraits',String(v16Enabled))}catch(_){}
+   button.textContent=v16Enabled?'✓ Новые персонажи включены · сравнить со старыми':'↩ Прежняя графика включена · включить новые';
+  };
+  root.appendChild(button);
+  const status=document.createElement('div');status.id='v16-explanation';
+  root.appendChild(status);v16MenuStatus();
+ }
+ const play=document.getElementById('v09play');
+ if(play)play.onclick=()=>v8Start(1);
+}
+v8Menu=v16Menu;v7Menu=v16Menu;v16Menu();
+
+
+/* v2.0 PLAYABLE ART SLICE. The scene background is genuine empty environment art
+ and two custom atlas PNGs are separate moving in-game characters.
+ Does not rely on any screenshots with baked-in figures or HUDs. */
+let v20ArtOn=true;
+try{v20ArtOn=localStorage.getItem('wife_game_v20_art')!=='false'}catch(_){}
+let v20LoadCount=0;
+const v20Files={
+ courtyard:'../assets/v20/courtyard.jpg',
+ wife:'../assets/v20/wife_motion.png',
+ husband:'../assets/v20/husband_motion.png'
+};
+const v20Img={};
+for(const [name,path] of Object.entries(v20Files)){
+ const im=new Image();
+ im.onload=()=>{v20LoadCount++;if(name==='courtyard')worldLayer=null;v20UpdateArtButton()};
+ im.onerror=()=>console.warn('v2.0 asset not loaded',name,path);
+ im.src=path+'?art=20';
+ v20Img[name]=im;
+}
+const v20Available=n=>!!(v20Img[n]&&v20Img[n].complete&&v20Img[n].naturalWidth>20);
+function v20UpdateArtButton(){
+ const el=document.getElementById('v20artmode');
+ if(el)el.textContent=v20ArtOn?'🎨 Новая графика включена · сравнить':'↩ Классическая графика · включить новую';
+ const info=document.getElementById('v20label');
+ if(info)info.textContent='Загружено новых ресурсов: '+v20LoadCount+'/3. Управление и сохранения работают в обоих режимах.';
+}
+function v20Toggle(){
+ v20ArtOn=!v20ArtOn;worldLayer=null;
+ try{localStorage.setItem('wife_game_v20_art',String(v20ArtOn))}catch(_){}
+ v20UpdateArtButton();
+}
+// Map the pictured garden's real landmarks to corresponding gameplay targets.
+Object.assign(v7Base.key,{x:1130,y:1220});
+Object.assign(v7Base.lever,{x:690,y:370});
+Object.assign(v7Base.gate,{x:253,y:1075});
+v7Base.coins=[{x:770,y:1110},{x:925,y:870},{x:470,y:675},{x:1010,y:500},{x:365,y:930}];
+v7Base.medals=[{x:1050,y:990},{x:540,y:770},{x:700,y:510}];
+v7Base.bushes=[{x:310,y:1245,r:110},{x:340,y:790,r:105},{x:720,y:1140,r:65},{x:1480,y:835,r:105},{x:960,y:1170,r:65}];
+v7Base.obstacles=[{x:1280,y:416,r:155},{x:1360,y:1110,r:125},{x:345,y:700,r:75}];
+v7Base.crates=[];v7Base.ponds=[];v7Base.trees=[];v7Base.flowerPatches=[];
+v7Base.boosts=[{x:850,y:820},{x:1000,y:1010}];
+v7Base.decoys=[{x:560,y:880},{x:820,y:550}];
+const v20OldSpawn=v7Spawn;
+v7Spawn=function(){
+ if(v7Level!==1){v20OldSpawn();return}
+ const startM={x:790,y:1210},startW={x:715,y:485};
+ Object.assign(v7Start.man,startM);Object.assign(v7Start.wife,startW);
+ Object.assign(man,startM);Object.assign(wife,{...startW,tx:startW.x,ty:startW.y});
+};
+const v20OldWorld=drawWorld;
+drawWorld=function(){
+ if(v7Level!==1||!v20ArtOn||!v20Available('courtyard')){v20OldWorld();return}
+ if(worldLayer)return;
+ const canvas=document.createElement('canvas');canvas.width=1600;canvas.height=1400;
+ const ctx=canvas.getContext('2d');
+ if(!ctx){v20OldWorld();return}
+ ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
+ ctx.drawImage(v20Img.courtyard,0,0,1600,1400);
+ worldLayer=canvas;
+};
+// End-of-stride frame selection from actual illustrated poses.
+const v20WifeFrame=s=>{
+ if(wife.mode==='search'&&s.speed<33)return [1,0];
+ if(wife.mode==='chase'||s.speed>160)return [0,5+Math.floor(s.phase*1.13)%3];
+ if(s.speed>13)return [0,1+Math.floor(s.phase*.92)%4];
+ return [0,0];
+};
+const v20ManFrame=s=>{
+ if(hidden)return [1,0];
+ if(sprint&&s.speed>154&&stamina>0)return [0,5+Math.floor(s.phase*1.15)%3];
+ if(s.speed>12)return [0,2+Math.floor(s.phase*.90)%3];
+ return [0,0];
+};
+function v20Frame(kind,row,frame,x,y,large,scale=1){
+ if(!v20ArtOn||!v20Available(kind))return false;
+ const im=v20Img[kind],cw=im.naturalWidth/8,ch=im.naturalHeight/2;
+ const height=(large?410:104)*scale;
+ const width=height*cw/ch;
+ const facing=large?wifeFacing:manFacing;
+ g.save();
+ // Shadow anchors the feet precisely to the same world-space floor line.
+ const radius=large?72:24,shadow=g.createRadialGradient(x,y+11,1,x,y+11,radius);
+ shadow.addColorStop(0,'rgba(30,29,21,.36)');
+ shadow.addColorStop(1,'rgba(30,29,21,0)');
+ g.fillStyle=shadow;g.beginPath();g.ellipse(x,y+11,radius,large?20:8,0,0,Math.PI*2);g.fill();
+ g.translate(x,y+12);
+ g.scale(facing,1);
+ g.imageSmoothingEnabled=true;g.imageSmoothingQuality='high';
+ const index=Math.max(0,Math.min(7,Math.floor(frame)));
+ g.drawImage(im,index*cw,row*ch,cw,ch,-width/2,-height,width,height);
+ g.restore();return true;
+}
+const v20OldFigure=figure;
+figure=function(x,y,large){
+ if(v7Level===1&&captureTimer<=0&&v20ArtOn){
+  const state=v12States[large?'wife':'husband'];
+  const pair=large?v20WifeFrame(state):v20ManFrame(state);
+  if(v20Frame(large?'wife':'husband',pair[0],pair[1],x,y,large))return;
+ }
+ v20OldFigure(x,y,large);
+};
+// On hide, do not fall through to the tiny original atlas.
+const v20PreviousV13DrawFrame=v13DrawFrame;
+v13DrawFrame=function(kind,frame,x,y,large,alpha=1){
+ if(v7Level===1&&kind==='husband_hide'&&v20ArtOn&&v20Available('husband'))
+  return v20Frame('husband',1,Math.floor(frame)%8,x,y,false);
+ return v20PreviousV13DrawFrame(kind,frame,x,y,large,alpha);
+};
+// Use the actual original render without the v1.6 duplicated hiding overlays.
+const v20OldRender=render;
+render=function(){
+ if(v7Level===1&&v20ArtOn){v16PreviousRender();return}
+ v20OldRender();
+};
+// Scripted four-stage real capture animation, using drawn positions and carrying pose.
+const v20OldCapture=v6DrawCapture;
+v6DrawCapture=function(){
+ if(v7Level!==1||!v20ArtOn||!v20Available('wife')||!v20Available('husband')){
+  v20OldCapture();return
+ }
+ const age=Math.max(0,4.6-captureTimer),dir=wifeFacing;
+ if(age<.56){
+  v20Frame('wife',1,0,wife.x,wife.y,true);
+  v20Frame('husband',1,1,man.x,man.y,false);
+ }else if(age<1.60){
+  const t=Math.min(1,(age-.56)/1.04);
+  v20Frame('wife',1,1,wife.x,wife.y,true);
+  v20Frame('husband',1,1,man.x,man.y,false);
+ }else if(age<2.25){
+  const t=Math.min(1,(age-1.6)/.65);
+  v20Frame('wife',1,1,wife.x,wife.y,true);
+  const hx=man.x*(1-t)+(wife.x+dir*48)*t;
+  const hy=man.y*(1-t)+(wife.y-205)*t;
+  v20Frame('husband',1,1,hx,hy,false,1-.18*t);
+ }else{
+  // Carry pose already contains husband; never render a duplicate.
+  v20Frame('wife',1,3,wife.x,wife.y,true);
+ }
+};
+// Silence old visual effects that do not belong to this artwork while retaining game physics.
+const v20OldEffects=effects;
+effects=function(){
+ if(v7Level!==1||!v20ArtOn){v20OldEffects();return}
+ // Interactive targets intentionally remain clearly visible.
+ for(const item of coins){if(item.got)continue;g.save();g.globalAlpha=.85;g.fillStyle='#fbe2a3';
+  g.beginPath();g.arc(item.x,item.y-14+Math.sin(clock*3)*3,9,0,Math.PI*2);g.fill();g.restore()}
+ const current=phase===0?key:!leverOn?lever:gate;
+ g.save();g.translate(current.x,current.y-22+Math.sin(clock*3)*6);
+ const glow=g.createRadialGradient(0,0,0,0,0,45);
+ glow.addColorStop(0,'rgba(255,230,144,.82)');glow.addColorStop(1,'rgba(250,212,130,0)');
+ g.fillStyle=glow;g.beginPath();g.arc(0,0,45,0,Math.PI*2);g.fill();
+ g.font='bold 30px system-ui';g.textAlign='center';g.fillStyle='#ffe9b8';
+ g.fillText(phase===0?'🔑':!leverOn?'⚙️':'🚪',0,11);g.restore();
+};
+const v20OldStart=v8Start;
+v8Start=function(level){
+ v20OldStart(level);
+ if(level===1&&v20ArtOn){
+  v8Camera.ready=false;v14SafeStart=6;
+  v8UpdateHud();
+ }
+};
+const v20OldMenu=v16Menu;
+function v20Menu(){
+ v20OldMenu();
+ const eyebrow=panel.querySelector('.v8eyebrow');
+ if(eyebrow)eyebrow.textContent='ХУДОЖЕСТВЕННЫЙ УРОВЕНЬ · v2.0';
+ const title=panel.querySelector('.v8menutitle');
+ if(title)title.innerHTML='Большая жена<br><em>и мелкий муж</em>';
+ const desc=panel.querySelector('.v8menudesc');
+ if(desc)desc.textContent='Новый полностью иллюстрированный двор. Оба героя двигаются независимыми кадрами, прячутся и взаимодействуют с предметами. Найди ключ у сарая, включи механизм возле дома и доберись до ворот.';
+ const root=panel.querySelector('.v8menu');
+ if(root){
+  const button=document.createElement('button');button.id='v20artmode';
+  button.onclick=v20Toggle;root.appendChild(button);
+  const info=document.createElement('div');info.id='v20label';root.appendChild(info);
+  v20UpdateArtButton();
+ }
+ const old=document.getElementById('v09old');if(old){old.href='../play-v16/?compare=20'}
+ const first=document.getElementById('v09play');if(first)first.onclick=()=>v8Start(1);
+ const foot=panel.querySelector('.v8menufooter');
+ if(foot)foot.textContent='Игровой вертикальный срез · Свободное управление · Автосохранение · Старый вариант сохранён';
+}
+v8Menu=v20Menu;v7Menu=v20Menu;v20Menu();
+
+function loop(now){var loading=document.getElementById('loadingHint');if(loading)loading.style.display='none';const dt=Math.min((now-last)/1000||0,.05);last=now;update(dt);render();requestAnimationFrame(loop)}requestAnimationFrame(loop);
+</script></body></html>
