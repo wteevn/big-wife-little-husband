@@ -441,7 +441,7 @@ const illustratedGround=new Image();illustratedGround.onload=()=>{worldLayer=nul
  drawWorld();if(worldLayer)g.drawImage(worldLayer,0,0);else{path();scenery()}
  effects();if(v7Level===2){dynamicWorldDetails();movingGardenArt();}celebrationEffects();v8WorldAtmosphere();if(v7Level===1)v10VisionGlow();
  if(wife.mode==='chase'&&captureTimer<=0){g.save();g.globalAlpha=.5;g.strokeStyle='#d95054';g.lineWidth=5;g.beginPath();g.arc(wife.x,wife.y,72+Math.sin(clock*6)*4,0,Math.PI*2);g.stroke();g.restore()}
- const drawMan=()=>{if(!hidden){if(invulnerable<=0||Math.floor(clock*6)%2===0)figure(man.x,man.y,false)}else{g.save();g.font='25px system-ui';g.fillText('👀',man.x-20,man.y-70);g.restore()}};
+ const drawMan=()=>{if(!hidden){if(invulnerable<=0||Math.floor(clock*6)%2===0)figure(man.x,man.y,false)}else{if(v13Enabled&&v13Ready&&v7Level===1)v13DrawFrame('husband_hide',Math.floor(v13HideTime*3),man.x,man.y,false);else{g.save();g.font='25px system-ui';g.fillText('👀',man.x-20,man.y-70);g.restore()}}};
  if(captureTimer>0)v6DrawCapture();
  else if(man.y<wife.y){drawMan();figure(wife.x,wife.y,true)}
  else{figure(wife.x,wife.y,true);drawMan()}
@@ -1374,7 +1374,7 @@ v13Atlas.onload=()=>{
  v13RefreshButton();
 };
 v13Atlas.onerror=()=>{v13Ready=false;v13ImageError=true;v13RefreshButton();console.warn('v1.3 atlas unavailable: falling back to existing sprites')};
-v13Atlas.src='../assets/animation_atlas_v13.png?build=13';
+v13Atlas.src='../assets/animations/redraw_v13.png?build=14';
 function v13Toggle(){
  v13Enabled=!v13Enabled;
  try{localStorage.setItem('wife_game_v13_redrawn',String(v13Enabled))}catch(_){}
@@ -1410,6 +1410,15 @@ function v13DrawActor(x,y,large){
 }
 const v13PrevFigure=figure;
 figure=function(x,y,large){if(v13DrawActor(x,y,large))return;v13PrevFigure(x,y,large)};
+const v13OldMini=v6DrawMiniAt;
+v6DrawMiniAt=function(x,y,angle=0,scale=1){
+ if(v13Enabled&&v13Ready&&v7Level===1){
+  g.save();g.translate(x,y);g.rotate(angle);g.scale(scale,scale);
+  v13DrawFrame('husband_hide',Math.floor(Math.max(0,4.6-captureTimer)*3),0,0,false);
+  g.restore();return;
+ }
+ return v13OldMini(x,y,angle,scale);
+};
 const v13PrevCapture=v6DrawCapture;
 v6DrawCapture=function(){
  if(!v13Enabled||!v13Ready||v7Level!==1){v13PrevCapture();return}
