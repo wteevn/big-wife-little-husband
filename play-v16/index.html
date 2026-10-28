@@ -1,4 +1,4 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Большая жена и мелкий муж · v1.6 · Высокодетализированные персонажи</title><style>*{box-sizing:border-box}body{margin:0;background:#b7d7b1;font:15px system-ui;color:white;overflow:hidden;touch-action:none;-webkit-user-select:none;user-select:none}canvas{display:block;width:100vw;height:100dvh;touch-action:none}#hud{position:fixed;top:env(safe-area-inset-top,12px);left:10px;right:10px;display:flex;gap:8px;justify-content:space-between;pointer-events:none}#hud>div{background:#213a42e8;border:1px solid #ffffff33;padding:9px 11px;border-radius:12px;max-width:65%}#state{font-size:13px;max-width:40%!important}#controls{position:fixed;bottom:max(24px,env(safe-area-inset-bottom));left:14px;display:grid;grid-template-columns:56px 56px 56px;gap:5px}button{border:1px solid #ffffff66;border-radius:15px;background:#264b65e9;color:#fff;font-size:24px;height:56px;touch-action:none;-webkit-touch-callout:none}#actions{position:fixed;right:12px;bottom:max(31px,env(safe-area-inset-bottom));display:grid;gap:10px}#actions button{font-size:15px;background:#a92d48e9;min-width:125px}#toast{position:fixed;top:105px;left:10%;right:10%;background:#1b3446e8;border-radius:12px;text-align:center;padding:12px;display:none}#overlay{position:fixed;inset:0;background:#142a3ccf;display:flex;align-items:center;justify-content:center;padding:25px}#panel{background:#f5dfb9;color:#3b2c24;padding:24px;border-radius:20px;max-width:360px;text-align:center;box-shadow:0 15px 50px #0008}#panel h2{margin:0 0 10px}#panel button{background:#b82c42;width:100%;margin-top:12px;font-size:18px}#panel p{line-height:1.5}#panel{background:linear-gradient(145deg,#fff1d2,#e8c698);border:3px solid #fff2d5;box-shadow:0 18px 65px #091d27b8,inset 0 0 0 2px #a8784833;max-height:88dvh;overflow:auto}#panel h2{font-size:27px;color:#7d3032;text-shadow:0 2px #fff5}#panel button{border-radius:30px;background:linear-gradient(180deg,#e95162,#9d233d);border:3px solid #ffd8a0;box-shadow:0 5px 0 #702139;font-weight:800;letter-spacing:.4px}#overlay{background:radial-gradient(circle at 50% 38%,#29483b99,#081a29eb)}#hud>div{background:linear-gradient(145deg,#1b4051f2,#19303ce8);border:2px solid #e6c88b99;box-shadow:0 3px 10px #0006;text-shadow:0 1px 2px #0008}#toast{border:2px solid #ffe4a7;box-shadow:0 6px 25px #0008;font-weight:700}#pause{border:2px solid #ffe2a4!important;border-radius:50%!important;background:linear-gradient(145deg,#b44b4b,#642e3c)!important}#hearts{border:2px solid #e8c98b88;box-shadow:0 4px 12px #0005}@media (orientation:landscape){#controls{grid-template-columns:48px 48px 48px;gap:4px;left:max(12px,env(safe-area-inset-left));bottom:12px}#controls button{height:45px;font-size:21px}#actions{right:max(12px,env(safe-area-inset-right));bottom:12px;gap:6px}#actions button{height:46px;min-width:110px}#hud{top:5px;left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right))}#hud>div{padding:5px 9px;font-size:12px}#hearts{top:48px!important;font-size:15px!important}#pause{top:47px!important;height:36px!important}#toast{top:49px;padding:6px}}@media(max-width:390px){#controls{grid-template-columns:48px 48px 48px}#controls button{height:49px}#actions button{min-width:112px;height:50px;font-size:13px}}#controls,#actions{z-index:4}#toast{pointer-events:none;z-index:5}#overlay{z-index:10}#controls{position:fixed;left:max(16px,env(safe-area-inset-left));bottom:max(24px,env(safe-area-inset-bottom));width:142px;height:142px;display:block;touch-action:none;z-index:6;border-radius:50%;border:2px solid #ffffff77;background:radial-gradient(circle at 35% 30%,#ffffff3c,#203a4da8 70%);box-shadow:inset 0 3px 12px #fff2,0 7px 20px #14273355}#stick{position:absolute;width:66px;height:66px;border-radius:50%;left:36px;top:36px;background:linear-gradient(145deg,#91c9e4,#37688d);border:3px solid #e5faffbb;box-shadow:0 4px 14px #102d4d99;pointer-events:none;transform:translate(0px,0px);display:grid;place-items:center;color:white;font-size:25px}#actions{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(26px,env(safe-area-inset-bottom));display:flex;align-items:end;gap:12px;z-index:6}#actions button{border-radius:50%;width:88px;height:88px;min-width:0;background:linear-gradient(150deg,#e54b6a,#95253d);border:3px solid #ffffffa0;box-shadow:0 5px 15px #17283c66;font-size:12px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px}#actions button span{font-size:29px;line-height:1.1}#actions #hide{width:76px;height:76px;background:linear-gradient(150deg,#6aa982,#2e6557)}#actions button:active,#actions button.active{filter:brightness(1.3);transform:scale(.96)}@media(orientation:landscape){#controls{width:120px;height:120px;left:max(20px,env(safe-area-inset-left));bottom:12px}#stick{left:28px;top:28px;width:60px;height:60px}#actions{bottom:12px;right:max(20px,env(safe-area-inset-right))}#actions button{width:76px;height:76px}#actions #hide{width:68px;height:68px}}@media(max-width:390px) and (orientation:portrait){#controls{width:124px;height:124px;left:12px}#stick{left:30px;top:30px;width:60px;height:60px}#actions{right:10px;gap:7px}#actions button{width:75px;height:75px}#actions #hide{width:68px;height:68px}}
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Большая жена и мелкий муж · v1.6 · Новые игровые герои</title><style>*{box-sizing:border-box}body{margin:0;background:#b7d7b1;font:15px system-ui;color:white;overflow:hidden;touch-action:none;-webkit-user-select:none;user-select:none}canvas{display:block;width:100vw;height:100dvh;touch-action:none}#hud{position:fixed;top:env(safe-area-inset-top,12px);left:10px;right:10px;display:flex;gap:8px;justify-content:space-between;pointer-events:none}#hud>div{background:#213a42e8;border:1px solid #ffffff33;padding:9px 11px;border-radius:12px;max-width:65%}#state{font-size:13px;max-width:40%!important}#controls{position:fixed;bottom:max(24px,env(safe-area-inset-bottom));left:14px;display:grid;grid-template-columns:56px 56px 56px;gap:5px}button{border:1px solid #ffffff66;border-radius:15px;background:#264b65e9;color:#fff;font-size:24px;height:56px;touch-action:none;-webkit-touch-callout:none}#actions{position:fixed;right:12px;bottom:max(31px,env(safe-area-inset-bottom));display:grid;gap:10px}#actions button{font-size:15px;background:#a92d48e9;min-width:125px}#toast{position:fixed;top:105px;left:10%;right:10%;background:#1b3446e8;border-radius:12px;text-align:center;padding:12px;display:none}#overlay{position:fixed;inset:0;background:#142a3ccf;display:flex;align-items:center;justify-content:center;padding:25px}#panel{background:#f5dfb9;color:#3b2c24;padding:24px;border-radius:20px;max-width:360px;text-align:center;box-shadow:0 15px 50px #0008}#panel h2{margin:0 0 10px}#panel button{background:#b82c42;width:100%;margin-top:12px;font-size:18px}#panel p{line-height:1.5}#panel{background:linear-gradient(145deg,#fff1d2,#e8c698);border:3px solid #fff2d5;box-shadow:0 18px 65px #091d27b8,inset 0 0 0 2px #a8784833;max-height:88dvh;overflow:auto}#panel h2{font-size:27px;color:#7d3032;text-shadow:0 2px #fff5}#panel button{border-radius:30px;background:linear-gradient(180deg,#e95162,#9d233d);border:3px solid #ffd8a0;box-shadow:0 5px 0 #702139;font-weight:800;letter-spacing:.4px}#overlay{background:radial-gradient(circle at 50% 38%,#29483b99,#081a29eb)}#hud>div{background:linear-gradient(145deg,#1b4051f2,#19303ce8);border:2px solid #e6c88b99;box-shadow:0 3px 10px #0006;text-shadow:0 1px 2px #0008}#toast{border:2px solid #ffe4a7;box-shadow:0 6px 25px #0008;font-weight:700}#pause{border:2px solid #ffe2a4!important;border-radius:50%!important;background:linear-gradient(145deg,#b44b4b,#642e3c)!important}#hearts{border:2px solid #e8c98b88;box-shadow:0 4px 12px #0005}@media (orientation:landscape){#controls{grid-template-columns:48px 48px 48px;gap:4px;left:max(12px,env(safe-area-inset-left));bottom:12px}#controls button{height:45px;font-size:21px}#actions{right:max(12px,env(safe-area-inset-right));bottom:12px;gap:6px}#actions button{height:46px;min-width:110px}#hud{top:5px;left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right))}#hud>div{padding:5px 9px;font-size:12px}#hearts{top:48px!important;font-size:15px!important}#pause{top:47px!important;height:36px!important}#toast{top:49px;padding:6px}}@media(max-width:390px){#controls{grid-template-columns:48px 48px 48px}#controls button{height:49px}#actions button{min-width:112px;height:50px;font-size:13px}}#controls,#actions{z-index:4}#toast{pointer-events:none;z-index:5}#overlay{z-index:10}#controls{position:fixed;left:max(16px,env(safe-area-inset-left));bottom:max(24px,env(safe-area-inset-bottom));width:142px;height:142px;display:block;touch-action:none;z-index:6;border-radius:50%;border:2px solid #ffffff77;background:radial-gradient(circle at 35% 30%,#ffffff3c,#203a4da8 70%);box-shadow:inset 0 3px 12px #fff2,0 7px 20px #14273355}#stick{position:absolute;width:66px;height:66px;border-radius:50%;left:36px;top:36px;background:linear-gradient(145deg,#91c9e4,#37688d);border:3px solid #e5faffbb;box-shadow:0 4px 14px #102d4d99;pointer-events:none;transform:translate(0px,0px);display:grid;place-items:center;color:white;font-size:25px}#actions{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(26px,env(safe-area-inset-bottom));display:flex;align-items:end;gap:12px;z-index:6}#actions button{border-radius:50%;width:88px;height:88px;min-width:0;background:linear-gradient(150deg,#e54b6a,#95253d);border:3px solid #ffffffa0;box-shadow:0 5px 15px #17283c66;font-size:12px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px}#actions button span{font-size:29px;line-height:1.1}#actions #hide{width:76px;height:76px;background:linear-gradient(150deg,#6aa982,#2e6557)}#actions button:active,#actions button.active{filter:brightness(1.3);transform:scale(.96)}@media(orientation:landscape){#controls{width:120px;height:120px;left:max(20px,env(safe-area-inset-left));bottom:12px}#stick{left:28px;top:28px;width:60px;height:60px}#actions{bottom:12px;right:max(20px,env(safe-area-inset-right))}#actions button{width:76px;height:76px}#actions #hide{width:68px;height:68px}}@media(max-width:390px) and (orientation:portrait){#controls{width:124px;height:124px;left:12px}#stick{left:30px;top:30px;width:60px;height:60px}#actions{right:10px;gap:7px}#actions button{width:75px;height:75px}#actions #hide{width:68px;height:68px}}
 /* Illustrated title artwork; game UI remains separate and interactive. */
 #overlay{isolation:isolate;overflow:hidden;background:#18302b}
 #overlay:before{content:"";position:absolute;inset:-12px;background:linear-gradient(90deg,#0b1c25a3,#14252a3d,#0c2023a3),url('../assets/intro-art.webp?v=36') center center/cover no-repeat;filter:blur(3px) saturate(1.15);z-index:-1}
@@ -314,27 +314,9 @@ body.v8-capture-mode #v10stamp{display:none}
 #v15continue:active{transform:scale(.99)}
 #v15checkpoint{font:600 10px system-ui;opacity:.76;margin-top:4px;color:#e5d8b7}
 @media(orientation:landscape) and (max-height:450px){#v15continue{min-height:36px;font-size:12px;padding:4px 9px;margin:4px 0}}
-</style>
-<style id="v16-cinematic-art">
-/* Minimal iPhone HUD: reserve almost the whole scene for live artwork. */
-#v8topcenter{background:linear-gradient(135deg,#27241bdf,#121f1ddf);border:1px solid #f4d5a37d;box-shadow:0 4px 18px #0006}
-#v8mid{background:#1c2922c9;border:1px solid #e9c17f7a}
-#v8topactions button{background:linear-gradient(145deg,#6d4b35e8,#231d20e8);border:1px solid #eac795b4}
-#v8tip,#toast{background:#292b24b8;border-color:#efd3a18c}
-#actions button,#actions #hide,#actions #interact{backdrop-filter:blur(7px);background:linear-gradient(130deg,#3a3930d8,#171d21df);border:1px solid #ead2ab}
-#actions #interact{background:linear-gradient(130deg,#e7cd9e,#a47a4b);color:#2f2216}
-#actions #hide{background:linear-gradient(130deg,#375b3ddf,#1b3421e9)}
-#actions #run{background:linear-gradient(130deg,#823b33df,#411b23d9)}
-#panel .v8menu{position:relative;overflow:hidden;border:1px solid #f7d2a795;
-background:linear-gradient(145deg,#1b2924fa,#101d1df9);box-shadow:0 18px 55px #0008}
-#panel .v8menu:before{content:"";display:block;position:absolute;inset:0 0 auto 0;height:200px;
-background:linear-gradient(180deg,#13232400,#1b2924),url('../assets/intro-art.webp') center 37%/cover;opacity:.36;pointer-events:none;z-index:0}
-#panel .v8menu>*{position:relative;z-index:1}
-#panel .v8eyebrow{color:#f1cd92;letter-spacing:1px}
-#v16art{display:block;width:100%;margin:9px 0;padding:10px 12px;border:1px solid #d8af70;
-background:linear-gradient(145deg,#6d4432,#343c2c);border-radius:12px;
-font:800 12px system-ui;color:#fff1d8;cursor:pointer}
-@media(orientation:landscape) and (max-height:470px){#panel .v8menu:before{height:115px}#v16art{padding:6px}}
+</style><style id="v16-ui">
+#v16-toggle{display:block;width:100%;min-height:44px;margin:10px 0 2px;padding:10px 14px;border:1px solid #d6bc8b;border-radius:13px;background:linear-gradient(130deg,#5d6241,#1b3c38);color:#fff4d6;font:700 12px/1.3 system-ui;cursor:pointer}
+#v16-explanation{font:600 10px/1.5 system-ui;color:#e3cfaa;margin:4px auto 7px;text-align:center;max-width:340px}
 </style></head><body><div id="loadingHint" style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff6dc;color:#443323;padding:15px 20px;border-radius:16px;z-index:12;text-align:center;max-width:85%;font:600 15px system-ui">Загрузка игры… Если надпись не исчезает, открой эту страницу в Safari.</div><script>window.addEventListener('error',function(e){var x=document.getElementById('loadingHint');if(x){x.textContent='Ошибка запуска: '+(e.message||'не удалось загрузить игру');x.style.display='block'}});</script><canvas id="c"></canvas><div id="v8ui"><canvas id="v09radar" width="256" height="224" aria-label="Миникарта двора"></canvas><div id="v8top"><div id="v8brand"><span class="v8logo">👠</span><div><span class="v8brandtitle">БОЛЬШАЯ ЖЕНА</span><span class="v8subtitle">МЕЛКИЙ МУЖ · v0.8</span></div></div><div id="v8topcenter"><div id="v8levelname">ПОБЕГ ИЗ ДОМА</div><div id="v8objective">Найди ключ</div><div id="v8progress"><i class="active"></i><i></i><i></i></div></div><div id="v8topactions"><button id="v8map" title="Карта" aria-label="Открыть карту">◇</button><button id="v8music" title="Звук" aria-label="Переключить звук">♫</button><button id="v8pause" title="Пауза" aria-label="Меню паузы">☰</button></div></div><div id="v8mid"><div class="v8stat"><div class="v8statline"><span>БЕГ</span><span id="v8staminaText">100%</span></div><div class="v8meter"><i id="v8stamina"></i></div></div><div class="v8stat"><div class="v8statline"><span>ОБНАРУЖЕНИЕ</span><span id="v8threatText">ТИХО</span></div><div class="v8meter danger"><i id="v8threat"></i></div></div><div class="v8statsmall"><span id="v8lives">♥ ♥ ♥</span><span id="v8loot">★ 0/3 · ◈ 0/5</span><span id="v8timer">00:00</span></div></div><div id="v8tip"><span id="v8tipicon">✦</span><span id="v8tiptext">Следуй к отмеченной цели</span></div><div id="v8waypoint">↗ <span id="v8distance">Ключ</span></div></div><div id="v8modal" aria-hidden="true"><div id="v8modalCard"></div></div><div id="hud"><div id="quest">🎯 Доберись до ворот</div><div id="state">👠 Жена ищет тебя</div></div><button id="pause" style="position:fixed;right:10px;top:75px;width:48px;height:44px;font-size:20px;z-index:3">⏸</button><div id="hearts" style="position:fixed;left:10px;top:76px;background:#213a42dc;border-radius:10px;padding:8px 12px;font-size:21px;pointer-events:none">❤️❤️❤️</div><div id="toast"></div><div id="v5mission" aria-live="polite">🗝️ 1 / 3 · Найди ключ</div><div id="v5proximity" aria-live="polite"></div><button id="v7home" aria-label="Выбрать уровень" title="Выбрать уровень">🗺️</button><div id="v7mapTag">🏡 Уровень 1</div><div id="v7help">Найди ключ, активируй рычаг, открой ворота</div><div id="v6cinema" role="status" aria-live="polite"><div class="v6cinemaicon">👀</div><div id="v6stage">Жена заметила тебя!</div><div class="v6cinemabar"><div id="v6cinemafill"></div></div></div><button id="v5sound" aria-label="Включить или выключить звук" title="Звук">🔊</button><div id="controls" aria-label="Джойстик движения"><div id="stick">✥</div></div><div id="actions"><button id="hide"><span>🌿</span>Укрытие</button><button id="interact" aria-label="Взаимодействовать"><span>✋</span>Действие</button><button id="run"><span>🏃</span>БЕГ</button></div><div id="overlay"><div id="panel"><h2>🏡 Большая жена и мелкий муж</h2><p>Версия 0.8 · Новый интерфейс «Побег из дома». Ты — крошечный муж огромной великанши. Найди ключ у сарая, нажми «Действие», включи рычаг и открой ворота. Собирай звёзды и монеты, обходи ящики и пруд. Жена сама ходит по двору и пытается поймать тебя!</p><p>🕹️ Джойстик — движение · 🏃 — бег (слышен жене) · 🌿 — прятки у кустов · ✋ — взять ключ, включить рычаг, открыть ворота.</p><p>Жена замечает тебя взглядом, слышит бег и ищет возле последнего места встречи. Три попытки, бонусы и лучший результат сохраняются.</p><div id="v7levels"><button id="v7level1" class="v7levelbtn">🏡 Уровень 1 · Побег из дома</button><button id="v7level2" class="v7levelbtn">🌙 Уровень 2 · Ночной сад</button></div><button id="start" style="display:none">▶ Начать побег</button></div></div><script>
 const spriteWife=new Image(),spriteHusband=new Image();spriteWife.src='../assets/wife.svg?fullbody=20261027d';spriteHusband.src='../assets/husband.svg?fullbody=20261027b';let wifeRaster=null;
 const artSprites={wife:null,husband:null};const artPaths={wife:'../assets/wife_new.webp',husband:'../assets/husband_new.webp'};
@@ -1823,125 +1805,133 @@ function v15Menu(){
 v8Menu=v15Menu;v7Menu=v15Menu;v15Menu();
 
 
-/* v1.6: large character paintings extracted from original character sheets.
-   Genuine canvas sprites; world coordinates and gameplay remain unchanged.
-   Fallback is the tested v1.5 renderer. */
-const v16Art={
- wife:new Image(),husband:new Image(),
- loaded:{wife:false,husband:false},
- enabled:true
+/* v1.6: Independent high-resolution PNGs extracted from the ORIGINAL character
+ illustrations. These genuinely replace character draw calls in gameplay.
+ Incomplete or cropped animation frames are NOT substituted for walk cycles. */
+const v16Images={};
+const v16Files={
+ wife_idle:'../assets/characters/v16_wife_idle.png',
+ wife_point:'../assets/characters/v16_wife_point.png',
+ wife_search:'../assets/characters/v16_wife_search.png',
+ husband_idle:'../assets/characters/v16_husband_idle.png',
+ husband_hide:'../assets/characters/v16_husband_hide.png'
 };
-try{v16Art.enabled=localStorage.getItem('giantwife_art_v16')!=='off'}catch(_){}
-v16Art.wife.onload=()=>v16Art.loaded.wife=!!v16Art.wife.naturalWidth;
-v16Art.husband.onload=()=>v16Art.loaded.husband=!!v16Art.husband.naturalWidth;
-v16Art.wife.onerror=()=>{v16Art.loaded.wife=false;console.warn('Large wife sheet failed; legacy frames remain')};
-v16Art.husband.onerror=()=>{v16Art.loaded.husband=false;console.warn('Large husband sheet failed; legacy frames remain')};
-v16Art.wife.src='../assets/art_v16/wife_sheet.png?v=16';
-v16Art.husband.src='../assets/art_v16/husband_sheet.png?v=16';
-const v16Cells={
- wife:{
-  idle:[[0,0,190,376]],
-  walk:[[568,0,719,376],[706,0,861,376],[840,0,1000,376],[985,0,1148,376]],
-  run:[[0,366,245,619],[225,366,475,619],[455,366,718,619],[701,366,971,619],[965,366,1220,619]],
-  search:[[0,0,190,376],[135,0,296,376]]
- },
- husband:{
-  idle:[[410,0,541,217]],
-  walk:[[167,216,340,420],[332,216,507,420],[505,216,678,420],[674,216,850,420],[850,216,1027,420],[1024,216,1260,420]],
-  run:[[156,417,344,613],[337,417,512,613],[507,417,696,613],[687,417,876,613],[869,417,1055,613],[1043,417,1269,613]],
-  hide:[[300,613,493,748],[490,613,687,748],[680,613,884,748]],
-  fear:[[300,742,493,896],[491,742,690,896],[681,742,880,896]]
- }
-};
-const v16SizeOriginal={width:1448,height:1086};
-function v16Animation(role){
- if(role==='wife'){
-  const s=v12States.wife;
-  return wife.mode==='chase'&&s.speed>100?'run':s.speed>22?'walk':wife.mode==='search'?'search':'idle';
- }
- if(hidden)return 'hide';
- return sprint&&v12States.husband.speed>165&&stamina>0?'run':v12States.husband.speed>16?'walk':'idle';
+let v16Enabled=true;
+try{v16Enabled=localStorage.getItem('wife_game_v16_portraits')!=='false'}catch(_){}
+let v16ReadyCount=0;
+for(const [kind,path] of Object.entries(v16Files)){
+ const image=new Image();
+ image.onload=()=>{if(image.naturalWidth>20&&image.naturalHeight>20){v16ReadyCount++;v16MenuStatus()}};
+ image.onerror=()=>{console.warn('High-res pose missing',kind)};
+ image.src=path+'?v=16';
+ v16Images[kind]=image;
 }
-function v16DrawPose(role,animation,frame,x,y,alpha=1,scale=1){
- if(!v16Art.enabled||!v16Art.loaded[role])return false;
- const arr=v16Cells[role][animation];if(!arr||!arr.length)return false;
- const index=((Math.floor(frame)%arr.length)+arr.length)%arr.length;
- const src=arr[index],im=v16Art[role];
- if(!im.naturalWidth||!im.naturalHeight)return false;
- const sX=im.naturalWidth/v16SizeOriginal.width,sY=im.naturalHeight/v16SizeOriginal.height;
- const sx=src[0]*sX,sy=src[1]*sY,sw=(src[2]-src[0])*sX,sh=(src[3]-src[1])*sY;
- if(sw<=1||sh<=1)return false;
- const isWife=role==='wife';
- const tall=isWife?(animation==='run'?338:410):(animation==='hide'?70:104);
- const width=Math.min(isWife?360:124,tall*(src[2]-src[0])/(src[3]-src[1]));
- const dir=isWife?wifeFacing:manFacing;
- g.save();g.globalAlpha*=Math.min(1,Math.max(0,alpha));
- const radius=isWife?69:23;
- const gr=g.createRadialGradient(x,y+11,0,x,y+11,radius);
- gr.addColorStop(0,'rgba(26,28,18,.29)');gr.addColorStop(1,'rgba(26,28,18,0)');
- g.fillStyle=gr;g.beginPath();g.ellipse(x,y+12,radius,isWife?19:8,0,0,2*Math.PI);g.fill();
- g.translate(x,y+12);g.scale(dir*scale,scale);
- const gait=isWife?v12States.wife:v12States.husband;
- if(animation==='walk'||animation==='run'){
-  const swing=Math.sin(clock*(animation==='run'?9:5))*Math.min(.013,Math.abs(gait.speed)/13000);
-  g.transform(1,0,swing,1,0,0);
- }
+function v16MenuStatus(){
+ const e=document.getElementById('v16-explanation');
+ if(e)e.textContent='Загружено детализированных поз: '+v16ReadyCount+'/5. Ходьба и бег пока используют старую анимацию; повреждённые кадры исключены.';
+}
+function v16CanDraw(kind){
+ const im=v16Images[kind];
+ return !!(v16Enabled&&im&&im.complete&&im.naturalWidth>20&&im.naturalHeight>20);
+}
+function v16DrawPose(kind,x,y,large,alpha=1,scale=1){
+ if(!v16CanDraw(kind))return false;
+ const image=v16Images[kind];
+ const h=(large?410:104)*scale;
+ const w=h*image.naturalWidth/image.naturalHeight;
+ const dir=large?wifeFacing:manFacing;
+ g.save();g.globalAlpha*=Math.max(0,Math.min(1,alpha));
+ const r=large?68:21;
+ const grad=g.createRadialGradient(x,y+11,1,x,y+11,r);
+ grad.addColorStop(0,'rgba(29,32,23,.34)');
+ grad.addColorStop(1,'rgba(29,32,23,0)');
+ g.fillStyle=grad;g.beginPath();g.ellipse(x,y+12,r,large?20:8,0,0,Math.PI*2);g.fill();
+ g.translate(x,y+12);g.scale(dir,1);
  g.imageSmoothingEnabled=true;g.imageSmoothingQuality='high';
- g.drawImage(im,sx,sy,sw,sh,-width/2,-tall,width,tall);
+ g.drawImage(image,-w/2,-h,w,h);
  g.restore();
  return true;
 }
-const v16OldFigure=figure;
+const v16PriorFigure=figure;
 figure=function(x,y,large){
- if(captureTimer>0)return v16OldFigure(x,y,large);
- const role=large?'wife':'husband',state=v12States[role],mode=v16Animation(role);
- const phase=(mode==='idle')?0:(mode==='hide'?Math.floor(clock*2.2):Math.floor(state.phase*.8));
- if(v16DrawPose(role,mode,phase,x,y))return;
- return v16OldFigure(x,y,large);
+ if(v7Level===1&&captureTimer<=0&&v16Enabled){
+  const speed=v12States[large?'wife':'husband'].speed;
+  if(large&&wife.mode==='search'&&speed<38){
+   if(v16DrawPose('wife_search',x,y,true))return;
+   if(v16DrawPose('wife_point',x,y,true))return;
+  }
+  if(speed<15){
+   if(v16DrawPose(large?'wife_idle':'husband_idle',x,y,large))return;
+  }
+ }
+ v16PriorFigure(x,y,large);
 };
-const v16OldDrawFrame=v13DrawFrame;
-v13DrawFrame=function(kind,frame,x,y,large,alpha=1){
- if(kind==='husband_hide'&&v16DrawPose('husband','hide',frame,x,y,alpha))return true;
- if(kind==='wife_walk'&&v16DrawPose('wife','idle',0,x,y,alpha))return true;
- return v16OldDrawFrame(kind,frame,x,y,large,alpha);
+// Hide the husband behind foliage with his real new crouching drawing,
+// replacing the emoji/small low-detail atlas when the transparent PNG is loaded.
+const v16PreviousRender=render;
+render=function(){
+ if(!playing||!hidden||v7Level!==1||captureTimer>0||!v16CanDraw('husband_hide')){
+  v16PreviousRender();return;
+ }
+ // Do not override camera/scene rendering. The normal render draws the bush and
+ // leaves the hiding man out of the actor layer; this next overlay is world-aligned.
+ v16PreviousRender();
+ const zoom=v8Camera.zoom,Ww=innerWidth,Hh=innerHeight;
+ const x=Ww/2+(man.x-v8Camera.x)*zoom;
+ const y=Hh/2+(man.y-v8Camera.y)*zoom;
+ g.save();g.globalAlpha=.90;
+ // Display only the upper part of the silhouette in bushes; not another HUD panel.
+ const im=v16Images.husband_hide;
+ const height=104*zoom,width=height*im.naturalWidth/im.naturalHeight;
+ const clipY=y-height*.53;
+ g.beginPath();g.rect(x-width/2-5,clipY-6,width+10,height*.58);g.clip();
+ g.drawImage(im,x-width/2,y-height,width,height);
+ g.restore();
 };
-function v16Toggle(){
- v16Art.enabled=!v16Art.enabled;
- try{localStorage.setItem('giantwife_art_v16',v16Art.enabled?'on':'off')}catch(_){}
- const btn=document.getElementById('v16art');
- if(btn)btn.textContent=v16Art.enabled?'✓ Крупные рисунки героев · ВКЛ':'↩ Прежние спрайты · ВКЛ';
-}
+const v16PreviousCapture=v6DrawCapture;
+v6DrawCapture=function(){
+ if(!v16Enabled||v7Level!==1||!v16CanDraw('wife_point')){v16PreviousCapture();return}
+ const age=Math.max(0,4.6-captureTimer);
+ if(age<.48){
+  v16DrawPose('wife_point',wife.x,wife.y,true);
+  v16DrawPose('husband_hide',man.x,man.y,false);
+  return;
+ }
+ if(age<1.32){
+  // Existing crouch animation remains in control; it has genuine bent-leg frames.
+  v16PreviousCapture();return;
+ }
+ if(age<2.12){
+  v16PreviousCapture();return;
+ }
+ // Preserve the carry pose where both figures form one coherent silhouette.
+ v16PreviousCapture();
+};
 const v16OldMenu=v15Menu;
 function v16Menu(){
  v16OldMenu();
- const header=panel.querySelector('.v8eyebrow');
- if(header)header.textContent='ГРАФИЧЕСКАЯ ПЕРЕРАБОТКА · v1.6';
+ const eyebrow=panel.querySelector('.v8eyebrow');
+ if(eyebrow)eyebrow.textContent='НОВЫЕ ИГРОВЫЕ ПЕРСОНАЖИ · v1.6';
  const desc=panel.querySelector('.v8menudesc');
- if(desc)desc.textContent='Первый игровой этап с крупными рисунками обоих героев. Ходьба и бег используют новые изображения; пол, управление, ключ и преследование остаются настоящими игровыми действиями.';
- const foot=panel.querySelector('.v8menufooter');
- if(foot)foot.textContent='Крупные игровые спрайты · Автосохранение · Старые версии сохранены';
- const menu=panel.querySelector('.v8menu');
- if(menu){
-  const b=document.createElement('button');b.id='v16art';
-  b.textContent=v16Art.enabled?'✓ Крупные рисунки героев · ВКЛ':'↩ Прежние спрайты · ВКЛ';
-  b.onclick=v16Toggle;menu.appendChild(b);
+ if(desc)desc.textContent='Подключены отдельные детализированные изображения героев: неподвижные позы, поиск, укрытие и начало сцены поимки. Вся механика и сохранения остались рабочими.';
+ const root=panel.querySelector('.v8menu');
+ if(root){
+  const button=document.createElement('button');
+  button.id='v16-toggle';
+  button.textContent=v16Enabled?'✓ Новые персонажи включены · сравнить со старыми':'↩ Прежняя графика включена · включить новые';
+  button.onclick=()=>{
+   v16Enabled=!v16Enabled;
+   try{localStorage.setItem('wife_game_v16_portraits',String(v16Enabled))}catch(_){}
+   button.textContent=v16Enabled?'✓ Новые персонажи включены · сравнить со старыми':'↩ Прежняя графика включена · включить новые';
+  };
+  root.appendChild(button);
+  const status=document.createElement('div');status.id='v16-explanation';
+  root.appendChild(status);v16MenuStatus();
  }
- const play=document.getElementById('v09play');if(play)play.onclick=()=>v8Start(1);
+ const play=document.getElementById('v09play');
+ if(play)play.onclick=()=>v8Start(1);
 }
-const v16OldPause=v8Pause;
-v8Pause=function(){
- v16OldPause();
- const container=document.getElementById('v8modalActions');
- if(container){
-  const b=document.createElement('button');b.className='quiet';
-  b.textContent=v16Art.enabled?'Вернуть прежние кадры':'Включить крупные рисунки';
-  b.onclick=()=>{v16Toggle();v8CloseModal()};
-  container.appendChild(b);
- }
-};
-document.getElementById('v8pause').onclick=v8Pause;
-v8Menu=v16Menu;v7Menu=v16Menu;
-v16Menu();
+v8Menu=v16Menu;v7Menu=v16Menu;v16Menu();
 
 function loop(now){var loading=document.getElementById('loadingHint');if(loading)loading.style.display='none';const dt=Math.min((now-last)/1000||0,.05);last=now;update(dt);render();requestAnimationFrame(loop)}requestAnimationFrame(loop);
 </script></body></html>
