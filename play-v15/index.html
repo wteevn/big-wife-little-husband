@@ -1440,8 +1440,8 @@ v13Atlas.onload=()=>{
  if(!v13Ready)v13ImageError=true;
  v13RefreshButton();
 };
-v13Atlas.onerror=()=>{v13Ready=false;v13ImageError=true;v13RefreshButton();console.warn('v1.3 atlas unavailable: falling back to existing sprites')};
-v13Atlas.src='../assets/animations/redraw_v14.png?build=14';
+v13Atlas.onerror=()=>{if(!v13Atlas.src.includes('redraw_v14.png')){console.warn('Original HD atlas unavailable; using compressed backup');v13Atlas.src='../assets/animations/redraw_v14.png?build=15fallback';return}v13Ready=false;v13ImageError=true;v13RefreshButton();console.warn('Character atlases unavailable: falling back to classic sprites')};
+v13Atlas.src='../assets/animation_atlas_v13.png?build=15hd';
 function v13Toggle(){
  v13Enabled=!v13Enabled;
  try{localStorage.setItem('wife_game_v13_redrawn',String(v13Enabled))}catch(_){}
