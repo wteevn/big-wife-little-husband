@@ -2226,7 +2226,14 @@ function v21Foreground(){
   g.save();
   g.beginPath();g.ellipse(b.x,b.y+b.r*.24,radius,radius*.43,0,0,Math.PI*2);g.clip();
   g.globalAlpha=.94;
-  g.drawImage(worldLayer,0,0,1600,1400);
+  // Copy only the shrub's local patch rather than re-drawing a 2.2MP image
+  // each frame. This matters on iPhone GPU memory and fill-rate.
+  const left=Math.max(0,Math.floor(b.x-radius-5));
+  const top=Math.max(0,Math.floor(b.y-radius*.5));
+  const right=Math.min(1600,Math.ceil(b.x+radius+5));
+  const bottom=Math.min(1400,Math.ceil(b.y+radius*.95));
+  const cw=right-left,ch=bottom-top;
+  if(cw>0&&ch>0)g.drawImage(worldLayer,left,top,cw,ch,left,top,cw,ch);
   g.restore();
  }
 }
